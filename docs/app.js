@@ -63,8 +63,8 @@
   const platformCheckboxes = Array.from(
     document.querySelectorAll('#platform-checkboxes input[type="checkbox"]')
   );
-  const categoryRadios = Array.from(
-    document.querySelectorAll('#category-radios input[name="category"]')
+  const categoryCheckboxes = Array.from(
+    document.querySelectorAll('#category-checkboxes input[name="category"]')
   );
   const includeKeywordsInput = document.getElementById("include-keywords");
   const keywordModeSelect = document.getElementById("keyword-mode");
@@ -231,14 +231,24 @@
     }
   }
 
+  function getSelectedCategories() {
+    const allBox = categoryCheckboxes.find((cb) => cb.value === "all");
+    const specificBoxes = categoryCheckboxes.filter((cb) => cb.value !== "all" && cb.checked);
+    if ((allBox && allBox.checked) || specificBoxes.length === 0) {
+      return ["all"];
+    }
+    return specificBoxes.map((cb) => cb.value);
+  }
+
   function getCurrentFilterState() {
     const selectedPlatforms = platformCheckboxes
       .filter((cb) => cb.checked)
       .map((cb) => cb.value);
-    const selectedCatRadio = categoryRadios.find((r) => r.checked);
+    const selectedCats = getSelectedCategories();
     return {
       platforms: selectedPlatforms,
-      category: selectedCatRadio ? selectedCatRadio.value : "all",
+      categories: selectedCats,
+      category: selectedCats[0] || "all",
       include_keywords: includeKeywordsInput.value.trim(),
       keyword_mode: keywordModeSelect.value,
       reward_type: rewardTypeSelect.value,
@@ -256,13 +266,29 @@
     platformCheckboxes.forEach((cb) => {
       cb.checked = plats.includes(cb.value);
     });
-    const cat = preset.category || "all";
-    const matchedRadio = categoryRadios.find((r) => r.value === cat);
-    if (matchedRadio) {
-      matchedRadio.checked = true;
-    } else if (categoryRadios[0]) {
-      categoryRadios[0].checked = true;
+
+    let targetCats = ["all"];
+    if (Array.isArray(preset.categories) && preset.categories.length > 0) {
+      targetCats = preset.categories;
+    } else if (preset.category && preset.category !== "all") {
+      targetCats = [preset.category];
     }
+
+    const isAll = targetCats.includes("all");
+    categoryCheckboxes.forEach((cb) => {
+      if (cb.value === "all") {
+        cb.checked = isAll;
+      } else {
+        cb.checked = !isAll && targetCats.includes(cb.value);
+      }
+    });
+
+    // もし個別カテゴリが1つも一致しなかった場合は「すべて」をONにする
+    if (!categoryCheckboxes.some((cb) => cb.checked)) {
+      const allBox = categoryCheckboxes.find((cb) => cb.value === "all");
+      if (allBox) allBox.checked = true;
+    }
+
     includeKeywordsInput.value = preset.include_keywords || "";
     keywordModeSelect.value = preset.keyword_mode || "OR";
     rewardTypeSelect.value = preset.reward_type || "all";
@@ -343,7 +369,15 @@
 
   function renderDirectSearchLauncher(state) {
     const kwList = splitKeywords(state.include_keywords);
-    const catLabel = state.category !== "all" ? CATEGORY_LABELS[state.category] || "" : "動画編集";
+    const activeCats = (state.categories || ["all"]).filter((c) => c !== "all");
+    const catLabel =
+      activeCats.length > 0
+        ? activeCats
+            .slice(0, 2)
+            .map((cid) => CATEGORY_LABELS[cid] || "")
+            .filter(Boolean)
+            .join(" ")
+        : "動画編集";
     const queryStr = kwList.length > 0 ? kwList.slice(0, 3).join(" ") : catLabel;
     const encoded = encodeURIComponent(queryStr);
 
@@ -412,10 +446,14 @@
     // 2. サイト
     if (!state.platforms.includes(job.platform)) return false;
 
-    // 3. 動画・映像・アニメーション 15詳細カテゴリ
-    if (state.category !== "all") {
+    // 3. 動画・映像・アニメーション 15詳細カテゴリ（複数選択対応）
+    const activeCats = (state.categories || ["all"]).filter((c) => c !== "all");
+    if (activeCats.length > 0) {
       const subcats = Array.isArray(job.subcategories) ? job.subcategories : [job.category];
-      if (job.category !== state.category && !subcats.includes(state.category)) {
+      const matchedAny =
+        activeCats.includes(job.category) ||
+        subcats.some((sc) => activeCats.includes(sc));
+      if (!matchedAny) {
         return false;
       }
     }
@@ -496,8 +534,17 @@
   function updateSummaryText(state, matchedCount) {
     const parts = [];
     parts.push(`${state.platforms.length}サイト`);
-    if (state.category !== "all") {
-      parts.push(CATEGORY_LABELS[state.category] || state.category);
+    const activeCats = (state.categories || ["all"]).filter((c) => c !== "all");
+    if (activeCats.length === 1) {
+      parts.push(CATEGORY_LABELS[activeCats[0]] || activeCats[0]);
+    } else if (activeCats.length === 2) {
+      parts.push(
+        activeCats.map((c) => CATEGORY_LABELS[c] || c).join("・")
+      );
+    } else if (activeCats.length >= 3) {
+      parts.push(
+        `${CATEGORY_LABELS[activeCats[0]] || activeCats[0]} ほか${activeCats.length - 1}カテゴリ`
+      );
     }
     if (state.min_fixed_reward > 0) {
       parts.push(`固定${state.min_fixed_reward.toLocaleString()}円〜`);
@@ -660,9 +707,32 @@
   }
 
   function bindEvents() {
+    categoryCheckboxes.forEach((cb) => {
+      cb.addEventListener("change", () => {
+        const allBox = categoryCheckboxes.find((item) => item.value === "all");
+        const specificBoxes = categoryCheckboxes.filter((item) => item.value !== "all");
+
+        if (cb.value === "all") {
+          if (cb.checked) {
+            specificBoxes.forEach((item) => {
+              item.checked = false;
+            });
+          } else if (!specificBoxes.some((item) => item.checked)) {
+            cb.checked = true;
+          }
+        } else {
+          if (cb.checked && allBox) {
+            allBox.checked = false;
+          } else if (!specificBoxes.some((item) => item.checked) && allBox) {
+            allBox.checked = true;
+          }
+        }
+        updateAll();
+      });
+    });
+
     const inputs = [
       ...platformCheckboxes,
-      ...categoryRadios,
       includeKeywordsInput,
       keywordModeSelect,
       rewardTypeSelect,
