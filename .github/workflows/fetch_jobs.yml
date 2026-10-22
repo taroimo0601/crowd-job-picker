@@ -1,0 +1,43 @@
+name: Update Crowdsourcing Jobs
+
+on:
+  schedule:
+    # 日本時間の 7:00, 10:00, 13:00, 16:00, 19:00, 22:00 に自動収集 (UTC: 22, 1, 4, 7, 10, 13)
+    - cron: "0 1,4,7,10,13,22 * * *"
+  workflow_dispatch: # GitHubのActionsタブから手動でも即時実行可能
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Fetch and score jobs across platforms
+        env:
+          SITE_PASSWORD: ${{ secrets.SITE_PASSWORD }}
+        run: python scripts/fetch_jobs.py
+
+      - name: Commit and push updated job data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/jobs.json
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update crowdsourcing jobs $(date +'%Y-%m-%d %H:%M')"
+            git push
+          fi

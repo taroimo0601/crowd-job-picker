@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="robots" content="noindex, nofollow, noarchive" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="JobPicker" />
+  <title>Crowd Job Picker | 5大クラウドソーシング横断・条件ピックアップ</title>
+  <link rel="manifest" href="./manifest.json" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <!-- パスワードロック画面（SITE_PASSWORD設定時のみ有効） -->
+  <div id="auth-overlay" class="auth-overlay" aria-modal="true" role="dialog" hidden>
+    <div class="auth-card">
+      <div class="auth-icon">🔒</div>
+      <h2 class="auth-title">プライベート・案件ピッカー</h2>
+      <p class="auth-desc">閲覧用のパスワードを入力してください（一度入力するとこの端末に記憶されます）</p>
+      <form id="auth-form" class="auth-form">
+        <input
+          id="auth-password-input"
+          class="auth-input"
+          type="password"
+          placeholder="パスワードを入力"
+          autocomplete="current-password"
+          required
+        />
+        <p id="auth-error" class="auth-error" hidden>パスワードが正しくありません</p>
+        <button class="auth-submit-btn" type="submit">ロックを解除</button>
+      </form>
+    </div>
+  </div>
+
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-badge">FREE &amp; AUTO</span>
+        <div>
+          <h1>Crowd Job Picker</h1>
+          <p class="brand-sub">5大クラウドソーシング横断・優良案件ピックアップ</p>
+        </div>
+      </div>
+
+      <div class="header-controls">
+        <span id="last-updated" class="updated-pill">更新: ----/--/--</span>
+        <button id="export-config-btn" class="secondary-btn" type="button" title="GitHub自動収集用の設定JSONを出力">
+          ⚙ 収集設定JSON
+        </button>
+        <button id="theme-toggle" class="icon-btn" type="button" aria-label="テーマ切り替え" title="ダーク/ライト切替">
+          ◐
+        </button>
+      </div>
+    </div>
+
+    <!-- 保存済み条件プリセットバー -->
+    <div class="preset-bar-wrapper">
+      <div class="preset-bar-inner">
+        <span class="preset-label">マイ条件:</span>
+        <div id="preset-tabs" class="preset-tabs" role="tablist">
+          <!-- JSでプリセットボタンを生成 -->
+        </div>
+        <button id="save-preset-btn" class="preset-save-btn" type="button" title="現在の絞り込み条件をマイ条件として保存">
+          ＋ 現在の条件を保存
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- 特定条件フィルタパネル -->
+    <section class="filter-panel" aria-label="案件の絞り込み条件">
+      <div class="filter-panel-header">
+        <div class="filter-panel-title-group">
+          <h2 class="filter-panel-title">特定条件フィルタ</h2>
+          <span id="active-filter-summary" class="active-filter-summary">全サイト対象</span>
+        </div>
+        <div class="filter-panel-actions">
+          <button id="reset-filter-btn" class="text-btn" type="button">条件をリセット</button>
+          <button id="toggle-filter-body-btn" class="toggle-panel-btn" type="button" aria-expanded="true">
+            条件パネルを折りたたむ ▲
+          </button>
+        </div>
+      </div>
+
+      <div id="filter-body" class="filter-body">
+        <!-- 1. 対象サービス選択 -->
+        <div class="filter-row">
+          <label class="filter-label">対象サイト（複数選択可）</label>
+          <div id="platform-checkboxes" class="chip-group">
+            <label class="chip-checkbox">
+              <input type="checkbox" value="crowdworks" checked />
+              <span class="chip-box platform-cw">クラウドワークス</span>
+            </label>
+            <label class="chip-checkbox">
+              <input type="checkbox" value="lancers" checked />
+              <span class="chip-box platform-lc">ランサーズ</span>
+            </label>
+            <label class="chip-checkbox">
+              <input type="checkbox" value="coconala" checked />
+              <span class="chip-box platform-cc">ココナラ公開依頼</span>
+            </label>
+            <label class="chip-checkbox">
+              <input type="checkbox" value="shufti" checked />
+              <span class="chip-box platform-sh">シュフティ</span>
+            </label>
+            <label class="chip-checkbox">
+              <input type="checkbox" value="mamaworks" checked />
+              <span class="chip-box platform-mw">ママワークス</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 2. カテゴリ・職種 -->
+        <div class="filter-row">
+          <label class="filter-label">カテゴリ・職種</label>
+          <div id="category-radios" class="chip-group">
+            <label class="chip-radio">
+              <input type="radio" name="category" value="all" checked />
+              <span class="chip-box">すべて</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="development" />
+              <span class="chip-box">💻 システム開発・AI・自動化</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="design" />
+              <span class="chip-box">🎨 Web制作・デザイン</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="video" />
+              <span class="chip-box">🎬 動画編集・制作</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="writing" />
+              <span class="chip-box">✍️ ライティング・記事作成</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="business" />
+              <span class="chip-box">📊 事務・データ入力・その他</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 3. キーワード検索 ＆ ピックアップ自動除外ルール -->
+        <div class="filter-grid-2">
+          <div class="filter-field">
+            <div class="field-label-row">
+              <label for="include-keywords" class="filter-label">検索キーワード（カンマまたはスペース区切り）</label>
+              <select id="keyword-mode" class="mini-select" aria-label="キーワード検索モード">
+                <option value="OR">いずれかを含む (OR)</option>
+                <option value="AND">すべて含む (AND)</option>
+              </select>
+            </div>
+            <input
+              id="include-keywords"
+              class="text-input"
+              type="text"
+              placeholder="例: Python, 自動化, YouTube, WordPress"
+            />
+          </div>
+
+          <div class="filter-field">
+            <div class="field-label-row">
+              <label for="add-exclude-input" class="filter-label">自動除外ルール（応募終了案件＋登録NGワードを常時除外）</label>
+              <span id="auto-exclude-badge" class="field-hint">ピックアップ段階で自動除外済</span>
+            </div>
+            <div class="exclude-add-row">
+              <input
+                id="add-exclude-input"
+                class="text-input"
+                type="text"
+                placeholder="追加したい除外ワードを入力してEnter（一度追加すると常時有効）"
+              />
+              <button id="add-exclude-btn" class="secondary-btn" type="button">＋ 常時除外に追加</button>
+            </div>
+            <details class="exclude-chips-details">
+              <summary id="exclude-summary-label" class="exclude-summary-label">
+                自動除外ワード一覧を確認・編集（20件登録中）
+              </summary>
+              <div id="exclude-chips-container" class="exclude-chips-container"></div>
+            </details>
+          </div>
+        </div>
+
+        <!-- 4. 報酬形態・最低単価（手動入力対応）・応募数 -->
+        <div class="filter-grid-4">
+          <div class="filter-field">
+            <label for="reward-type-select" class="filter-label">報酬形態</label>
+            <select id="reward-type-select" class="select-input">
+              <option value="all">すべて（固定・時給）</option>
+              <option value="fixed">固定報酬のみ</option>
+              <option value="hourly">時給制のみ</option>
+            </select>
+          </div>
+
+          <div class="filter-field">
+            <label for="min-fixed-input" class="filter-label">最低固定報酬（円以上・直接入力）</label>
+            <div class="number-input-wrap">
+              <input
+                id="min-fixed-input"
+                class="text-input number-input"
+                type="number"
+                min="0"
+                step="1000"
+                value="0"
+                placeholder="例: 15000"
+                inputmode="numeric"
+              />
+              <span class="unit-suffix">円〜</span>
+            </div>
+          </div>
+
+          <div class="filter-field">
+            <label for="min-hourly-input" class="filter-label">最低時給（円以上・直接入力）</label>
+            <div class="number-input-wrap">
+              <input
+                id="min-hourly-input"
+                class="text-input number-input"
+                type="number"
+                min="0"
+                step="100"
+                value="0"
+                placeholder="例: 1500"
+                inputmode="numeric"
+              />
+              <span class="unit-suffix">円〜</span>
+            </div>
+          </div>
+
+          <div class="filter-field">
+            <label for="max-proposals-input" class="filter-label">応募数上限（穴場絞り込み）</label>
+            <select id="max-proposals-input" class="select-input">
+              <option value="999">上限なし</option>
+              <option value="3">応募 3件以下（超穴場）</option>
+              <option value="5">応募 5件以下（穴場）</option>
+              <option value="10">応募 10件以下</option>
+              <option value="20">応募 20件以下</option>
+              <option value="30">応募 30件以下</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="filter-bottom-bar">
+          <div class="filter-toggles">
+            <label class="inline-check">
+              <input id="include-unspecified-check" type="checkbox" checked />
+              <span>「予算相談・未定」の案件も含める</span>
+            </label>
+            <label class="inline-check">
+              <input id="hide-dismissed-check" type="checkbox" checked />
+              <span>「非表示（見送り）」にした案件を隠す</span>
+            </label>
+          </div>
+
+          <!-- 現在の条件で各サイトを直接リアルタイム検索するランチャー -->
+          <div class="direct-launcher">
+            <span class="launcher-label">現在の条件で実サイトを直接開く:</span>
+            <div id="direct-search-links" class="launcher-buttons">
+              <!-- JSで各サイトの検索URLを動的生成 -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ステータス別タブ＆並び替えバー -->
+    <section class="toolbar-section" aria-label="表示切替と並び替え">
+      <div class="status-tabs" role="tablist">
+        <button class="status-tab active" data-status="all" type="button">
+          ピックアップ一覧 <span id="count-all" class="tab-count">0</span>
+        </button>
+        <button class="status-tab" data-status="saved" type="button">
+          ★ お気に入り <span id="count-saved" class="tab-count">0</span>
+        </button>
+        <button class="status-tab" data-status="applied" type="button">
+          ✓ 応募済み・検討中 <span id="count-applied" class="tab-count">0</span>
+        </button>
+        <button class="status-tab" data-status="dismissed" type="button">
+          見送り（非表示） <span id="count-dismissed" class="tab-count">0</span>
+        </button>
+      </div>
+
+      <div class="sort-box">
+        <label for="sort-select" class="sort-label">並び順:</label>
+        <select id="sort-select" class="select-input sort-select">
+          <option value="score_desc">おすすめ・条件適合度順</option>
+          <option value="reward_desc">報酬額が高い順</option>
+          <option value="proposals_asc">応募数が少ない順（穴場順）</option>
+          <option value="days_asc">締切が近い順</option>
+          <option value="newest">新着順</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- 案件カードリスト -->
+    <section id="jobs-container" class="jobs-list" aria-live="polite"></section>
+  </main>
+
+  <!-- 設定JSON出力モーダル -->
+  <div id="config-modal" class="modal-overlay" hidden>
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>GitHub自動収集用の設定JSON (config/conditions.json)</h3>
+        <button id="close-modal-btn" class="icon-btn" type="button">✕</button>
+      </div>
+      <p class="modal-desc">
+        画面上で作成したマイ条件プリセットや除外キーワード設定を、GitHub Actionsの自動収集スクリプト（<code>config/conditions.json</code>）にそのまま貼り付けて反映できます。
+      </p>
+      <textarea id="config-json-textarea" class="code-textarea" readonly></textarea>
+      <div class="modal-actions">
+        <button id="copy-config-btn" class="primary-btn" type="button">JSONをクリップボードにコピー</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <p>Crowd Job Picker — GitHub Actions &amp; GitHub Pages 完全無料運用モデル</p>
+  </footer>
+
+  <script src="./app.js"></script>
+</body>
+</html>

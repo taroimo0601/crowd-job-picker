@@ -1,0 +1,164 @@
+{
+  "site_title": "Crowd Job Picker",
+  "platforms": {
+    "crowdworks": {
+      "enabled": true,
+      "name": "クラウドワークス",
+      "max_items_per_query": 25
+    },
+    "lancers": {
+      "enabled": true,
+      "name": "ランサーズ",
+      "max_items_per_query": 25
+    },
+    "coconala": {
+      "enabled": true,
+      "name": "ココナラ（公開依頼）",
+      "max_items_per_query": 25
+    },
+    "shufti": {
+      "enabled": true,
+      "name": "シュフティ",
+      "max_items_per_query": 20
+    },
+    "mamaworks": {
+      "enabled": true,
+      "name": "ママワークス",
+      "max_items_per_query": 20
+    }
+  },
+  "search_queries": [
+    {
+      "id": "dev_ai",
+      "label": "システム開発・AI・自動化",
+      "category": "development",
+      "keywords": ["Python", "自動化", "スクレイピング", "AI", "ChatGPT", "GAS", "API", "ツール開発", "Webアプリ"]
+    },
+    {
+      "id": "web_design",
+      "label": "Web制作・デザイン",
+      "category": "design",
+      "keywords": ["LP制作", "WordPress", "コーディング", "バナー", "サムネイル", "Figma", "Webデザイン"]
+    },
+    {
+      "id": "video_edit",
+      "label": "動画編集・制作",
+      "category": "video",
+      "keywords": ["YouTube", "動画編集", "Premiere", "ショート動画", "TikTok", "リール", "切り抜き"]
+    },
+    {
+      "id": "writing",
+      "label": "ライティング・記事作成",
+      "category": "writing",
+      "keywords": ["SEO", "記事作成", "ブログ", "コラム", "シナリオ", "構成案", "ライティング"]
+    },
+    {
+      "id": "business",
+      "label": "事務・データ入力・リサーチ",
+      "category": "business",
+      "keywords": ["データ入力", "リサーチ", "リスト作成", "オンラインアシスタント", "スプレッドシート", "事務"]
+    }
+  ],
+  "default_filters": {
+    "exclude_keywords": [
+      "スクール勧誘",
+      "スクール生募集",
+      "モニター募集",
+      "無料モニター",
+      "アンケート回答のみ",
+      "1記事100円",
+      "1本100円",
+      "1本300円",
+      "テストライティング100円",
+      "テスト編集100円",
+      "LINE登録",
+      "公式LINE",
+      "情報商材",
+      "代理購入",
+      "代行購入",
+      "口座開設",
+      "身分証提示",
+      "クレジットカード作成",
+      "覆面調査",
+      "座談会"
+    ],
+    "exclude_closed_jobs": true,
+    "min_fixed_reward": 5000,
+    "min_hourly_reward": 1200,
+    "include_unspecified_budget": true,
+    "max_proposals": 30,
+    "min_days_left": 1
+  },
+  "saved_presets": [
+    {
+      "id": "preset_all",
+      "name": "すべて表示（自動クリーン済）",
+      "platforms": ["crowdworks", "lancers", "coconala", "shufti", "mamaworks"],
+      "category": "all",
+      "reward_type": "all",
+      "min_fixed_reward": 0,
+      "min_hourly_reward": 0,
+      "include_unspecified": true,
+      "max_proposals": 999,
+      "min_days_left": 1,
+      "include_keywords": "",
+      "sort_by": "score_desc"
+    },
+    {
+      "id": "preset_high_dev",
+      "name": "高単価・開発＆AI自動化",
+      "platforms": ["crowdworks", "lancers", "coconala"],
+      "category": "development",
+      "reward_type": "all",
+      "min_fixed_reward": 30000,
+      "min_hourly_reward": 2000,
+      "include_unspecified": false,
+      "max_proposals": 15,
+      "min_days_left": 1,
+      "include_keywords": "Python, AI, 自動化, GAS, API, スクレイピング, Web",
+      "sort_by": "reward_desc"
+    },
+    {
+      "id": "preset_video",
+      "name": "優良・動画編集（5,000円〜）",
+      "platforms": ["crowdworks", "lancers", "coconala", "mamaworks"],
+      "category": "video",
+      "reward_type": "fixed",
+      "min_fixed_reward": 5000,
+      "min_hourly_reward": 1500,
+      "include_unspecified": false,
+      "max_proposals": 20,
+      "min_days_left": 1,
+      "include_keywords": "動画編集, YouTube, Premiere, ショート",
+      "sort_by": "score_desc"
+    },
+    {
+      "id": "preset_low_comp",
+      "name": "穴場案件（応募5件以下・1万円〜）",
+      "platforms": ["crowdworks", "lancers", "coconala", "shufti", "mamaworks"],
+      "category": "all",
+      "reward_type": "all",
+      "min_fixed_reward": 10000,
+      "min_hourly_reward": 1500,
+      "include_unspecified": false,
+      "max_proposals": 5,
+      "min_days_left": 2,
+      "include_keywords": "",
+      "sort_by": "proposals_asc"
+    },
+    {
+      "id": "preset_writing_biz",
+      "name": "在宅ワーク・記事作成＆事務",
+      "platforms": ["crowdworks", "lancers", "shufti", "mamaworks"],
+      "category": "all",
+      "reward_type": "all",
+      "min_fixed_reward": 3000,
+      "min_hourly_reward": 1200,
+      "include_unspecified": true,
+      "max_proposals": 25,
+      "min_days_left": 1,
+      "include_keywords": "記事, ライティング, SEO, リサーチ, データ入力, 事務, アシスタント",
+      "sort_by": "newest"
+    }
+  ]
+}

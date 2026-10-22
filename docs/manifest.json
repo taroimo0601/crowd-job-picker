@@ -1,0 +1,9 @@
+{
+  "name": "Crowd Job Picker - 自分専用案件ピックアップ",
+  "short_name": "JobPicker",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#2563eb",
+  "description": "5大クラウドソーシングから特定条件で優良案件をピックアップする自分専用ツール"
+}
