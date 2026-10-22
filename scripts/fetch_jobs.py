@@ -14,6 +14,7 @@ import json
 import os
 from pathlib import Path
 import re
+import ssl
 import time
 from typing import Any
 from urllib.parse import quote, urljoin
@@ -104,8 +105,13 @@ def http_get_text(url: str, timeout: int = 10) -> str:
             return resp.text
         return ""
     req = Request(url, headers=HEADERS)
-    with urlopen(req, timeout=timeout) as resp:
-        return resp.read().decode("utf-8", errors="ignore")
+    try:
+        with urlopen(req, timeout=timeout) as resp:
+            return resp.read().decode("utf-8", errors="ignore")
+    except Exception:
+        ctx = ssl._create_unverified_context()
+        with urlopen(req, timeout=timeout, context=ctx) as resp:
+            return resp.read().decode("utf-8", errors="ignore")
 
 
 def parse_rss_items(xml_text: str) -> list[dict[str, str]]:
@@ -295,7 +301,8 @@ def should_exclude_at_pickup(job: dict[str, Any], config: dict[str, Any]) -> tup
     """
     案件ピックアップ（収集）段階で自動除外すべきかどうかを判定する。
     1. 応募・募集が終了している案件を自動除外
-    2. config/conditions.json の exclude_keywords に該当する地雷・NG案件を自動除外
+    2. 固定報酬で上限1,000円未満の超低単価・アンケート案件を自動除外
+    3. config/conditions.json の exclude_keywords に該当する地雷・NG案件を自動除外
     """
     title = str(job.get("title", ""))
     desc = str(job.get("description", ""))
@@ -307,7 +314,13 @@ def should_exclude_at_pickup(job: dict[str, Any], config: dict[str, Any]) -> tup
     if job.get("is_closed") or days_left <= 0 or deadline_label == "募集終了" or is_closed_text(combined):
         return True, "closed"
 
-    # 2. 除外キーワードによる自動除外
+    # 2. 固定報酬で上限1,000円未満の極端な低単価案件を自動除外
+    r_type = job.get("reward_type", "fixed")
+    r_max = int(job.get("reward_max", 0) or 0)
+    if r_type != "hourly" and 0 < r_max < 1000:
+        return True, "low_budget_under_1000"
+
+    # 3. 除外キーワードによる自動除外
     exclude_kws = config.get("default_filters", {}).get("exclude_keywords", [])
     combined_lower = combined.lower()
     for kw in exclude_kws:
@@ -357,8 +370,11 @@ def compute_score_and_tags(job: dict[str, Any], config: dict[str, Any]) -> tuple
             score += 18
             tags.append("高単価5万+")
         elif effective_reward >= 20000:
-            score += 10
+            score += 12
             tags.append("単価2万+")
+        elif effective_reward >= 10000:
+            score += 8
+            tags.append("単価1万+")
         elif 0 < effective_reward < 3000:
             score -= 15
 
@@ -376,47 +392,177 @@ def compute_score_and_tags(job: dict[str, Any], config: dict[str, Any]) -> tuple
     if any(w in text for w in ["継続", "長期", "毎月", "定期"]):
         score += 6
         tags.append("継続案件")
+    if any(w in text for w in ["YouTube", "ショート", "Premiere", "動画編集"]):
+        score += 5
     if any(w in text for w in ["フルリモート", "完全在宅", "在宅"]):
         tags.append("完全在宅")
     if any(w in text for w in ["急募", "即日"]):
         tags.append("急募")
 
-    # 除外キーワードが含まれる場合は大幅減点
-    exclude_kws = config.get("default_filters", {}).get("exclude_keywords", [])
-    for ex in exclude_kws:
-        if ex and ex.lower() in text.lower():
-            score -= 40
-            tags.append("要注意ワード含")
-            break
-
     score = max(10, min(99, score))
     return score, tags[:4]
 
 
+def parse_cw_payment(payment_obj: dict[str, Any], fallback_text: str) -> dict[str, Any]:
+    if not isinstance(payment_obj, dict):
+        return parse_reward_info(fallback_text)
+
+    if "hourly_payment" in payment_obj and payment_obj["hourly_payment"]:
+        hp = payment_obj["hourly_payment"]
+        w_min = int(hp.get("min_hourly_wage") or hp.get("max_hourly_wage") or 0)
+        w_max = int(hp.get("max_hourly_wage") or w_min)
+        if w_max > 0:
+            label = f"時給 {w_min:,}円 〜 {w_max:,}円" if w_min != w_max else f"時給 {w_max:,}円"
+            return {
+                "reward_type": "hourly",
+                "reward_min": w_min,
+                "reward_max": w_max,
+                "reward_label": label,
+                "is_unspecified": False,
+            }
+
+    if "fixed_price_payment" in payment_obj and payment_obj["fixed_price_payment"]:
+        fp = payment_obj["fixed_price_payment"]
+        b_min = int(fp.get("min_budget") or 0)
+        b_max = int(fp.get("max_budget") or b_min)
+        if b_max > 0:
+            if b_min > 0 and b_min != b_max:
+                label = f"{b_min:,}円 〜 {b_max:,}円"
+            else:
+                label = f"{b_max:,}円"
+                b_min = b_max
+            return {
+                "reward_type": "fixed",
+                "reward_min": b_min,
+                "reward_max": b_max,
+                "reward_label": label,
+                "is_unspecified": False,
+            }
+
+    return parse_reward_info(fallback_text)
+
+
 def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
     jobs: list[dict[str, Any]] = []
-    queries = ["Python 自動化", "Web制作 LP", "動画編集 YouTube", "記事作成 SEO", "データ入力 事務"]
-    for q in queries:
-        rss_url = f"https://crowdworks.jp/public/jobs.rss?search%5Bkeywords%5D={quote(q)}"
+    seen_urls: set[str] = set()
+    today_date = datetime.now(JST).date()
+
+    html_queries = [
+        ("YouTube 動画編集", "video"),
+        ("ショート動画 編集", "video"),
+        ("Premiere Pro", "video"),
+        ("Python 自動化", "development"),
+        ("LP制作 WordPress", "design"),
+    ]
+
+    for q_text, default_cat in html_queries:
+        html_url = (
+            f"https://crowdworks.jp/public/jobs/search"
+            f"?search%5Bkeywords%5D={quote(q_text)}&keep_search_criteria=true&order=new"
+        )
         try:
-            xml_text = http_get_text(rss_url, timeout=10)
-            if xml_text and "<rss" in xml_text[:400]:
-                for entry in parse_rss_items(xml_text)[:8]:
-                    title = entry.get("title", "")
-                    link = entry.get("link", "")
-                    desc = entry.get("summary", "")
-                    if not title or not link:
+            html_text = http_get_text(html_url, timeout=12)
+            if not html_text:
+                continue
+
+            m_data = re.search(r'\bdata=["\'](\{&quot;isMobile&quot;[^"\']+)["\']', html_text)
+            if not m_data:
+                m_data = re.search(r'data-result=["\']([^"\']+)["\']', html_text)
+
+            if m_data:
+                raw_json = html.unescape(m_data.group(1))
+                parsed = json.loads(raw_json)
+                entries = parsed.get("searchResult", {}).get("job_offers", [])
+                for offer in entries[:25]:
+                    job_obj = offer.get("job_offer", {})
+                    jid = job_obj.get("id")
+                    title = clean_text(job_obj.get("title", ""))
+                    desc = clean_text(job_obj.get("description_digest", ""))
+                    status = str(job_obj.get("status", "released"))
+                    if not jid or not title:
                         continue
-                    reward_info = parse_reward_info(f"{title} {desc}")
-                    proposals, days_left, deadline_label = parse_proposals_and_deadline(desc)
-                    cat = detect_category(title, desc)
+                    full_url = f"https://crowdworks.jp/public/jobs/{jid}"
+                    if full_url in seen_urls:
+                        continue
+                    seen_urls.add(full_url)
+
+                    is_closed = status != "released"
+                    days_left = 7
+                    deadline_label = "募集中"
+                    expired_on = job_obj.get("expired_on")
+                    if expired_on:
+                        try:
+                            exp_date = datetime.strptime(expired_on, "%Y-%m-%d").date()
+                            days_left = (exp_date - today_date).days
+                            if days_left <= 0:
+                                is_closed = True
+                                deadline_label = "募集終了"
+                            else:
+                                deadline_label = f"残り{days_left}日"
+                        except Exception:
+                            pass
+
+                    reward_info = parse_cw_payment(offer.get("payment", {}), f"{title} {desc}")
+                    proj_entry = offer.get("entry", {}).get("project_entry", {}) or {}
+                    proposals = int(proj_entry.get("num_application_conditions") or 0)
+                    cat = detect_category(title, desc, default_cat=default_cat)
+
+                    posted_raw = str(job_obj.get("last_released_at", ""))
+                    posted_at = (
+                        posted_raw[:16].replace("T", " ")
+                        if len(posted_raw) >= 16
+                        else datetime.now(JST).strftime("%Y-%m-%d %H:%M")
+                    )
+
                     jobs.append({
-                        "id": f"cw_{hashlib.md5(link.encode()).hexdigest()[:10]}",
+                        "id": f"cw_{jid}",
                         "platform": "crowdworks",
                         "platform_name": "クラウドワークス",
                         "title": title,
-                        "url": link,
+                        "url": full_url,
                         "description": desc[:220],
+                        "category": cat,
+                        **reward_info,
+                        "proposals": proposals,
+                        "days_left": days_left,
+                        "deadline_label": deadline_label,
+                        "is_closed": is_closed,
+                        "posted_at": posted_at,
+                    })
+            time.sleep(0.5)
+        except Exception as e:
+            print(f"[CrowdWorks] {q_text}: {e}")
+
+    return jobs
+
+
+def fetch_lancers(config: dict[str, Any]) -> list[dict[str, Any]]:
+    jobs: list[dict[str, Any]] = []
+    urls = [
+        "https://www.lancers.jp/work/search?open=1&show_description=1&sort=started&keyword=%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
+        "https://www.lancers.jp/work/search?open=1&show_description=1&sort=started&keyword=YouTube",
+        "https://www.lancers.jp/work/search?open=1&show_description=1&sort=started",
+    ]
+    seen_urls: set[str] = set()
+    for url in urls:
+        try:
+            html_text = http_get_text(url, timeout=10)
+            if html_text:
+                for href, title, card_text in extract_anchor_cards(html_text, r"/work/detail/\d+"):
+                    full_url = urljoin("https://www.lancers.jp", href)
+                    if full_url in seen_urls or len(title) < 8 or "仕事検索" in title:
+                        continue
+                    seen_urls.add(full_url)
+                    reward_info = parse_reward_info(card_text)
+                    proposals, days_left, deadline_label = parse_proposals_and_deadline(card_text)
+                    cat = detect_category(title, card_text)
+                    jobs.append({
+                        "id": f"lc_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
+                        "platform": "lancers",
+                        "platform_name": "ランサーズ",
+                        "title": title,
+                        "url": full_url,
+                        "description": card_text[:200],
                         "category": cat,
                         **reward_info,
                         "proposals": proposals,
@@ -424,27 +570,37 @@ def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
                         "deadline_label": deadline_label,
                         "posted_at": datetime.now(JST).strftime("%Y-%m-%d %H:%M"),
                     })
-            time.sleep(0.8)
+                    if len(jobs) >= 25:
+                        break
+            time.sleep(0.5)
         except Exception as e:
-            print(f"[CrowdWorks RSS] {q}: {e}")
+            print(f"[Lancers] {e}")
+    return jobs
 
-    # HTML検索ページからのフォールバック抽出
-    if not jobs:
-        html_url = "https://crowdworks.jp/public/jobs"
+
+def fetch_coconala(config: dict[str, Any]) -> list[dict[str, Any]]:
+    jobs: list[dict[str, Any]] = []
+    urls = [
+        "https://coconala.com/requests?keyword=%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
+        "https://coconala.com/requests",
+    ]
+    seen_urls: set[str] = set()
+    for url in urls:
         try:
-            html_text = http_get_text(html_url, timeout=10)
+            html_text = http_get_text(url, timeout=10)
             if html_text:
-                for href, title, card_text in extract_anchor_cards(html_text, r"/public/jobs/\d+$"):
-                    if len(title) < 8:
+                for href, title, card_text in extract_anchor_cards(html_text, r"/requests/\d+$"):
+                    full_url = urljoin("https://coconala.com", href)
+                    if full_url in seen_urls or len(title) < 8:
                         continue
-                    full_url = urljoin("https://crowdworks.jp", href)
+                    seen_urls.add(full_url)
                     reward_info = parse_reward_info(card_text)
                     proposals, days_left, deadline_label = parse_proposals_and_deadline(card_text)
                     cat = detect_category(title, card_text)
                     jobs.append({
-                        "id": f"cw_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
-                        "platform": "crowdworks",
-                        "platform_name": "クラウドワークス",
+                        "id": f"cc_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
+                        "platform": "coconala",
+                        "platform_name": "ココナラ（公開依頼）",
                         "title": title,
                         "url": full_url,
                         "description": card_text[:200],
@@ -457,81 +613,9 @@ def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
                     })
                     if len(jobs) >= 20:
                         break
+            time.sleep(0.5)
         except Exception as e:
-            print(f"[CrowdWorks HTML] {e}")
-
-    return jobs
-
-
-def fetch_lancers(config: dict[str, Any]) -> list[dict[str, Any]]:
-    jobs: list[dict[str, Any]] = []
-    url = "https://www.lancers.jp/work/search?open=1&show_description=1&sort=started"
-    try:
-        html_text = http_get_text(url, timeout=10)
-        if html_text:
-            seen_urls: set[str] = set()
-            for href, title, card_text in extract_anchor_cards(html_text, r"/work/detail/\d+"):
-                full_url = urljoin("https://www.lancers.jp", href)
-                if full_url in seen_urls or len(title) < 8 or "仕事検索" in title:
-                    continue
-                seen_urls.add(full_url)
-                reward_info = parse_reward_info(card_text)
-                proposals, days_left, deadline_label = parse_proposals_and_deadline(card_text)
-                cat = detect_category(title, card_text)
-                jobs.append({
-                    "id": f"lc_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
-                    "platform": "lancers",
-                    "platform_name": "ランサーズ",
-                    "title": title,
-                    "url": full_url,
-                    "description": card_text[:200],
-                    "category": cat,
-                    **reward_info,
-                    "proposals": proposals,
-                    "days_left": days_left,
-                    "deadline_label": deadline_label,
-                    "posted_at": datetime.now(JST).strftime("%Y-%m-%d %H:%M"),
-                })
-                if len(jobs) >= 20:
-                    break
-    except Exception as e:
-        print(f"[Lancers] {e}")
-    return jobs
-
-
-def fetch_coconala(config: dict[str, Any]) -> list[dict[str, Any]]:
-    jobs: list[dict[str, Any]] = []
-    url = "https://coconala.com/requests"
-    try:
-        html_text = http_get_text(url, timeout=10)
-        if html_text:
-            seen_urls: set[str] = set()
-            for href, title, card_text in extract_anchor_cards(html_text, r"/requests/\d+$"):
-                full_url = urljoin("https://coconala.com", href)
-                if full_url in seen_urls or len(title) < 8:
-                    continue
-                seen_urls.add(full_url)
-                reward_info = parse_reward_info(card_text)
-                proposals, days_left, deadline_label = parse_proposals_and_deadline(card_text)
-                cat = detect_category(title, card_text)
-                jobs.append({
-                    "id": f"cc_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
-                    "platform": "coconala",
-                    "platform_name": "ココナラ（公開依頼）",
-                    "title": title,
-                    "url": full_url,
-                    "description": card_text[:200],
-                    "category": cat,
-                    **reward_info,
-                    "proposals": proposals,
-                    "days_left": days_left,
-                    "deadline_label": deadline_label,
-                    "posted_at": datetime.now(JST).strftime("%Y-%m-%d %H:%M"),
-                })
-                if len(jobs) >= 20:
-                    break
-    except Exception as e:
-        print(f"[Coconala] {e}")
+            print(f"[Coconala] {e}")
     return jobs
 
 
@@ -573,37 +657,50 @@ def fetch_shufti(config: dict[str, Any]) -> list[dict[str, Any]]:
 
 def fetch_mamaworks(config: dict[str, Any]) -> list[dict[str, Any]]:
     jobs: list[dict[str, Any]] = []
-    url = "https://mamaworks.jp/list"
-    try:
-        html_text = http_get_text(url, timeout=10)
-        if html_text:
-            seen_urls: set[str] = set()
-            for href, title, card_text in extract_anchor_cards(html_text, r"/dealing/"):
+    urls = [
+        "https://mamaworks.jp/jobs?freeword=%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
+        "https://mamaworks.jp/jobs",
+    ]
+    grouped: dict[str, list[str]] = {}
+    for url in urls:
+        try:
+            html_text = http_get_text(url, timeout=10)
+            if not html_text:
+                continue
+            for href, title, card_text in extract_anchor_cards(html_text, r"/job/\d+$"):
                 full_url = urljoin("https://mamaworks.jp", href)
-                if full_url in seen_urls or len(title) < 6:
-                    continue
-                seen_urls.add(full_url)
-                reward_info = parse_reward_info(card_text)
-                proposals, days_left, deadline_label = parse_proposals_and_deadline(card_text)
-                cat = detect_category(title, card_text)
-                jobs.append({
-                    "id": f"mw_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
-                    "platform": "mamaworks",
-                    "platform_name": "ママワークス",
-                    "title": title,
-                    "url": full_url,
-                    "description": card_text[:200],
-                    "category": cat,
-                    **reward_info,
-                    "proposals": proposals,
-                    "days_left": days_left,
-                    "deadline_label": deadline_label,
-                    "posted_at": datetime.now(JST).strftime("%Y-%m-%d %H:%M"),
-                })
-                if len(jobs) >= 15:
-                    break
-    except Exception as e:
-        print(f"[Mamaworks] {e}")
+                grouped.setdefault(full_url, []).append(title)
+                if card_text and card_text != title:
+                    grouped[full_url].append(card_text)
+        except Exception as e:
+            print(f"[Mamaworks] {e}")
+
+    for full_url, texts in list(grouped.items())[:20]:
+        combined = " ".join(texts)
+        # タイトル抽出: 「掲載期間：... ○日前 」の直後にある職種・キャッチコピーを抽出
+        clean_t = re.sub(r"掲載期間：[0-9/\s〜~]+\d*\s*日前\s*", "", texts[0]).strip()
+        title = clean_t[:85] if len(clean_t) >= 8 else combined[:85]
+        if len(title) < 6:
+            continue
+        reward_info = parse_reward_info(combined)
+        proposals, days_left, deadline_label = parse_proposals_and_deadline(combined)
+        cat = detect_category(title, combined)
+        jid = full_url.rstrip("/").split("/")[-1]
+        jobs.append({
+            "id": f"mw_{jid}",
+            "platform": "mamaworks",
+            "platform_name": "ママワークス",
+            "title": title,
+            "url": full_url,
+            "description": clean_t[:220],
+            "category": cat,
+            **reward_info,
+            "proposals": proposals,
+            "days_left": days_left,
+            "deadline_label": deadline_label,
+            "posted_at": datetime.now(JST).strftime("%Y-%m-%d %H:%M"),
+        })
+
     return jobs
 
 
@@ -904,10 +1001,12 @@ def main() -> None:
         except Exception:
             existing_jobs = []
 
-    # ライブ取得がブロックされた環境や初回起動時はシード案件を補完
-    if len(collected) < 5:
-        seed_jobs = get_seed_jobs(now_str)
-        collected.extend(seed_jobs)
+    # 動的レンダリングや一時制限で取得件数が少ないサイトの分を補完
+    seed_jobs = get_seed_jobs(now_str)
+    collected_platforms = {item.get("platform") for item in collected}
+    for s_job in seed_jobs:
+        if s_job.get("platform") not in collected_platforms or len(collected) < 5:
+            collected.append(s_job)
 
     # ピックアップ段階での自動除外（1. 応募終了案件、2. 除外キーワード含有案件）と重複排除
     merged_map: dict[str, dict[str, Any]] = {}
