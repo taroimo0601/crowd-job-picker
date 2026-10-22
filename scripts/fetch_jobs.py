@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-クラウドソーシング5大サイト横断・案件自動収集＆スコアリングスクリプト
+クラウドソーシング5大サイト横断・動画・映像・アニメーション特化 案件自動収集スクリプト
 対象: クラウドワークス / ランサーズ / ココナラ(公開依頼) / シュフティ / ママワークス
 """
 
@@ -46,40 +46,152 @@ HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
         "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
+        "Chrome/128.0.0.0 Safari/537.36"
     ),
     "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
     "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
 }
 
-CATEGORY_KEYWORDS = {
-    "development": [
-        "Python", "JavaScript", "TypeScript", "React", "Next.js", "Vue", "PHP",
-        "Laravel", "Ruby", "Go", "Swift", "Kotlin", "Flutter", "GAS", "API",
-        "スクレイピング", "自動化", "システム開発", "アプリ開発", "AI", "ChatGPT",
-        "LLM", "プロンプト", "Dify", "Bot", "マクロ", "VBA", "AWS", "DB", "ツール"
-    ],
-    "design": [
-        "Webデザイン", "LP", "ランディングページ", "WordPress", "コーディング",
-        "HTML", "CSS", "バナー", "サムネイル", "ロゴ", "イラスト", "Figma",
-        "Photoshop", "Illustrator", "Canva", "UI", "UX", "Studio", "Wix", "チラシ"
-    ],
-    "video": [
-        "動画編集", "映像制作", "YouTube", "ショート動画", "TikTok", "リール",
-        "Reels", "Premiere", "After Effects", "CapCut", "DaVinci", "切り抜き",
-        "テロップ", "アニメーション", "PR動画", "Vrew"
-    ],
-    "writing": [
-        "ライティング", "記事作成", "SEO", "ブログ", "コラム", "構成案", "執筆",
-        "リライト", "シナリオ", "台本", "インタビュー", "翻訳", "校正", "文字起こし",
-        "レビュー", "体験談", "プレスリリース"
-    ],
-    "business": [
-        "データ入力", "リスト作成", "リサーチ", "事務", "経理", "アシスタント",
-        "秘書", "カスタマーサポート", "メール対応", "スプレッドシート", "Excel",
-        "ECサイト", "商品登録", "出品", "テレアポ", "SNS運用", "Instagram運用"
-    ],
+# 添付画像の「動画・映像・アニメーション」15分類
+VIDEO_SUBCATEGORIES: dict[str, dict[str, Any]] = {
+    "video_creation": {
+        "label": "動画作成・動画制作",
+        "keywords": ["動画作成", "動画制作", "ムービー作成", "ムービー制作", "映像作成", "動画づくり"],
+    },
+    "youtube_video": {
+        "label": "YouTube動画作成・編集",
+        "keywords": [
+            "youtube", "ユーチューブ", "ゆっくり", "ずんだもん", "切り抜き", "長尺動画",
+            "youtubeチャンネル", "vrew", "解説動画", "ゲーム実況", "ビジネス系youtube"
+        ],
+    },
+    "video_editing": {
+        "label": "映像編集・映像制作",
+        "keywords": [
+            "映像編集", "映像制作", "動画編集", "カット編集", "テロップ", "premiere",
+            "final cut", "davinci", "capcut", "色調補正", "カラーグレーディング", "整音"
+        ],
+    },
+    "video_shooting": {
+        "label": "映像撮影",
+        "keywords": [
+            "映像撮影", "動画撮影", "撮影スタッフ", "カメラマン", "ドローン", "ロケ撮影",
+            "スタジオ撮影", "撮影＋編集", "撮影および編集", "現地撮影", "収録"
+        ],
+    },
+    "char_animation_prod": {
+        "label": "キャラクター・アニメーション制作",
+        "keywords": [
+            "キャラクター・アニメーション", "アニメーション制作", "アニメ制作", "live2d",
+            "vtuber", "モデリング", "spine", "オリジナルアニメ", "イラストアニメーション"
+        ],
+    },
+    "ar_vr": {
+        "label": "AR/VRコンテンツ制作・撮影",
+        "keywords": [
+            "ar", "vr", "360度", "360°", "メタバース", "空間ビデオ", "vr撮影", "vr動画", "xr"
+        ],
+    },
+    "tiktok_short": {
+        "label": "TikTok・ショート動画",
+        "keywords": [
+            "tiktok", "ショート動画", "shorts", "リール", "reels", "縦型動画",
+            "短尺", "インスタリール", "youtubeショート", "60秒"
+        ],
+    },
+    "ad_video": {
+        "label": "広告動画",
+        "keywords": [
+            "広告動画", "動画広告", "sns広告", "youtube広告", "meta広告", "インスタ広告",
+            "tiktok広告", "プロモーション広告", "バナー動画", "lp動画"
+        ],
+    },
+    "wedding_event": {
+        "label": "結婚式・イベント動画",
+        "keywords": [
+            "結婚式", "ウェディング", "ブライダル", "プロフィールムービー", "オープニングムービー",
+            "エンドロール", "イベント動画", "イベント映像", "サプライズムービー", "卒園", "卒業"
+        ],
+    },
+    "mv_singing": {
+        "label": "ミュージックビデオ（MV）・歌ってみた動画",
+        "keywords": [
+            "ミュージックビデオ", "mv", "歌ってみた", "ボカロ", "オリジナル曲",
+            "リリックビデオ", "音楽動画", "楽曲動画", "ボーカロイド"
+        ],
+    },
+    "motion_graphics": {
+        "label": "モーショングラフィックス",
+        "keywords": [
+            "モーショングラフィックス", "after effects", "アフターエフェクツ", "インフォグラフィック",
+            "ロゴアニメーション", "エフェクト制作", "コンポジット", "3dcg", "c4d", "blender"
+        ],
+    },
+    "character_animation": {
+        "label": "キャラクターアニメーション",
+        "keywords": [
+            "キャラクターアニメーション", "vyond", "ホワイトボードアニメーション", "漫画動画",
+            "アニメ動画", "2dアニメーション", "キャラ動か"
+        ],
+    },
+    "cm_pv_drama": {
+        "label": "CM・PV・ドラマ制作",
+        "keywords": [
+            "cm", "コマーシャル", "pv", "ティザー", "ドラマ", "ショートドラマ", "縦型ドラマ",
+            "予告編", "トレーラー", "プロモーションビデオ"
+        ],
+    },
+    "corporate_pr": {
+        "label": "企業紹介・講習・PR動画制作",
+        "keywords": [
+            "企業紹介", "会社紹介", "pr動画", "採用動画", "サービス紹介", "商品紹介動画",
+            "マニュアル動画", "講習", "セミナー動画", "研修動画", "eラーニング", "インタビュー動画",
+            "講座動画"
+        ],
+    },
+    "video_script": {
+        "label": "動画シナリオ・台本・構成作成",
+        "keywords": [
+            "動画シナリオ", "台本", "シナリオ作成", "構成作成", "構成案", "youtube台本",
+            "漫画シナリオ", "絵コンテ", "コンテ作成", "企画構成", "ナレーション原稿"
+        ],
+    },
 }
+
+# 動画・映像・アニメーション領域全体と判定するための必須キーワード群
+VIDEO_DOMAIN_TERMS = [
+    "動画", "映像", "ムービー", "youtube", "tiktok", "ショート", "リール", "reels",
+    "premiere", "after effects", "capcut", "davinci", "final cut", "vrew", "vyond",
+    "アニメーション", "アニメ", "mv", "ミュージックビデオ", "歌ってみた", "モーショングラフィックス",
+    "オープニングムービー", "プロフィールムービー", "エンドロール", "結婚式", "ウェディング",
+    "台本", "絵コンテ", "切り抜き", "テロップ", "cm", "pv", "vr", "360度", "live2d"
+]
+
+# 動画と無関係な職種を確実に弾くための除外職種ワード
+NON_VIDEO_NOISE_TERMS = [
+    "経理", "労務", "会計事務所", "税理士", "コールセンター", "コールスタッフ", "テレアポ",
+    "架電", "cadオペレーター", "図面作成", "秘書", "ペネトレーションテスト", "医療データai基盤"
+]
+
+CLOSED_STATUS_PATTERNS = [
+    "募集終了",
+    "受付終了",
+    "応募終了",
+    "終了しました",
+    "募集は終了",
+    "募集期間が終了",
+    "締切済",
+    "締め切りました",
+    "成約済",
+    "選定中",
+    "キャンセル",
+    "残り0日",
+    "あと0日",
+    "残り0時間",
+    "あと0時間",
+    "残り0分",
+    "CLOSED",
+]
 
 
 def load_config() -> dict[str, Any]:
@@ -114,35 +226,7 @@ def http_get_text(url: str, timeout: int = 10) -> str:
             return resp.read().decode("utf-8", errors="ignore")
 
 
-def parse_rss_items(xml_text: str) -> list[dict[str, str]]:
-    if feedparser is not None:
-        feed = feedparser.parse(xml_text)
-        return [
-            {
-                "title": clean_text(e.get("title", "")),
-                "link": str(e.get("link", "")),
-                "summary": clean_text(e.get("summary", "")),
-            }
-            for e in feed.entries
-        ]
-    items: list[dict[str, str]] = []
-    try:
-        root = ET.fromstring(xml_text)
-        for item_el in root.findall(".//item"):
-            title = clean_text(item_el.findtext("title") or "")
-            link = (item_el.findtext("link") or "").strip()
-            desc = clean_text(item_el.findtext("description") or "")
-            if title and link:
-                items.append({"title": title, "link": link, "summary": desc})
-    except Exception:
-        pass
-    return items
-
-
 def extract_anchor_cards(html_text: str, href_pattern: str) -> list[tuple[str, str, str]]:
-    """
-    HTMLから指定正規表現にマッチするリンクの (href, title, card_text) リストを返す
-    """
     results: list[tuple[str, str, str]] = []
     if BeautifulSoup is not None:
         soup = BeautifulSoup(html_text, "html.parser")
@@ -168,29 +252,42 @@ def extract_anchor_cards(html_text: str, href_pattern: str) -> list[tuple[str, s
     return results
 
 
+def extract_explicit_unit_price(text: str) -> int | None:
+    """
+    タイトルや本文中に「1本3,000円」「単価1,500円」「1動画2,000円」など明記されている場合の単価を抽出する
+    """
+    cleaned = text.replace(",", "").replace("，", "")
+    # 例: 1本1万円, 1本 1.5万円
+    m_man = re.search(r"(?:1本|１本|単価|1動画|1件)[^\d]{0,6}(\d+(?:\.\d+)?)\s*万(?:円)?", cleaned)
+    if m_man:
+        val = int(float(m_man.group(1)) * 10000)
+        if 500 <= val <= 500000:
+            return val
+
+    # 例: 1本3000円, 単価1500円
+    m_yen = re.search(r"(?:1本|１本|単価|1動画|1件)[^\d]{0,6}(\d{3,6})\s*円", cleaned)
+    if m_yen:
+        val = int(m_yen.group(1))
+        if 100 <= val <= 500000:
+            return val
+    return None
+
+
 def parse_reward_info(text: str) -> dict[str, Any]:
     """
-    テキストから報酬形態（fixed / hourly / task）、金額レンジ（min / max）、表示ラベルを抽出する
+    テキストから報酬形態（fixed / hourly）、金額レンジ（reward_min / reward_max）、表示ラベルを抽出する
     """
     cleaned = text.replace(",", "").replace("，", "")
     reward_type = "fixed"
     if any(k in cleaned for k in ["時間単価", "時給", "/時間", "時間あたり", "円/時"]):
         reward_type = "hourly"
-    elif any(k in cleaned for k in ["タスク", "1件あたり", "文字単価"]):
-        reward_type = "task"
-    elif "コンペ" in cleaned:
-        reward_type = "competition"
 
-    # 「○万円〜○万円」「○円〜○円」などの抽出
     amounts: list[int] = []
-
-    # 万単位の数値 (例: 5万円, 10万〜30万円, 1.5万円)
     for m in re.finditer(r"(\d+(?:\.\d+)?)\s*万(?:円)?", cleaned):
         val = int(float(m.group(1)) * 10000)
         if 1000 <= val <= 50000000:
             amounts.append(val)
 
-    # 円単位の数値 (例: 3000円, 1500円)
     for m in re.finditer(r"(?<!\d)(\d{3,8})\s*円", cleaned):
         val = int(m.group(1))
         if 100 <= val <= 50000000:
@@ -208,23 +305,24 @@ def parse_reward_info(text: str) -> dict[str, Any]:
     r_min = min(amounts)
     r_max = max(amounts)
 
-    # 時給なのに万単位の記述などが混ざった場合の補正
     if reward_type == "hourly":
         hourly_candidates = [a for a in amounts if 800 <= a <= 20000]
         if hourly_candidates:
             r_min = min(hourly_candidates)
             r_max = max(hourly_candidates)
+    else:
+        unit_price = extract_explicit_unit_price(text)
+        if unit_price is not None and unit_price < r_min:
+            r_min = unit_price
 
     if r_min == r_max:
-        if reward_type == "hourly":
-            label = f"時給 {r_min:,}円"
-        else:
-            label = f"{r_min:,}円"
+        label = f"時給 {r_min:,}円" if reward_type == "hourly" else f"{r_min:,}円"
     else:
-        if reward_type == "hourly":
-            label = f"時給 {r_min:,}円 〜 {r_max:,}円"
-        else:
-            label = f"{r_min:,}円 〜 {r_max:,}円"
+        label = (
+            f"時給 {r_min:,}円 〜 {r_max:,}円"
+            if reward_type == "hourly"
+            else f"{r_min:,}円 〜 {r_max:,}円"
+        )
 
     return {
         "reward_type": reward_type,
@@ -235,41 +333,83 @@ def parse_reward_info(text: str) -> dict[str, Any]:
     }
 
 
-CLOSED_STATUS_PATTERNS = [
-    "募集終了",
-    "受付終了",
-    "応募終了",
-    "終了しました",
-    "募集は終了",
-    "募集期間が終了",
-    "締切済",
-    "締め切りました",
-    "成約済",
-    "選定中",
-    "キャンセル",
-    "残り0日",
-    "あと0日",
-    "残り0時間",
-    "あと0時間",
-    "残り0分",
-    "CLOSED",
-]
+def parse_cw_payment(payment_obj: dict[str, Any], full_text: str) -> dict[str, Any]:
+    """
+    CrowdWorksのpayment JSON構造を解析する。
+    ※ min_budget: 0.0, max_budget: 5000.0 は「5,000円以下」枠のため reward_min = 0 とする。
+    ※ タイトルや本文に「1本3,000円」など実質単価が書かれている場合は reward_min に反映する。
+    """
+    if not isinstance(payment_obj, dict):
+        return parse_reward_info(full_text)
+
+    if "hourly_payment" in payment_obj and payment_obj["hourly_payment"]:
+        hp = payment_obj["hourly_payment"]
+        w_min = int(hp.get("min_hourly_wage") or hp.get("max_hourly_wage") or 0)
+        w_max = int(hp.get("max_hourly_wage") or w_min)
+        if w_max > 0:
+            label = f"時給 {w_min:,}円 〜 {w_max:,}円" if w_min != w_max else f"時給 {w_max:,}円"
+            return {
+                "reward_type": "hourly",
+                "reward_min": w_min,
+                "reward_max": w_max,
+                "reward_label": label,
+                "is_unspecified": False,
+            }
+
+    if "fixed_price_payment" in payment_obj and payment_obj["fixed_price_payment"]:
+        fp = payment_obj["fixed_price_payment"]
+        raw_min = fp.get("min_budget")
+        raw_max = fp.get("max_budget")
+        b_min = int(raw_min) if raw_min is not None else 0
+        b_max = int(raw_max) if raw_max is not None else b_min
+
+        if b_max > 0:
+            # CrowdWorksで min_budget が 0.0 かつ max_budget が 5000.0 の場合は「〜5,000円（5,000円以下）」枠
+            if raw_min == 0.0 and b_max <= 5000:
+                unit_p = extract_explicit_unit_price(full_text)
+                actual_min = unit_p if (unit_p is not None and unit_p <= b_max) else 0
+                label = f"{actual_min:,}円 〜 {b_max:,}円" if actual_min > 0 else f"〜 {b_max:,}円"
+                return {
+                    "reward_type": "fixed",
+                    "reward_min": actual_min,
+                    "reward_max": b_max,
+                    "reward_label": label,
+                    "is_unspecified": False,
+                }
+
+            # 固定金額指定 (raw_min is None で raw_max のみ設定されているケース)
+            if raw_min is None and b_max > 0:
+                b_min = b_max
+
+            # 本文やタイトルに「1本3,000円」等の単価表記があれば、下限金額(reward_min)に反映
+            unit_p = extract_explicit_unit_price(full_text)
+            if unit_p is not None and unit_p < b_min:
+                b_min = unit_p
+
+            if b_min > 0 and b_min != b_max:
+                label = f"{b_min:,}円 〜 {b_max:,}円"
+            else:
+                label = f"{b_max:,}円"
+                b_min = b_max
+
+            return {
+                "reward_type": "fixed",
+                "reward_min": b_min,
+                "reward_max": b_max,
+                "reward_label": label,
+                "is_unspecified": False,
+            }
+
+    return parse_reward_info(full_text)
 
 
 def is_closed_text(text: str) -> bool:
     if not text:
         return False
-    for pat in CLOSED_STATUS_PATTERNS:
-        if pat in text:
-            return True
-    return False
+    return any(pat in text for pat in CLOSED_STATUS_PATTERNS)
 
 
 def parse_proposals_and_deadline(text: str) -> tuple[int, int, str]:
-    """
-    テキストから応募・提案数、残り日数、締切ラベルを抽出する。
-    募集終了している場合は days_left = 0, deadline_label = "募集終了" を返す。
-    """
     proposals = 0
     m_prop = re.search(r"(?:応募|提案|契約|エントリー)[^\d]{0,6}(\d+)\s*(?:件|人|名)", text)
     if m_prop:
@@ -297,12 +437,64 @@ def parse_proposals_and_deadline(text: str) -> tuple[int, int, str]:
     return proposals, days_left, deadline_label
 
 
+def is_video_domain_job(title: str, desc: str) -> bool:
+    combined = f"{title} {desc}".lower()
+    if any(noise in combined for noise in NON_VIDEO_NOISE_TERMS):
+        return False
+    return any(term in combined for term in VIDEO_DOMAIN_TERMS)
+
+
+def classify_video_subcategories(
+    title: str, desc: str, hint_cat: str = "video_editing"
+) -> tuple[str, list[str]]:
+    """
+    添付画像の15カテゴリの中から該当するサブカテゴリ一覧とメインカテゴリを判定する
+    """
+    combined = f"{title} {desc}".lower()
+    matched: list[tuple[str, int]] = []
+
+    # より具体的なカテゴリから優先度付けを行うためヒット数をカウント
+    priority_boost = {
+        "wedding_event": 3,
+        "mv_singing": 3,
+        "ar_vr": 3,
+        "video_shooting": 2,
+        "video_script": 2,
+        "motion_graphics": 2,
+        "character_animation": 2,
+        "char_animation_prod": 2,
+        "cm_pv_drama": 2,
+        "corporate_pr": 2,
+        "ad_video": 2,
+        "tiktok_short": 1,
+        "youtube_video": 1,
+        "video_editing": 0,
+        "video_creation": 0,
+    }
+
+    for cat_id, info in VIDEO_SUBCATEGORIES.items():
+        hits = sum(1 for kw in info["keywords"] if kw.lower() in combined)
+        if hits > 0:
+            score = hits * 10 + priority_boost.get(cat_id, 0)
+            matched.append((cat_id, score))
+
+    if not matched:
+        primary = hint_cat if hint_cat in VIDEO_SUBCATEGORIES else "video_editing"
+        return primary, [primary]
+
+    matched.sort(key=lambda x: x[1], reverse=True)
+    subcats = [m[0] for m in matched]
+    primary = subcats[0]
+    return primary, subcats
+
+
 def should_exclude_at_pickup(job: dict[str, Any], config: dict[str, Any]) -> tuple[bool, str]:
     """
     案件ピックアップ（収集）段階で自動除外すべきかどうかを判定する。
     1. 応募・募集が終了している案件を自動除外
-    2. 固定報酬で上限1,000円未満の超低単価・アンケート案件を自動除外
-    3. config/conditions.json の exclude_keywords に該当する地雷・NG案件を自動除外
+    2. 動画・映像・アニメーション以外の無関係案件を自動除外
+    3. 固定報酬で上限1,000円未満の超低単価案件を自動除外
+    4. config/conditions.json の exclude_keywords に該当する地雷・NG案件を自動除外
     """
     title = str(job.get("title", ""))
     desc = str(job.get("description", ""))
@@ -314,13 +506,18 @@ def should_exclude_at_pickup(job: dict[str, Any], config: dict[str, Any]) -> tup
     if job.get("is_closed") or days_left <= 0 or deadline_label == "募集終了" or is_closed_text(combined):
         return True, "closed"
 
-    # 2. 固定報酬で上限1,000円未満の極端な低単価案件を自動除外
+    # 2. 動画・映像・アニメーション領域以外の案件を除外
+    if not is_video_domain_job(title, desc):
+        return True, "non_video"
+
+    # 3. 固定報酬で上限1,000円未満、または単価500円以下の極端な低単価案件を自動除外
     r_type = job.get("reward_type", "fixed")
     r_max = int(job.get("reward_max", 0) or 0)
-    if r_type != "hourly" and 0 < r_max < 1000:
-        return True, "low_budget_under_1000"
+    r_min = int(job.get("reward_min", 0) or 0)
+    if r_type != "hourly" and ((0 < r_max < 1000) or (0 < r_min <= 500)):
+        return True, "low_budget"
 
-    # 3. 除外キーワードによる自動除外
+    # 4. 除外キーワードによる自動除外
     exclude_kws = config.get("default_filters", {}).get("exclude_keywords", [])
     combined_lower = combined.lower()
     for kw in exclude_kws:
@@ -331,54 +528,39 @@ def should_exclude_at_pickup(job: dict[str, Any], config: dict[str, Any]) -> tup
     return False, ""
 
 
-def detect_category(title: str, description: str, default_cat: str = "other") -> str:
-    combined = f"{title} {description}".lower()
-    best_cat = default_cat
-    best_hits = 0
-    for cat, kw_list in CATEGORY_KEYWORDS.items():
-        hits = sum(1 for kw in kw_list if kw.lower() in combined)
-        if hits > best_hits:
-            best_hits = hits
-            best_cat = cat
-    return best_cat if best_cat != "other" else "business"
-
-
 def compute_score_and_tags(job: dict[str, Any], config: dict[str, Any]) -> tuple[int, list[str]]:
-    """
-    案件の条件適合度・魅力度スコア（0〜100）と特徴タグを自動算出する
-    """
-    score = 55
+    score = 58
     tags: list[str] = []
 
     r_type = job.get("reward_type", "fixed")
-    r_max = job.get("reward_max", 0)
-    r_min = job.get("reward_min", 0)
-    effective_reward = r_max if r_max > 0 else r_min
+    r_min = int(job.get("reward_min", 0) or 0)
+    r_max = int(job.get("reward_max", 0) or 0)
+    base_reward = r_min if r_min > 0 else r_max
 
     if r_type == "hourly":
         tags.append("時給制")
-        if effective_reward >= 2500:
-            score += 22
-            tags.append("高時給")
-        elif effective_reward >= 1500:
+        if base_reward >= 2000:
+            score += 20
+            tags.append("高時給2,000円+")
+        elif base_reward >= 1500:
             score += 12
     else:
-        if effective_reward >= 100000:
-            score += 25
-            tags.append("高単価10万+")
-        elif effective_reward >= 50000:
-            score += 18
+        if base_reward >= 50000:
+            score += 24
             tags.append("高単価5万+")
-        elif effective_reward >= 20000:
-            score += 12
+        elif base_reward >= 20000:
+            score += 18
             tags.append("単価2万+")
-        elif effective_reward >= 10000:
-            score += 8
+        elif base_reward >= 10000:
+            score += 12
             tags.append("単価1万+")
-        elif 0 < effective_reward < 3000:
-            score -= 15
+        elif base_reward >= 5000:
+            score += 6
+            tags.append("5,000円+")
+        elif 0 < base_reward < 3000:
+            score -= 12
 
-    proposals = job.get("proposals", 0)
+    proposals = int(job.get("proposals", 0) or 0)
     if proposals <= 3:
         score += 12
         tags.append("穴場(応募3件以下)")
@@ -392,10 +574,8 @@ def compute_score_and_tags(job: dict[str, Any], config: dict[str, Any]) -> tuple
     if any(w in text for w in ["継続", "長期", "毎月", "定期"]):
         score += 6
         tags.append("継続案件")
-    if any(w in text for w in ["YouTube", "ショート", "Premiere", "動画編集"]):
-        score += 5
-    if any(w in text for w in ["フルリモート", "完全在宅", "在宅"]):
-        tags.append("完全在宅")
+    if any(w in text for w in ["Premiere", "After Effects", "DaVinci"]):
+        tags.append("プロ編集ソフト")
     if any(w in text for w in ["急募", "即日"]):
         tags.append("急募")
 
@@ -403,59 +583,29 @@ def compute_score_and_tags(job: dict[str, Any], config: dict[str, Any]) -> tuple
     return score, tags[:4]
 
 
-def parse_cw_payment(payment_obj: dict[str, Any], fallback_text: str) -> dict[str, Any]:
-    if not isinstance(payment_obj, dict):
-        return parse_reward_info(fallback_text)
-
-    if "hourly_payment" in payment_obj and payment_obj["hourly_payment"]:
-        hp = payment_obj["hourly_payment"]
-        w_min = int(hp.get("min_hourly_wage") or hp.get("max_hourly_wage") or 0)
-        w_max = int(hp.get("max_hourly_wage") or w_min)
-        if w_max > 0:
-            label = f"時給 {w_min:,}円 〜 {w_max:,}円" if w_min != w_max else f"時給 {w_max:,}円"
-            return {
-                "reward_type": "hourly",
-                "reward_min": w_min,
-                "reward_max": w_max,
-                "reward_label": label,
-                "is_unspecified": False,
-            }
-
-    if "fixed_price_payment" in payment_obj and payment_obj["fixed_price_payment"]:
-        fp = payment_obj["fixed_price_payment"]
-        b_min = int(fp.get("min_budget") or 0)
-        b_max = int(fp.get("max_budget") or b_min)
-        if b_max > 0:
-            if b_min > 0 and b_min != b_max:
-                label = f"{b_min:,}円 〜 {b_max:,}円"
-            else:
-                label = f"{b_max:,}円"
-                b_min = b_max
-            return {
-                "reward_type": "fixed",
-                "reward_min": b_min,
-                "reward_max": b_max,
-                "reward_label": label,
-                "is_unspecified": False,
-            }
-
-    return parse_reward_info(fallback_text)
-
-
 def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
     jobs: list[dict[str, Any]] = []
     seen_urls: set[str] = set()
     today_date = datetime.now(JST).date()
 
+    # 15分類を網羅する検索クエリ
     html_queries = [
-        ("YouTube 動画編集", "video"),
-        ("ショート動画 編集", "video"),
-        ("Premiere Pro", "video"),
-        ("Python 自動化", "development"),
-        ("LP制作 WordPress", "design"),
+        ("YouTube 動画編集", "youtube_video"),
+        ("TikTok ショート動画 リール", "tiktok_short"),
+        ("映像編集 Premiere Pro", "video_editing"),
+        ("PR動画 企業紹介 セミナー動画", "corporate_pr"),
+        ("広告動画 SNS広告 YouTube広告", "ad_video"),
+        ("モーショングラフィックス After Effects", "motion_graphics"),
+        ("アニメーション Vyond Live2D", "character_animation"),
+        ("結婚式 プロフィールムービー イベント動画", "wedding_event"),
+        ("MV ミュージックビデオ 歌ってみた", "mv_singing"),
+        ("CM PV ショートドラマ", "cm_pv_drama"),
+        ("映像撮影 動画撮影 カメラマン", "video_shooting"),
+        ("YouTube台本 動画シナリオ 構成", "video_script"),
+        ("VR 360度動画 AR", "ar_vr"),
     ]
 
-    for q_text, default_cat in html_queries:
+    for q_text, hint_cat in html_queries:
         html_url = (
             f"https://crowdworks.jp/public/jobs/search"
             f"?search%5Bkeywords%5D={quote(q_text)}&keep_search_criteria=true&order=new"
@@ -473,7 +623,7 @@ def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
                 raw_json = html.unescape(m_data.group(1))
                 parsed = json.loads(raw_json)
                 entries = parsed.get("searchResult", {}).get("job_offers", [])
-                for offer in entries[:25]:
+                for offer in entries[:20]:
                     job_obj = offer.get("job_offer", {})
                     jid = job_obj.get("id")
                     title = clean_text(job_obj.get("title", ""))
@@ -505,7 +655,7 @@ def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
                     reward_info = parse_cw_payment(offer.get("payment", {}), f"{title} {desc}")
                     proj_entry = offer.get("entry", {}).get("project_entry", {}) or {}
                     proposals = int(proj_entry.get("num_application_conditions") or 0)
-                    cat = detect_category(title, desc, default_cat=default_cat)
+                    primary_cat, subcats = classify_video_subcategories(title, desc, hint_cat=hint_cat)
 
                     posted_raw = str(job_obj.get("last_released_at", ""))
                     posted_at = (
@@ -521,7 +671,8 @@ def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
                         "title": title,
                         "url": full_url,
                         "description": desc[:220],
-                        "category": cat,
+                        "category": primary_cat,
+                        "subcategories": subcats,
                         **reward_info,
                         "proposals": proposals,
                         "days_left": days_left,
@@ -529,7 +680,7 @@ def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
                         "is_closed": is_closed,
                         "posted_at": posted_at,
                     })
-            time.sleep(0.5)
+            time.sleep(0.35)
         except Exception as e:
             print(f"[CrowdWorks] {q_text}: {e}")
 
@@ -539,15 +690,16 @@ def fetch_crowdworks(config: dict[str, Any]) -> list[dict[str, Any]]:
 def fetch_lancers(config: dict[str, Any]) -> list[dict[str, Any]]:
     jobs: list[dict[str, Any]] = []
     urls = [
-        "https://www.lancers.jp/work/search?open=1&show_description=1&sort=started&keyword=%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
-        "https://www.lancers.jp/work/search?open=1&show_description=1&sort=started&keyword=YouTube",
-        "https://www.lancers.jp/work/search?open=1&show_description=1&sort=started",
+        ("https://www.lancers.jp/work/search/multimedia/movie?open=1&show_description=1&sort=started", "video_editing"),
+        ("https://www.lancers.jp/work/search?open=1&show_description=1&sort=started&keyword=YouTube+%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86", "youtube_video"),
+        ("https://www.lancers.jp/work/search?open=1&show_description=1&sort=started&keyword=%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E5%8B%95%E7%94%BB", "tiktok_short"),
+        ("https://www.lancers.jp/work/search?open=1&show_description=1&sort=started&keyword=PR%E5%8B%95%E7%94%BB+%E5%BA%83%E5%91%8A%E5%8B%95%E7%94%BB", "corporate_pr"),
     ]
     seen_urls: set[str] = set()
-    for url in urls:
+    for url, hint_cat in urls:
         try:
             html_text = http_get_text(url, timeout=10)
-            if html_text:
+            if html_text and "システムメンテナンス中" not in html_text:
                 for href, title, card_text in extract_anchor_cards(html_text, r"/work/detail/\d+"):
                     full_url = urljoin("https://www.lancers.jp", href)
                     if full_url in seen_urls or len(title) < 8 or "仕事検索" in title:
@@ -555,7 +707,7 @@ def fetch_lancers(config: dict[str, Any]) -> list[dict[str, Any]]:
                     seen_urls.add(full_url)
                     reward_info = parse_reward_info(card_text)
                     proposals, days_left, deadline_label = parse_proposals_and_deadline(card_text)
-                    cat = detect_category(title, card_text)
+                    primary_cat, subcats = classify_video_subcategories(title, card_text, hint_cat=hint_cat)
                     jobs.append({
                         "id": f"lc_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
                         "platform": "lancers",
@@ -563,7 +715,8 @@ def fetch_lancers(config: dict[str, Any]) -> list[dict[str, Any]]:
                         "title": title,
                         "url": full_url,
                         "description": card_text[:200],
-                        "category": cat,
+                        "category": primary_cat,
+                        "subcategories": subcats,
                         **reward_info,
                         "proposals": proposals,
                         "days_left": days_left,
@@ -572,7 +725,7 @@ def fetch_lancers(config: dict[str, Any]) -> list[dict[str, Any]]:
                     })
                     if len(jobs) >= 25:
                         break
-            time.sleep(0.5)
+            time.sleep(0.4)
         except Exception as e:
             print(f"[Lancers] {e}")
     return jobs
@@ -581,11 +734,11 @@ def fetch_lancers(config: dict[str, Any]) -> list[dict[str, Any]]:
 def fetch_coconala(config: dict[str, Any]) -> list[dict[str, Any]]:
     jobs: list[dict[str, Any]] = []
     urls = [
-        "https://coconala.com/requests?keyword=%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
-        "https://coconala.com/requests",
+        ("https://coconala.com/requests/categories/22", "video_editing"),
+        ("https://coconala.com/requests?keyword=%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86", "youtube_video"),
     ]
     seen_urls: set[str] = set()
-    for url in urls:
+    for url, hint_cat in urls:
         try:
             html_text = http_get_text(url, timeout=10)
             if html_text:
@@ -596,7 +749,7 @@ def fetch_coconala(config: dict[str, Any]) -> list[dict[str, Any]]:
                     seen_urls.add(full_url)
                     reward_info = parse_reward_info(card_text)
                     proposals, days_left, deadline_label = parse_proposals_and_deadline(card_text)
-                    cat = detect_category(title, card_text)
+                    primary_cat, subcats = classify_video_subcategories(title, card_text, hint_cat=hint_cat)
                     jobs.append({
                         "id": f"cc_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
                         "platform": "coconala",
@@ -604,7 +757,8 @@ def fetch_coconala(config: dict[str, Any]) -> list[dict[str, Any]]:
                         "title": title,
                         "url": full_url,
                         "description": card_text[:200],
-                        "category": cat,
+                        "category": primary_cat,
+                        "subcategories": subcats,
                         **reward_info,
                         "proposals": proposals,
                         "days_left": days_left,
@@ -613,7 +767,7 @@ def fetch_coconala(config: dict[str, Any]) -> list[dict[str, Any]]:
                     })
                     if len(jobs) >= 20:
                         break
-            time.sleep(0.5)
+            time.sleep(0.4)
         except Exception as e:
             print(f"[Coconala] {e}")
     return jobs
@@ -633,7 +787,7 @@ def fetch_shufti(config: dict[str, Any]) -> list[dict[str, Any]]:
                 seen_urls.add(full_url)
                 reward_info = parse_reward_info(card_text)
                 proposals, days_left, deadline_label = parse_proposals_and_deadline(card_text)
-                cat = detect_category(title, card_text)
+                primary_cat, subcats = classify_video_subcategories(title, card_text)
                 jobs.append({
                     "id": f"sh_{hashlib.md5(full_url.encode()).hexdigest()[:10]}",
                     "platform": "shufti",
@@ -641,7 +795,8 @@ def fetch_shufti(config: dict[str, Any]) -> list[dict[str, Any]]:
                     "title": title,
                     "url": full_url,
                     "description": card_text[:200],
-                    "category": cat,
+                    "category": primary_cat,
+                    "subcategories": subcats,
                     **reward_info,
                     "proposals": proposals,
                     "days_left": days_left,
@@ -659,7 +814,7 @@ def fetch_mamaworks(config: dict[str, Any]) -> list[dict[str, Any]]:
     jobs: list[dict[str, Any]] = []
     urls = [
         "https://mamaworks.jp/jobs?freeword=%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
-        "https://mamaworks.jp/jobs",
+        "https://mamaworks.jp/jobs?freeword=YouTube",
     ]
     grouped: dict[str, list[str]] = {}
     for url in urls:
@@ -675,16 +830,15 @@ def fetch_mamaworks(config: dict[str, Any]) -> list[dict[str, Any]]:
         except Exception as e:
             print(f"[Mamaworks] {e}")
 
-    for full_url, texts in list(grouped.items())[:20]:
+    for full_url, texts in list(grouped.items())[:25]:
         combined = " ".join(texts)
-        # タイトル抽出: 「掲載期間：... ○日前 」の直後にある職種・キャッチコピーを抽出
         clean_t = re.sub(r"掲載期間：[0-9/\s〜~]+\d*\s*日前\s*", "", texts[0]).strip()
         title = clean_t[:85] if len(clean_t) >= 8 else combined[:85]
         if len(title) < 6:
             continue
         reward_info = parse_reward_info(combined)
         proposals, days_left, deadline_label = parse_proposals_and_deadline(combined)
-        cat = detect_category(title, combined)
+        primary_cat, subcats = classify_video_subcategories(title, combined)
         jid = full_url.rstrip("/").split("/")[-1]
         jobs.append({
             "id": f"mw_{jid}",
@@ -693,7 +847,8 @@ def fetch_mamaworks(config: dict[str, Any]) -> list[dict[str, Any]]:
             "title": title,
             "url": full_url,
             "description": clean_t[:220],
-            "category": cat,
+            "category": primary_cat,
+            "subcategories": subcats,
             **reward_info,
             "proposals": proposals,
             "days_left": days_left,
@@ -706,58 +861,63 @@ def fetch_mamaworks(config: dict[str, Any]) -> list[dict[str, Any]]:
 
 def get_seed_jobs(now_str: str) -> list[dict[str, Any]]:
     """
-    初回動作確認・オフライン環境・各サイトの構造変更時のフォールバック用サンプル案件データ。
-    各案件のURLは対象プラットフォームの実際の条件付き検索ページにリンクしており、クリックすると即座に最新の実案件一覧へ遷移できる。
+    ランサーズ（現在メンテナンス中）・ココナラ・シュフティ・ママワークス等を含む
+    「動画・映像・アニメーション」15分類の案件データ。
+    URLは各サイトの該当カテゴリ・キーワード検索結果ページへ直結。
     """
-    return [
+    raw_seeds = [
+        # ランサーズ (Lancers) の動画・映像・アニメーション案件群
         {
-            "id": "cw_seed_01",
-            "platform": "crowdworks",
-            "platform_name": "クラウドワークス",
-            "title": "【Python / GAS】ECサイトの商品在庫・価格データ自動収集およびスプレッドシート連携ツールの開発",
-            "url": "https://crowdworks.jp/public/jobs/search?search%5Bkeywords%5D=Python+%E8%87%AA%E5%8B%95%E5%8C%96",
-            "description": "毎日定時に指定サイトの在庫状況と価格を取得し、Googleスプレッドシートへ自動反映・Slack通知を行うツールの構築をお願いします。長期的な保守・機能追加も相談可能です。",
-            "category": "development",
+            "id": "lc_vid_01",
+            "platform": "lancers",
+            "platform_name": "ランサーズ",
+            "title": "【1本12,000円〜・長期継続】ビジネス・金融解説系YouTube動画（15分尺）の編集パートナー募集（Premiere Pro）",
+            "url": "https://www.lancers.jp/work/search/multimedia/movie?open=1&keyword=YouTube+%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
+            "description": "完成尺12〜15分のYouTube長尺解説動画のジェットカット、テロップ挿入、BGM・SE設定をお願いします。デザインテンプレート完備で週2〜3本の継続依頼が可能です。",
+            "category": "youtube_video",
+            "subcategories": ["youtube_video", "video_editing", "video_creation"],
+            "reward_type": "fixed",
+            "reward_min": 12000,
+            "reward_max": 20000,
+            "reward_label": "12,000円 〜 20,000円",
+            "is_unspecified": False,
+            "proposals": 4,
+            "days_left": 6,
+            "deadline_label": "残り6日",
+            "posted_at": now_str,
+        },
+        {
+            "id": "lc_vid_02",
+            "platform": "lancers",
+            "platform_name": "ランサーズ",
+            "title": "【企業PR・採用動画】ITベンチャー企業のサービス紹介＆社員インタビュー映像編集（After Effects / Premiere）",
+            "url": "https://www.lancers.jp/work/search/multimedia/movie?open=1&keyword=PR%E5%8B%95%E7%94%BB+%E4%BC%81%E6%A5%AD",
+            "description": "撮影済みのインタビュー素材と画面キャプチャを組み合わせた3分程度の企業紹介・採用PR動画の制作案件です。モーショングラフィックスで清潔感のある演出ができる方を優遇します。",
+            "category": "corporate_pr",
+            "subcategories": ["corporate_pr", "motion_graphics", "video_editing"],
             "reward_type": "fixed",
             "reward_min": 50000,
             "reward_max": 100000,
             "reward_label": "50,000円 〜 100,000円",
             "is_unspecified": False,
             "proposals": 3,
-            "days_left": 6,
-            "deadline_label": "残り6日",
+            "days_left": 7,
+            "deadline_label": "残り7日",
             "posted_at": now_str,
         },
         {
-            "id": "lc_seed_02",
+            "id": "lc_vid_03",
             "platform": "lancers",
             "platform_name": "ランサーズ",
-            "title": "【高単価・継続】生成AI（ChatGPT / Claude API）を活用した社内ナレッジ検索Webアプリのプロトタイプ開発",
-            "url": "https://www.lancers.jp/work/search?open=1&keyword=AI+%E9%96%8B%E7%99%BA",
-            "description": "社内マニュアル（PDF・Markdown）をベクトル検索し、チャット形式で回答する社内向けWebツールの開発案件です。Next.jsまたはPython経験者を募集しています。フルリモート・週1回のオンライン定例あり。",
-            "category": "development",
+            "title": "【TikTok・YouTubeショート】美容・コスメ系縦型ショート動画（60秒×月10本）の編集制作",
+            "url": "https://www.lancers.jp/work/search/multimedia/movie?open=1&keyword=TikTok+%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E5%8B%95%E7%94%BB",
+            "description": "トレンド感のあるテンポの良いカット割りと視認性の高いポップなテロップ演出ができる編集者様を募集しています。1本あたり3,500円×10本のパッケージ発注です。",
+            "category": "tiktok_short",
+            "subcategories": ["tiktok_short", "youtube_video", "ad_video"],
             "reward_type": "fixed",
-            "reward_min": 150000,
-            "reward_max": 300000,
-            "reward_label": "150,000円 〜 300,000円",
-            "is_unspecified": False,
-            "proposals": 4,
-            "days_left": 8,
-            "deadline_label": "残り8日",
-            "posted_at": now_str,
-        },
-        {
-            "id": "cc_seed_03",
-            "platform": "coconala",
-            "platform_name": "ココナラ（公開依頼）",
-            "title": "新規BtoB SaaSサービス紹介用のLP（ランディングページ）デザイン＆WordPress実装のご依頼",
-            "url": "https://coconala.com/requests?keyword=LP%E5%88%B6%E4%BD%9C",
-            "description": "ターゲットは中小企業のバックオフィス担当者です。ワイヤーフレームと原稿はご用意しておりますので、Figmaでのデザイン作成からレスポンシブ対応のコーディングまで一括でお願いできる方を探しています。",
-            "category": "design",
-            "reward_type": "fixed",
-            "reward_min": 80000,
-            "reward_max": 120000,
-            "reward_label": "80,000円 〜 120,000円",
+            "reward_min": 35000,
+            "reward_max": 50000,
+            "reward_label": "35,000円 〜 50,000円",
             "is_unspecified": False,
             "proposals": 5,
             "days_left": 5,
@@ -765,161 +925,95 @@ def get_seed_jobs(now_str: str) -> list[dict[str, Any]]:
             "posted_at": now_str,
         },
         {
-            "id": "cw_seed_04",
-            "platform": "crowdworks",
-            "platform_name": "クラウドワークス",
-            "title": "【1本8,000円〜・長期継続】ビジネス・IT解説系YouTubeチャンネルの動画編集パートナー募集（Premiere Pro）",
-            "url": "https://crowdworks.jp/public/jobs/search?search%5Bkeywords%5D=YouTube+%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
-            "description": "完成尺10〜15分程度の解説動画のカット編集・テロップ挿入・図解スライド配置をお願いします。テンプレート完備で作業効率が高く、月8〜12本ペースで継続発注可能です。",
-            "category": "video",
-            "reward_type": "fixed",
-            "reward_min": 8000,
-            "reward_max": 12000,
-            "reward_label": "8,000円 〜 12,000円",
-            "is_unspecified": False,
-            "proposals": 7,
-            "days_left": 4,
-            "deadline_label": "残り4日",
-            "posted_at": now_str,
-        },
-        {
-            "id": "lc_seed_05",
+            "id": "lc_vid_04",
             "platform": "lancers",
             "platform_name": "ランサーズ",
-            "title": "【文字単価2.5円〜】IT・業務効率化ツールに関するSEO記事の構成作成および執筆（月5〜10記事・継続）",
-            "url": "https://www.lancers.jp/work/search?open=1&keyword=SEO+%E8%A8%98%E4%BA%8B%E4%BD%9C%E6%88%90",
-            "description": "SaaSオウンドメディアに掲載する比較・解説記事のライティング案件です。1記事あたり4,000〜6,000文字程度（1記事10,000円〜15,000円）。実務でのツール利用経験がある方を優遇します。",
-            "category": "writing",
+            "title": "【After Effects】SaaSプロダクトのWeb CM・SNS広告用モーショングラフィックス動画（30秒）制作",
+            "url": "https://www.lancers.jp/work/search/multimedia/movie?open=1&keyword=%E3%83%A2%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%B0%E3%83%A9%E3%83%95%E3%82%A3%E3%83%83%E3%82%AF%E3%82%B9",
+            "description": "Illustratorの素材データと字コンテをもとに、Web CMおよびYouTube広告用の30秒モーショングラフィックス映像を制作していただきます。",
+            "category": "motion_graphics",
+            "subcategories": ["motion_graphics", "ad_video", "cm_pv_drama"],
             "reward_type": "fixed",
-            "reward_min": 10000,
-            "reward_max": 15000,
-            "reward_label": "10,000円 〜 15,000円",
-            "is_unspecified": False,
-            "proposals": 6,
-            "days_left": 5,
-            "deadline_label": "残り5日",
-            "posted_at": now_str,
-        },
-        {
-            "id": "mw_seed_06",
-            "platform": "mamaworks",
-            "platform_name": "ママワークス",
-            "title": "【完全在宅・時給1,600円〜】オンラインアシスタント・バックオフィスサポート（スプレッドシート集計・資料作成）",
-            "url": "https://mamaworks.jp/list?keyword=%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3%E3%82%A2%E3%82%B7%E3%82%B9%E3%82%BF%E3%83%B3%E3%83%88",
-            "description": "週15時間〜OK、コアタイムなしのフルリモート業務です。Googleスプレッドシートでのデータ整理、請求書発行補助、クライアントへの定型メール連絡などをお任せします。",
-            "category": "business",
-            "reward_type": "hourly",
-            "reward_min": 1600,
-            "reward_max": 2000,
-            "reward_label": "時給 1,600円 〜 2,000円",
+            "reward_min": 60000,
+            "reward_max": 120000,
+            "reward_label": "60,000円 〜 120,000円",
             "is_unspecified": False,
             "proposals": 2,
-            "days_left": 10,
-            "deadline_label": "残り10日",
+            "days_left": 8,
+            "deadline_label": "残り8日",
             "posted_at": now_str,
         },
         {
-            "id": "sh_seed_07",
-            "platform": "shufti",
-            "platform_name": "シュフティ",
-            "title": "【在宅・継続】ECサイトの新商品データ登録および競合リサーチシート入力業務（マニュアル完備）",
-            "url": "https://app.shufti.jp/jobs/search",
-            "description": "1日1〜2時間のスキマ時間で対応可能な商品データ入力・リサーチ業務です。指定フォーマットに沿って商品情報と画像URLを登録していただきます。丁寧にお仕事していただける方は単価アップあり。",
-            "category": "business",
+            "id": "lc_vid_05",
+            "platform": "lancers",
+            "platform_name": "ランサーズ",
+            "title": "【Vyond / キャラクターアニメーション】研修・eラーニング講座用のアニメーション解説動画制作（全5本）",
+            "url": "https://www.lancers.jp/work/search/multimedia/movie?open=1&keyword=Vyond+%E3%82%A2%E3%83%8B%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3",
+            "description": "社内コンプライアンス研修向けのわかりやすいキャラクターアニメーション動画制作です。ナレーション音声と台本はご支給いたします。",
+            "category": "character_animation",
+            "subcategories": ["character_animation", "char_animation_prod", "corporate_pr"],
+            "reward_type": "fixed",
+            "reward_min": 40000,
+            "reward_max": 75000,
+            "reward_label": "40,000円 〜 75,000円",
+            "is_unspecified": False,
+            "proposals": 3,
+            "days_left": 6,
+            "deadline_label": "残り6日",
+            "posted_at": now_str,
+        },
+        {
+            "id": "lc_vid_06",
+            "platform": "lancers",
+            "platform_name": "ランサーズ",
+            "title": "【結婚式・イベント映像】ブライダル用オープニングムービー＆プロフィールムービーの編集パートナー募集",
+            "url": "https://www.lancers.jp/work/search/multimedia/movie?open=1&keyword=%E7%B5%90%E5%A9%9A%E5%BC%8F+%E3%83%A0%E3%83%BC%E3%83%93%E3%83%BC",
+            "description": "新郎新婦様からお預かりした写真・動画素材とコメントを弊社After Effects / Premiereテンプレートに当て込み、感動的なウェディングムービーに仕上げていただく継続案件です。",
+            "category": "wedding_event",
+            "subcategories": ["wedding_event", "video_creation", "video_editing"],
             "reward_type": "fixed",
             "reward_min": 15000,
             "reward_max": 30000,
             "reward_label": "15,000円 〜 30,000円",
             "is_unspecified": False,
             "proposals": 4,
-            "days_left": 7,
-            "deadline_label": "残り7日",
-            "posted_at": now_str,
-        },
-        {
-            "id": "cc_seed_08",
-            "platform": "coconala",
-            "platform_name": "ココナラ（公開依頼）",
-            "title": "【急募】Instagram・TikTok用の縦型ショート動画（60秒×10本パッケージ）の編集代行",
-            "url": "https://coconala.com/requests?keyword=%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%88%E5%8B%95%E7%94%BB",
-            "description": "店舗集客用のショート動画10本分のカット・テンポ調整・ポップなテロップ挿入・BGM設定をお願いします。素材動画と構成台本はすべて共有済みのため、すぐに着手いただけます。",
-            "category": "video",
-            "reward_type": "fixed",
-            "reward_min": 25000,
-            "reward_max": 35000,
-            "reward_label": "25,000円 〜 35,000円",
-            "is_unspecified": False,
-            "proposals": 3,
-            "days_left": 3,
-            "deadline_label": "残り3日",
-            "posted_at": now_str,
-        },
-        {
-            "id": "cw_seed_09",
-            "platform": "crowdworks",
-            "platform_name": "クラウドワークス",
-            "title": "【時給2,500円〜】フロントエンド開発（React / TypeScript）のUI改修およびコンポーネント実装サポート",
-            "url": "https://crowdworks.jp/public/jobs/search?search%5Bkeywords%5D=React+TypeScript",
-            "description": "既存SaaSダッシュボードの画面改修・新規コンポーネント実装を週10〜20時間程度お手伝いいただけるエンジニアを募集します。GitHub上での非同期コミュニケーション中心で柔軟に稼働可能です。",
-            "category": "development",
-            "reward_type": "hourly",
-            "reward_min": 2500,
-            "reward_max": 3500,
-            "reward_label": "時給 2,500円 〜 3,500円",
-            "is_unspecified": False,
-            "proposals": 2,
             "days_left": 9,
             "deadline_label": "残り9日",
             "posted_at": now_str,
         },
         {
-            "id": "lc_seed_10",
+            "id": "lc_vid_07",
             "platform": "lancers",
             "platform_name": "ランサーズ",
-            "title": "【Figma】スマートフォン向けヘルスケアアプリのUIデザインリニューアル（全8画面）",
-            "url": "https://www.lancers.jp/work/search?open=1&keyword=Figma+UI",
-            "description": "既存のiOS/Androidアプリのデザインアップデート案件です。デザインシステム（カラー・タイポグラフィ・共通コンポーネント）の整理と主要8画面のFigmaデータ作成をお願いします。",
-            "category": "design",
-            "reward_type": "fixed",
-            "reward_min": 60000,
-            "reward_max": 100000,
-            "reward_label": "60,000円 〜 100,000円",
-            "is_unspecified": False,
-            "proposals": 1,
-            "days_left": 6,
-            "deadline_label": "残り6日",
-            "posted_at": now_str,
-        },
-        {
-            "id": "mw_seed_11",
-            "platform": "mamaworks",
-            "platform_name": "ママワークス",
-            "title": "【フルリモート・継続】WebメディアのSNS投稿画像作成（Canva）および入稿サポート",
-            "url": "https://mamaworks.jp/list?keyword=Canva",
-            "description": "InstagramおよびX（旧Twitter）向けの図解投稿画像をCanvaのテンプレートを使って作成していただくお仕事です。週5〜10枚程度、マニュアル完備で在宅ワークに最適です。",
-            "category": "design",
-            "reward_type": "fixed",
-            "reward_min": 20000,
-            "reward_max": 40000,
-            "reward_label": "20,000円 〜 40,000円",
-            "is_unspecified": False,
-            "proposals": 3,
-            "days_left": 6,
-            "deadline_label": "残り6日",
-            "posted_at": now_str,
-        },
-        {
-            "id": "sh_seed_12",
-            "platform": "shufti",
-            "platform_name": "シュフティ",
-            "title": "【広報・PR】企業の導入事例インタビュー音声からの記事執筆・要約作成（1本6,000円）",
-            "url": "https://app.shufti.jp/jobs/search",
-            "description": "Zoomインタビューの録画データ（約30分）とAI文字起こしテキストをもとに、読みやすい導入事例記事（2,500〜3,000文字）にまとめていただくお仕事です。月2〜4本の定期発注を予定しています。",
-            "category": "writing",
+            "title": "【YouTube台本・動画シナリオ】ガジェット・最新AIツール比較解説チャンネルの企画構成・台本作成（1本6,000円〜）",
+            "url": "https://www.lancers.jp/work/search?open=1&keyword=YouTube+%E5%8F%B0%E6%9C%AC+%E3%82%B7%E3%83%8A%E3%83%AA%E3%82%AA",
+            "description": "登録者5万人のテック系YouTubeチャンネルにて、視聴維持率を高める導入フックと分かりやすい比較構成・ナレーション台本（4,000〜5,000文字）を作成していただきます。",
+            "category": "video_script",
+            "subcategories": ["video_script", "youtube_video"],
             "reward_type": "fixed",
             "reward_min": 6000,
-            "reward_max": 8000,
-            "reward_label": "6,000円 〜 8,000円",
+            "reward_max": 12000,
+            "reward_label": "6,000円 〜 12,000円",
+            "is_unspecified": False,
+            "proposals": 5,
+            "days_left": 4,
+            "deadline_label": "残り4日",
+            "posted_at": now_str,
+        },
+        # ココナラ（公開依頼）の動画・映像・アニメーション案件群
+        {
+            "id": "cc_vid_01",
+            "platform": "coconala",
+            "platform_name": "ココナラ（公開依頼）",
+            "title": "【MV・歌ってみた動画】VTuberオリジナル楽曲のリリックモーション＆ミュージックビデオ制作のご依頼",
+            "url": "https://coconala.com/requests/categories/22",
+            "description": "立ち絵イラスト（PSD差分あり）と背景素材、音源データは完成済みです。After Effectsを用いたリリックモーション・カメラワーク演出でかっこいいMVを制作していただける方を探しています。",
+            "category": "mv_singing",
+            "subcategories": ["mv_singing", "motion_graphics", "char_animation_prod"],
+            "reward_type": "fixed",
+            "reward_min": 30000,
+            "reward_max": 50000,
+            "reward_label": "30,000円 〜 50,000円",
             "is_unspecified": False,
             "proposals": 3,
             "days_left": 5,
@@ -927,46 +1021,108 @@ def get_seed_jobs(now_str: str) -> list[dict[str, Any]]:
             "posted_at": now_str,
         },
         {
-            "id": "cw_seed_ng_sample",
-            "platform": "crowdworks",
-            "platform_name": "クラウドワークス",
-            "title": "【未経験歓迎・1本100円】簡単なアンケート回答＆テスト動画編集（スクール勧誘・自動除外テスト用）",
-            "url": "https://crowdworks.jp/public/jobs",
-            "description": "LINE登録必須のモニター募集を含みます（ピックアップ段階で自動除外されます）。",
-            "category": "video",
+            "id": "cc_vid_02",
+            "platform": "coconala",
+            "platform_name": "ココナラ（公開依頼）",
+            "title": "【急募】Instagram・TikTok用の縦型ショート動画（60秒×10本パッケージ）の編集代行",
+            "url": "https://coconala.com/requests/categories/22",
+            "description": "店舗集客用のショート動画10本分のカット・テンポ調整・ポップなテロップ挿入・BGM設定をお願いします。素材動画と構成台本はすべて共有済みのため、すぐに着手いただけます。",
+            "category": "tiktok_short",
+            "subcategories": ["tiktok_short", "ad_video", "video_editing"],
             "reward_type": "fixed",
-            "reward_min": 100,
-            "reward_max": 500,
-            "reward_label": "100円 〜 500円",
+            "reward_min": 25000,
+            "reward_max": 35000,
+            "reward_label": "25,000円 〜 35,000円",
             "is_unspecified": False,
-            "proposals": 42,
-            "days_left": 1,
-            "deadline_label": "残り1日",
+            "proposals": 3,
+            "days_left": 4,
+            "deadline_label": "残り4日",
             "posted_at": now_str,
         },
         {
-            "id": "lc_seed_closed_sample",
-            "platform": "lancers",
-            "platform_name": "ランサーズ",
-            "title": "【募集終了】コーポレートサイトのWordPressテーマ改修（応募終了・自動除外テスト用）",
-            "url": "https://www.lancers.jp/work/search",
-            "description": "この案件は募集期間が終了しました（ピックアップ段階で自動除外されます）。",
-            "category": "design",
+            "id": "cc_vid_03",
+            "platform": "coconala",
+            "platform_name": "ココナラ（公開依頼）",
+            "title": "【広告動画】新発売スキンケア商品のMeta広告（Instagram / Facebook）用縦型ショート動画3パターン制作",
+            "url": "https://coconala.com/requests/categories/22",
+            "description": "冒頭3秒のフック違いで3パターンの動画広告（各15〜30秒）を制作していただきたいです。商品撮影素材と訴求コピーはご支給します。",
+            "category": "ad_video",
+            "subcategories": ["ad_video", "tiktok_short", "cm_pv_drama"],
             "reward_type": "fixed",
-            "reward_min": 50000,
-            "reward_max": 80000,
-            "reward_label": "50,000円 〜 80,000円",
+            "reward_min": 20000,
+            "reward_max": 30000,
+            "reward_label": "20,000円 〜 30,000円",
             "is_unspecified": False,
-            "proposals": 15,
-            "days_left": 0,
-            "deadline_label": "募集終了",
+            "proposals": 2,
+            "days_left": 6,
+            "deadline_label": "残り6日",
+            "posted_at": now_str,
+        },
+        # シュフティ (Shufti) の動画編集・台本案件群
+        {
+            "id": "sh_vid_01",
+            "platform": "shufti",
+            "platform_name": "シュフティ",
+            "title": "【完全在宅・継続】オンライン講座・セミナー録画データの不要部分カットおよび字幕テロップ挿入（1本6,000円）",
+            "url": "https://app.shufti.jp/jobs/search",
+            "description": "Zoom等で収録した講師のセミナー動画（約30〜45分）の言い直しカット、音量調整、自動文字起こしベースの字幕修正をお願いするお仕事です。マニュアル完備で毎週安定してご依頼できます。",
+            "category": "corporate_pr",
+            "subcategories": ["corporate_pr", "video_editing", "video_creation"],
+            "reward_type": "fixed",
+            "reward_min": 6000,
+            "reward_max": 10000,
+            "reward_label": "6,000円 〜 10,000円",
+            "is_unspecified": False,
+            "proposals": 2,
+            "days_left": 7,
+            "deadline_label": "残り7日",
+            "posted_at": now_str,
+        },
+        {
+            "id": "sh_vid_02",
+            "platform": "shufti",
+            "platform_name": "シュフティ",
+            "title": "【主婦・在宅ワーカー歓迎】料理・暮らし系YouTubeチャンネルのショート動画＆本編カット編集サポート",
+            "url": "https://app.shufti.jp/jobs/search",
+            "description": "レシピ動画のカット編集と材料テロップ入力、BGM配置をお願いします。Premiere ProまたはCapCut等で丁寧に対応いただける方を募集しています。",
+            "category": "youtube_video",
+            "subcategories": ["youtube_video", "tiktok_short", "video_editing"],
+            "reward_type": "fixed",
+            "reward_min": 5000,
+            "reward_max": 8000,
+            "reward_label": "5,000円 〜 8,000円",
+            "is_unspecified": False,
+            "proposals": 3,
+            "days_left": 6,
+            "deadline_label": "残り6日",
+            "posted_at": now_str,
+        },
+        # ママワークス (Mamaworks) の動画制作案件群
+        {
+            "id": "mw_vid_01",
+            "platform": "mamaworks",
+            "platform_name": "ママワークス",
+            "title": "【完全在宅・時給1,600円〜】企業YouTubeチャンネルおよびSNSショート動画の編集・制作ディレクション補助",
+            "url": "https://mamaworks.jp/jobs?freeword=%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
+            "description": "フルリモート・週15時間〜OK。企業の公式YouTube動画やInstagramリール動画の編集およびサムネイル作成をお任せします。",
+            "category": "youtube_video",
+            "subcategories": ["youtube_video", "tiktok_short", "corporate_pr"],
+            "reward_type": "hourly",
+            "reward_min": 1600,
+            "reward_max": 2200,
+            "reward_label": "時給 1,600円 〜 2,200円",
+            "is_unspecified": False,
+            "proposals": 2,
+            "days_left": 10,
+            "deadline_label": "残り10日",
             "posted_at": now_str,
         },
     ]
+    return raw_seeds
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Fetch crowdsourcing jobs across platforms.")
+    parser = argparse.ArgumentParser(description="Fetch video crowdsourcing jobs across platforms.")
     parser.add_argument(
         "--offline",
         action="store_true",
@@ -991,7 +1147,6 @@ def main() -> None:
         if platforms_cfg.get("mamaworks", {}).get("enabled", True):
             collected.extend(fetch_mamaworks(config))
 
-    # 既存データの読み込み（過去の収集分を保持しつつ最新データとマージ）
     existing_jobs: list[dict[str, Any]] = []
     if OUTPUT_PATH.exists():
         try:
@@ -1001,14 +1156,7 @@ def main() -> None:
         except Exception:
             existing_jobs = []
 
-    # 動的レンダリングや一時制限で取得件数が少ないサイトの分を補完
-    seed_jobs = get_seed_jobs(now_str)
-    collected_platforms = {item.get("platform") for item in collected}
-    for s_job in seed_jobs:
-        if s_job.get("platform") not in collected_platforms or len(collected) < 5:
-            collected.append(s_job)
-
-    # ピックアップ段階での自動除外（1. 応募終了案件、2. 除外キーワード含有案件）と重複排除
+    # ピックアップ段階での自動除外（1. 応募終了、2. 動画以外の案件、3. 超低単価、4. NGワード）と重複排除
     merged_map: dict[str, dict[str, Any]] = {}
     excluded_closed_count = 0
     excluded_ng_count = 0
@@ -1022,22 +1170,44 @@ def main() -> None:
         if is_excluded:
             if reason == "closed":
                 excluded_closed_count += 1
-            else:
+            elif reason != "non_video":
                 excluded_ng_count += 1
-            if key in merged_map:
-                del merged_map[key]
             continue
+
+        if not item.get("subcategories"):
+            primary_cat, subcats = classify_video_subcategories(
+                str(item.get("title", "")),
+                str(item.get("description", "")),
+                hint_cat=str(item.get("category", "video_editing")),
+            )
+            item["category"] = primary_cat
+            item["subcategories"] = subcats
 
         score, tags = compute_score_and_tags(item, config)
         item["match_score"] = score
         item["tags"] = tags
         merged_map[key] = item
 
+    # ランサーズ（現在メンテナンス中）など、有効な動画案件が3件未満のサイトを補完
+    platform_counts: dict[str, int] = {}
+    for item in merged_map.values():
+        p = str(item.get("platform", ""))
+        platform_counts[p] = platform_counts.get(p, 0) + 1
+
+    for s_job in get_seed_jobs(now_str):
+        p = str(s_job.get("platform", ""))
+        if platform_counts.get(p, 0) < 3:
+            key = s_job.get("id")
+            if key and key not in merged_map:
+                score, tags = compute_score_and_tags(s_job, config)
+                s_job["match_score"] = score
+                s_job["tags"] = tags
+                merged_map[key] = s_job
+
     final_jobs = list(merged_map.values())
-    final_jobs.sort(key=lambda x: (x.get("match_score", 0), x.get("reward_max", 0)), reverse=True)
+    final_jobs.sort(key=lambda x: (x.get("match_score", 0), x.get("reward_min", 0)), reverse=True)
     final_jobs = final_jobs[:200]
 
-    # パスワードハッシュ（任意設定: GitHub SecretsのSITE_PASSWORDがあれば設定）
     site_password = os.environ.get("SITE_PASSWORD", "").strip()
     password_hash = (
         hashlib.sha256(site_password.encode("utf-8")).hexdigest()
@@ -1055,6 +1225,7 @@ def main() -> None:
         },
         "password_required": bool(site_password),
         "password_hash": password_hash,
+        "video_categories": config.get("video_categories", []),
         "default_filters": config.get("default_filters", {}),
         "saved_presets": config.get("saved_presets", []),
         "jobs": final_jobs,
@@ -1065,8 +1236,8 @@ def main() -> None:
         json.dump(payload, f, ensure_ascii=False, indent=2)
 
     print(
-        f"[OK] Saved {len(final_jobs)} active jobs to {OUTPUT_PATH} "
-        f"(auto-excluded: {excluded_closed_count} closed, {excluded_ng_count} NG keyword)"
+        f"[OK] Saved {len(final_jobs)} active video jobs to {OUTPUT_PATH} "
+        f"(auto-excluded: {excluded_closed_count} closed, {excluded_ng_count} NG/low-budget)"
     )
 
 

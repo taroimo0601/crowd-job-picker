@@ -3,18 +3,28 @@
     THEME: "cjp_theme",
     AUTH_HASH: "cjp_auth_hash",
     JOB_STATUS: "cjp_job_status_map",
-    CUSTOM_PRESETS: "cjp_custom_presets",
-    ACTIVE_PRESET: "cjp_active_preset_id",
-    EXCLUDE_KEYWORDS: "cjp_exclude_keywords_v1",
+    CUSTOM_PRESETS: "cjp_custom_presets_v2",
+    ACTIVE_PRESET: "cjp_active_preset_id_v2",
+    EXCLUDE_KEYWORDS: "cjp_exclude_keywords_v2",
   };
 
+  // 添付画像の「動画・映像・アニメーション」15分類ラベル
   const CATEGORY_LABELS = {
-    development: "💻 システム開発・AI",
-    design: "🎨 Web制作・デザイン",
-    video: "🎬 動画編集・制作",
-    writing: "✍️ ライティング",
-    business: "📊 事務・データ入力",
-    other: "📁 その他",
+    video_creation: "動画作成・動画制作",
+    youtube_video: "YouTube動画作成・編集",
+    video_editing: "映像編集・映像制作",
+    video_shooting: "映像撮影",
+    char_animation_prod: "キャラクター・アニメーション制作",
+    ar_vr: "AR/VRコンテンツ制作・撮影",
+    tiktok_short: "TikTok・ショート動画",
+    ad_video: "広告動画",
+    wedding_event: "結婚式・イベント動画",
+    mv_singing: "ミュージックビデオ（MV）・歌ってみた動画",
+    motion_graphics: "モーショングラフィックス",
+    character_animation: "キャラクターアニメーション",
+    cm_pv_drama: "CM・PV・ドラマ制作",
+    corporate_pr: "企業紹介・講習・PR動画制作",
+    video_script: "動画シナリオ・台本・構成作成",
   };
 
   const CLOSED_PATTERNS = [
@@ -36,7 +46,7 @@
   let rawData = null;
   let allJobs = [];
   let presets = [];
-  let activePresetId = "preset_all";
+  let activePresetId = "preset_video_all";
   let currentStatusTab = "all";
   let jobStatusMap = loadJsonStorage(STORAGE_KEYS.JOB_STATUS, {});
   let persistentExcludeKeywords = [];
@@ -98,6 +108,20 @@
     } catch {
       // ignore storage errors
     }
+  }
+
+  /**
+   * 全角数字（０〜９）やカンマ（, / ，）・円記号が含まれていても正確に数値へ変換する
+   */
+  function parseAmountInput(rawVal) {
+    if (rawVal === null || rawVal === undefined) return 0;
+    const normalized = String(rawVal)
+      .replace(/[０-９]/g, (ch) => String.fromCharCode(ch.charCodeAt(0) - 0xfee0))
+      .replace(/[,，、\s円¥￥]/g, "")
+      .trim();
+    if (!normalized) return 0;
+    const num = parseInt(normalized, 10);
+    return Number.isNaN(num) || num < 0 ? 0 : num;
   }
 
   function initTheme() {
@@ -218,8 +242,8 @@
       include_keywords: includeKeywordsInput.value.trim(),
       keyword_mode: keywordModeSelect.value,
       reward_type: rewardTypeSelect.value,
-      min_fixed_reward: Math.max(0, Number(minFixedInput.value) || 0),
-      min_hourly_reward: Math.max(0, Number(minHourlyInput.value) || 0),
+      min_fixed_reward: parseAmountInput(minFixedInput.value),
+      min_hourly_reward: parseAmountInput(minHourlyInput.value),
       max_proposals: Number(maxProposalsInput.value) || 999,
       include_unspecified: includeUnspecifiedCheck.checked,
       hide_dismissed: hideDismissedCheck.checked,
@@ -233,16 +257,19 @@
       cb.checked = plats.includes(cb.value);
     });
     const cat = preset.category || "all";
-    categoryRadios.forEach((r) => {
-      r.checked = r.value === cat;
-    });
+    const matchedRadio = categoryRadios.find((r) => r.value === cat);
+    if (matchedRadio) {
+      matchedRadio.checked = true;
+    } else if (categoryRadios[0]) {
+      categoryRadios[0].checked = true;
+    }
     includeKeywordsInput.value = preset.include_keywords || "";
     keywordModeSelect.value = preset.keyword_mode || "OR";
     rewardTypeSelect.value = preset.reward_type || "all";
     minFixedInput.value = String(preset.min_fixed_reward ?? 0);
     minHourlyInput.value = String(preset.min_hourly_reward ?? 0);
     maxProposalsInput.value = String(preset.max_proposals ?? 999);
-    includeUnspecifiedCheck.checked = preset.include_unspecified ?? true;
+    includeUnspecifiedCheck.checked = Boolean(preset.include_unspecified);
     if (preset.sort_by) {
       sortSelect.value = preset.sort_by;
     }
@@ -281,7 +308,7 @@
   }
 
   function saveCurrentAsPreset() {
-    const name = window.prompt("現在の絞り込み条件の名前を入力してください:", "マイ条件（カスタム）");
+    const name = window.prompt("現在の絞り込み条件の名前を入力してください:", "マイ動画条件");
     if (!name || !name.trim()) return;
     const state = getCurrentFilterState();
     const newPreset = {
@@ -316,30 +343,25 @@
 
   function renderDirectSearchLauncher(state) {
     const kwList = splitKeywords(state.include_keywords);
-    const queryStr = kwList.length > 0 ? kwList.slice(0, 3).join(" ") : "";
+    const catLabel = state.category !== "all" ? CATEGORY_LABELS[state.category] || "" : "動画編集";
+    const queryStr = kwList.length > 0 ? kwList.slice(0, 3).join(" ") : catLabel;
     const encoded = encodeURIComponent(queryStr);
 
     const links = [
       {
         id: "crowdworks",
         name: "クラウドワークス ↗",
-        url: queryStr
-          ? `https://crowdworks.jp/public/jobs/search?search%5Bkeywords%5D=${encoded}`
-          : "https://crowdworks.jp/public/jobs",
+        url: `https://crowdworks.jp/public/jobs/search?search%5Bkeywords%5D=${encoded}`,
       },
       {
         id: "lancers",
         name: "ランサーズ ↗",
-        url: queryStr
-          ? `https://www.lancers.jp/work/search?open=1&keyword=${encoded}`
-          : "https://www.lancers.jp/work/search?open=1",
+        url: `https://www.lancers.jp/work/search/multimedia/movie?open=1&keyword=${encoded}`,
       },
       {
         id: "coconala",
         name: "ココナラ公開依頼 ↗",
-        url: queryStr
-          ? `https://coconala.com/requests?keyword=${encoded}`
-          : "https://coconala.com/requests",
+        url: `https://coconala.com/requests/categories/22?keyword=${encoded}`,
       },
       {
         id: "shufti",
@@ -349,9 +371,7 @@
       {
         id: "mamaworks",
         name: "ママワークス ↗",
-        url: queryStr
-          ? `https://mamaworks.jp/list?keyword=${encoded}`
-          : "https://mamaworks.jp/list",
+        url: `https://mamaworks.jp/jobs?freeword=${encoded}`,
       },
     ];
 
@@ -392,22 +412,45 @@
     // 2. サイト
     if (!state.platforms.includes(job.platform)) return false;
 
-    // 3. カテゴリ
-    if (state.category !== "all" && job.category !== state.category) return false;
+    // 3. 動画・映像・アニメーション 15詳細カテゴリ
+    if (state.category !== "all") {
+      const subcats = Array.isArray(job.subcategories) ? job.subcategories : [job.category];
+      if (job.category !== state.category && !subcats.includes(state.category)) {
+        return false;
+      }
+    }
 
     // 4. 報酬形態
     if (state.reward_type !== "all" && job.reward_type !== state.reward_type) return false;
 
-    // 5. 予算未定・最低報酬額（手動入力値で比較）
-    const effectiveAmount = job.reward_max || job.reward_min || 0;
-    if (job.is_unspecified || effectiveAmount === 0) {
-      if (!state.include_unspecified) return false;
-    } else {
+    // 5. 最低固定報酬・最低時給による厳密な絞り込み（下限値 reward_min を基準に判定）
+    const rMin = Number(job.reward_min ?? 0);
+    const rMax = Number(job.reward_max ?? 0);
+    const isUnspec = Boolean(job.is_unspecified) || (rMin === 0 && rMax === 0);
+
+    // 最低固定報酬が入力されている場合:
+    // ・「予算相談・未定」の案件は自動的に除外
+    // ・「時給制」の案件も（最低時給が別途指定されていない限り）除外
+    // ・案件の下限報酬額 (reward_min) が入力値未満（または 〜5,000円枠など rMin=0）の案件を確実に除外
+    if (state.min_fixed_reward > 0) {
+      if (isUnspec) return false;
       if (job.reward_type === "hourly") {
-        if (effectiveAmount < state.min_hourly_reward) return false;
+        if (state.min_hourly_reward <= 0 || rMin < state.min_hourly_reward) {
+          return false;
+        }
       } else {
-        if (effectiveAmount < state.min_fixed_reward) return false;
+        if (rMin < state.min_fixed_reward) {
+          return false;
+        }
       }
+    } else if (state.min_hourly_reward > 0) {
+      if (isUnspec) return false;
+      if (job.reward_type === "hourly") {
+        if (rMin < state.min_hourly_reward) return false;
+      }
+    } else {
+      // 最低報酬額の入力が0（指定なし）のときはチェックボックスに従う
+      if (isUnspec && !state.include_unspecified) return false;
     }
 
     // 6. 応募数上限
@@ -432,8 +475,8 @@
     const copy = [...jobs];
     copy.sort((a, b) => {
       if (sortBy === "reward_desc") {
-        const ra = a.reward_max || a.reward_min || 0;
-        const rb = b.reward_max || b.reward_min || 0;
+        const ra = a.reward_min || a.reward_max || 0;
+        const rb = b.reward_min || b.reward_max || 0;
         return rb - ra;
       }
       if (sortBy === "proposals_asc") {
@@ -485,8 +528,8 @@
       const empty = document.createElement("div");
       empty.className = "empty-state";
       empty.innerHTML = `
-        <p>現在の特定条件に一致する案件がありません。</p>
-        <p style="font-size:0.8rem; margin-top:0.4rem;">最低報酬額やキーワードを緩めるか、上の「現在の条件で実サイトを直接開く」から各サイトのリアルタイム検索結果をご確認ください。</p>
+        <p>現在の特定条件に一致する動画案件がありません。</p>
+        <p style="font-size:0.8rem; margin-top:0.4rem;">最低固定報酬やカテゴリ条件を緩めるか、上の「現在の条件で実サイトを直接開く」から各サイトのリアルタイム検索結果をご確認ください。</p>
       `;
       jobsContainer.appendChild(empty);
       return;
@@ -499,6 +542,18 @@
         status === "applied" ? "is-applied" : ""
       }`;
 
+      const subcats = Array.isArray(job.subcategories) && job.subcategories.length > 0
+        ? job.subcategories.slice(0, 2)
+        : [job.category];
+      const catBadgesHtml = subcats
+        .map(
+          (cid) =>
+            `<span class="category-badge">🎬 ${escapeHtml(
+              CATEGORY_LABELS[cid] || "動画・映像制作"
+            )}</span>`
+        )
+        .join("");
+
       const tagsHtml = (job.tags || [])
         .map((t) => `<span class="tag-badge">${escapeHtml(t)}</span>`)
         .join("");
@@ -509,9 +564,7 @@
             <span class="platform-badge badge-${escapeHtml(job.platform)}">${escapeHtml(
               job.platform_name
             )}</span>
-            <span class="category-badge">${escapeHtml(
-              CATEGORY_LABELS[job.category] || "その他"
-            )}</span>
+            ${catBadgesHtml}
             ${tagsHtml}
           </div>
           <span class="score-pill">適合スコア ${job.match_score || 60}点</span>
@@ -623,6 +676,7 @@
 
     inputs.forEach((el) => {
       el.addEventListener("input", updateAll);
+      el.addEventListener("keyup", updateAll);
       el.addEventListener("change", updateAll);
     });
 
@@ -705,7 +759,7 @@
 
       const stats = rawData.auto_excluded_stats;
       if (stats && autoExcludeBadge) {
-        autoExcludeBadge.textContent = `ピックアップ段階で自動除外済（終了:${stats.closed_count || 0}件 / NG:${stats.ng_keyword_count || 0}件）`;
+        autoExcludeBadge.textContent = `ピックアップ段階で自動除外済（終了:${stats.closed_count || 0}件 / NG・低単価:${stats.ng_keyword_count || 0}件）`;
       }
 
       const defaultExcludeList = (rawData.default_filters && rawData.default_filters.exclude_keywords) || [];

@@ -1,5 +1,5 @@
 {
-  "site_title": "Crowd Job Picker",
+  "site_title": "Crowd Job Picker | 動画・映像・アニメーション特化",
   "platforms": {
     "crowdworks": {
       "enabled": true,
@@ -27,43 +27,22 @@
       "max_items_per_query": 20
     }
   },
-  "search_queries": [
-    {
-      "id": "video_youtube",
-      "label": "YouTube動画編集・長尺制作",
-      "category": "video",
-      "keywords": ["YouTube 動画編集", "Premiere Pro", "ビジネス系 YouTube", "解説動画 編集", "YouTube 継続"]
-    },
-    {
-      "id": "video_short",
-      "label": "ショート動画・SNS映像制作",
-      "category": "video",
-      "keywords": ["ショート動画 編集", "TikTok 動画編集", "リール 編集", "YouTube Shorts", "縦型動画"]
-    },
-    {
-      "id": "video_corp",
-      "label": "PR動画・企業VP・アニメーション",
-      "category": "video",
-      "keywords": ["PR動画", "After Effects", "プロモーション動画", "採用動画", "セミナー動画 編集"]
-    },
-    {
-      "id": "dev_ai",
-      "label": "システム開発・AI・自動化",
-      "category": "development",
-      "keywords": ["Python 自動化", "GAS", "AI 開発", "スクレイピング"]
-    },
-    {
-      "id": "web_design",
-      "label": "Web制作・デザイン・サムネイル",
-      "category": "design",
-      "keywords": ["YouTube サムネイル", "LP制作", "WordPress", "バナー制作"]
-    },
-    {
-      "id": "writing_biz",
-      "label": "台本作成・ライティング・事務",
-      "category": "writing",
-      "keywords": ["YouTube 台本", "シナリオ作成", "SEO 記事作成", "オンラインアシスタント"]
-    }
+  "video_categories": [
+    { "id": "video_creation", "label": "動画作成・動画制作" },
+    { "id": "youtube_video", "label": "YouTube動画作成・編集" },
+    { "id": "video_editing", "label": "映像編集・映像制作" },
+    { "id": "video_shooting", "label": "映像撮影" },
+    { "id": "char_animation_prod", "label": "キャラクター・アニメーション制作" },
+    { "id": "ar_vr", "label": "AR/VRコンテンツ制作・撮影" },
+    { "id": "tiktok_short", "label": "TikTok・ショート動画" },
+    { "id": "ad_video", "label": "広告動画" },
+    { "id": "wedding_event", "label": "結婚式・イベント動画" },
+    { "id": "mv_singing", "label": "ミュージックビデオ（MV）・歌ってみた動画" },
+    { "id": "motion_graphics", "label": "モーショングラフィックス" },
+    { "id": "character_animation", "label": "キャラクターアニメーション" },
+    { "id": "cm_pv_drama", "label": "CM・PV・ドラマ制作" },
+    { "id": "corporate_pr", "label": "企業紹介・講習・PR動画制作" },
+    { "id": "video_script", "label": "動画シナリオ・台本・構成作成" }
   ],
   "default_filters": {
     "exclude_keywords": [
@@ -98,82 +77,82 @@
       "座談会"
     ],
     "exclude_closed_jobs": true,
-    "min_fixed_reward": 5000,
-    "min_hourly_reward": 1500,
-    "include_unspecified_budget": true,
-    "max_proposals": 30,
+    "min_fixed_reward": 0,
+    "min_hourly_reward": 0,
+    "include_unspecified_budget": false,
+    "max_proposals": 999,
     "min_days_left": 1
   },
   "saved_presets": [
     {
-      "id": "preset_video_main",
-      "name": "🎬 動画編集すべて（地雷・終了除外済）",
-      "platforms": ["crowdworks", "lancers", "coconala", "shufti", "mamaworks"],
-      "category": "video",
-      "reward_type": "all",
-      "min_fixed_reward": 0,
-      "min_hourly_reward": 0,
-      "include_unspecified": true,
-      "max_proposals": 999,
-      "min_days_left": 1,
-      "include_keywords": "",
-      "sort_by": "score_desc"
-    },
-    {
-      "id": "preset_video_high",
-      "name": "🎬 優良・高単価動画編集（5,000円〜）",
-      "platforms": ["crowdworks", "lancers", "coconala", "mamaworks"],
-      "category": "video",
-      "reward_type": "all",
-      "min_fixed_reward": 5000,
-      "min_hourly_reward": 1500,
-      "include_unspecified": false,
-      "max_proposals": 20,
-      "min_days_left": 1,
-      "include_keywords": "動画編集, YouTube, Premiere, ショート, リール, PR動画",
-      "sort_by": "reward_desc"
-    },
-    {
-      "id": "preset_video_low_comp",
-      "name": "🎬 動画編集・穴場（応募5件以下）",
-      "platforms": ["crowdworks", "lancers", "coconala", "shufti", "mamaworks"],
-      "category": "video",
-      "reward_type": "all",
-      "min_fixed_reward": 3000,
-      "min_hourly_reward": 1200,
-      "include_unspecified": true,
-      "max_proposals": 5,
-      "min_days_left": 1,
-      "include_keywords": "",
-      "sort_by": "proposals_asc"
-    },
-    {
-      "id": "preset_all",
-      "name": "すべて表示（全ジャンル）",
+      "id": "preset_video_all",
+      "name": "🎬 すべての動画・映像案件",
       "platforms": ["crowdworks", "lancers", "coconala", "shufti", "mamaworks"],
       "category": "all",
       "reward_type": "all",
       "min_fixed_reward": 0,
       "min_hourly_reward": 0,
-      "include_unspecified": true,
+      "include_unspecified": false,
       "max_proposals": 999,
       "min_days_left": 1,
       "include_keywords": "",
       "sort_by": "score_desc"
     },
     {
-      "id": "preset_high_dev",
-      "name": "💻 高単価・開発＆AI自動化",
-      "platforms": ["crowdworks", "lancers", "coconala"],
-      "category": "development",
-      "reward_type": "all",
-      "min_fixed_reward": 30000,
-      "min_hourly_reward": 2000,
+      "id": "preset_youtube",
+      "name": "▶️ YouTube動画作成・編集（5,000円〜）",
+      "platforms": ["crowdworks", "lancers", "coconala", "shufti", "mamaworks"],
+      "category": "youtube_video",
+      "reward_type": "fixed",
+      "min_fixed_reward": 5000,
+      "min_hourly_reward": 0,
       "include_unspecified": false,
-      "max_proposals": 15,
+      "max_proposals": 25,
       "min_days_left": 1,
-      "include_keywords": "Python, AI, 自動化, GAS, API, スクレイピング, Web",
+      "include_keywords": "",
       "sort_by": "reward_desc"
+    },
+    {
+      "id": "preset_short",
+      "name": "📱 TikTok・ショート動画",
+      "platforms": ["crowdworks", "lancers", "coconala", "shufti", "mamaworks"],
+      "category": "tiktok_short",
+      "reward_type": "all",
+      "min_fixed_reward": 3000,
+      "min_hourly_reward": 0,
+      "include_unspecified": false,
+      "max_proposals": 25,
+      "min_days_left": 1,
+      "include_keywords": "",
+      "sort_by": "score_desc"
+    },
+    {
+      "id": "preset_corp_ad",
+      "name": "🏢 企業PR・広告・CM制作（高単価）",
+      "platforms": ["crowdworks", "lancers", "coconala", "mamaworks"],
+      "category": "corporate_pr",
+      "reward_type": "fixed",
+      "min_fixed_reward": 20000,
+      "min_hourly_reward": 0,
+      "include_unspecified": false,
+      "max_proposals": 20,
+      "min_days_left": 1,
+      "include_keywords": "",
+      "sort_by": "reward_desc"
+    },
+    {
+      "id": "preset_low_comp",
+      "name": "💎 穴場の動画案件（応募5件以下）",
+      "platforms": ["crowdworks", "lancers", "coconala", "shufti", "mamaworks"],
+      "category": "all",
+      "reward_type": "fixed",
+      "min_fixed_reward": 5000,
+      "min_hourly_reward": 0,
+      "include_unspecified": false,
+      "max_proposals": 5,
+      "min_days_left": 1,
+      "include_keywords": "",
+      "sort_by": "proposals_asc"
     }
   ]
 }

@@ -8,7 +8,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="apple-mobile-web-app-title" content="JobPicker" />
-  <title>Crowd Job Picker | 5大クラウドソーシング横断・条件ピックアップ</title>
+  <title>Crowd Job Picker | 動画・映像・アニメーション案件ピックアップ</title>
   <link rel="manifest" href="./manifest.json" />
   <link rel="stylesheet" href="./style.css" />
 </head>
@@ -37,10 +37,10 @@
   <header class="app-header">
     <div class="header-inner">
       <div class="brand">
-        <span class="brand-badge">FREE &amp; AUTO</span>
+        <span class="brand-badge">VIDEO &amp; MOVIE</span>
         <div>
           <h1>Crowd Job Picker</h1>
-          <p class="brand-sub">5大クラウドソーシング横断・優良案件ピックアップ</p>
+          <p class="brand-sub">5大クラウドソーシング横断・動画・映像・アニメーション特化</p>
         </div>
       </div>
 
@@ -74,7 +74,7 @@
     <section class="filter-panel" aria-label="案件の絞り込み条件">
       <div class="filter-panel-header">
         <div class="filter-panel-title-group">
-          <h2 class="filter-panel-title">特定条件フィルタ</h2>
+          <h2 class="filter-panel-title">動画・映像・アニメーション 特定条件フィルタ</h2>
           <span id="active-filter-summary" class="active-filter-summary">全サイト対象</span>
         </div>
         <div class="filter-panel-actions">
@@ -113,33 +113,73 @@
           </div>
         </div>
 
-        <!-- 2. カテゴリ・職種 -->
+        <!-- 2. 動画・映像・アニメーション 詳細カテゴリ（15分類） -->
         <div class="filter-row">
-          <label class="filter-label">カテゴリ・職種</label>
+          <label class="filter-label">動画・映像・アニメーション 詳細カテゴリ</label>
           <div id="category-radios" class="chip-group">
             <label class="chip-radio">
               <input type="radio" name="category" value="all" checked />
               <span class="chip-box">すべて</span>
             </label>
             <label class="chip-radio">
-              <input type="radio" name="category" value="development" />
-              <span class="chip-box">💻 システム開発・AI・自動化</span>
+              <input type="radio" name="category" value="video_creation" />
+              <span class="chip-box">動画作成・動画制作</span>
             </label>
             <label class="chip-radio">
-              <input type="radio" name="category" value="design" />
-              <span class="chip-box">🎨 Web制作・デザイン</span>
+              <input type="radio" name="category" value="youtube_video" />
+              <span class="chip-box">YouTube動画作成・編集</span>
             </label>
             <label class="chip-radio">
-              <input type="radio" name="category" value="video" />
-              <span class="chip-box">🎬 動画編集・制作</span>
+              <input type="radio" name="category" value="video_editing" />
+              <span class="chip-box">映像編集・映像制作</span>
             </label>
             <label class="chip-radio">
-              <input type="radio" name="category" value="writing" />
-              <span class="chip-box">✍️ ライティング・記事作成</span>
+              <input type="radio" name="category" value="video_shooting" />
+              <span class="chip-box">映像撮影</span>
             </label>
             <label class="chip-radio">
-              <input type="radio" name="category" value="business" />
-              <span class="chip-box">📊 事務・データ入力・その他</span>
+              <input type="radio" name="category" value="char_animation_prod" />
+              <span class="chip-box">キャラクター・アニメーション制作</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="ar_vr" />
+              <span class="chip-box">AR/VRコンテンツ制作・撮影</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="tiktok_short" />
+              <span class="chip-box">TikTok・ショート動画</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="ad_video" />
+              <span class="chip-box">広告動画</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="wedding_event" />
+              <span class="chip-box">結婚式・イベント動画</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="mv_singing" />
+              <span class="chip-box">ミュージックビデオ（MV）・歌ってみた動画</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="motion_graphics" />
+              <span class="chip-box">モーショングラフィックス</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="character_animation" />
+              <span class="chip-box">キャラクターアニメーション</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="cm_pv_drama" />
+              <span class="chip-box">CM・PV・ドラマ制作</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="corporate_pr" />
+              <span class="chip-box">企業紹介・講習・PR動画制作</span>
+            </label>
+            <label class="chip-radio">
+              <input type="radio" name="category" value="video_script" />
+              <span class="chip-box">動画シナリオ・台本・構成作成</span>
             </label>
           </div>
         </div>
@@ -158,7 +198,7 @@
               id="include-keywords"
               class="text-input"
               type="text"
-              placeholder="例: Python, 自動化, YouTube, WordPress"
+              placeholder="例: Premiere, After Effects, ゆっくり, 切り抜き"
             />
           </div>
 
@@ -178,7 +218,7 @@
             </div>
             <details class="exclude-chips-details">
               <summary id="exclude-summary-label" class="exclude-summary-label">
-                自動除外ワード一覧を確認・編集（20件登録中）
+                自動除外ワード一覧を確認・編集
               </summary>
               <div id="exclude-chips-container" class="exclude-chips-container"></div>
             </details>
@@ -197,34 +237,30 @@
           </div>
 
           <div class="filter-field">
-            <label for="min-fixed-input" class="filter-label">最低固定報酬（円以上・直接入力）</label>
+            <label for="min-fixed-input" class="filter-label">最低固定報酬（直接入力・未満を除外）</label>
             <div class="number-input-wrap">
               <input
                 id="min-fixed-input"
                 class="text-input number-input"
-                type="number"
-                min="0"
-                step="1000"
-                value="0"
-                placeholder="例: 15000"
+                type="text"
                 inputmode="numeric"
+                value="0"
+                placeholder="例: 5000（全角・半角OK）"
               />
               <span class="unit-suffix">円〜</span>
             </div>
           </div>
 
           <div class="filter-field">
-            <label for="min-hourly-input" class="filter-label">最低時給（円以上・直接入力）</label>
+            <label for="min-hourly-input" class="filter-label">最低時給（直接入力・未満を除外）</label>
             <div class="number-input-wrap">
               <input
                 id="min-hourly-input"
                 class="text-input number-input"
-                type="number"
-                min="0"
-                step="100"
-                value="0"
-                placeholder="例: 1500"
+                type="text"
                 inputmode="numeric"
+                value="0"
+                placeholder="例: 1500（全角・半角OK）"
               />
               <span class="unit-suffix">円〜</span>
             </div>
@@ -246,8 +282,8 @@
         <div class="filter-bottom-bar">
           <div class="filter-toggles">
             <label class="inline-check">
-              <input id="include-unspecified-check" type="checkbox" checked />
-              <span>「予算相談・未定」の案件も含める</span>
+              <input id="include-unspecified-check" type="checkbox" />
+              <span>「予算相談・未定」の案件も含める（※最低報酬指定時は自動で除外されます）</span>
             </label>
             <label class="inline-check">
               <input id="hide-dismissed-check" type="checkbox" checked />
