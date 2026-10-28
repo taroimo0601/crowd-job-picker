@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-10-28 00:46",
+  "updated_at": "2026-10-28 10:01",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 79,
-    "ng_keyword_count": 5,
-    "total_excluded": 84
+    "ng_keyword_count": 4,
+    "total_excluded": 83
   },
   "password_required": false,
   "password_hash": "",
@@ -829,32 +829,30 @@
       ]
     },
     {
-      "id": "cw_13563995",
+      "id": "cw_13564885",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
-      "title": "【企業案件】継続案件・大量発注YouTubeチャンネル編集メンバー【動画編集】",
-      "url": "https://crowdworks.jp/public/jobs/13563995",
-      "description": "※チャンネル立上げメンバーあるいは、既存動画編集メンバー募集となります。 【 概要 】 youtubeの動画編集 文字入力、音声カット、BGMなど基本操作多めです！ 【 依頼内容 】 お仕事に依頼は以下の通りとな...",
-      "category": "youtube_video",
+      "title": "【完全在宅・時給1,540円〜】カー用品・キャンプ用品の広告動画・画像制作｜どちらかの経験でOK◎改善提案も歓迎✨",
+      "url": "https://crowdworks.jp/public/jobs/13564885",
+      "description": "＼ ＼ カー用品・キャンプ用品ブランドの広告クリエイティブを、あなたの手で ／／ Facebook・Instagram・Amazon広告で使用する 動画または画像クリエイティブの制作をお任せできる方を募集しています✨...",
+      "category": "ad_video",
       "subcategories": [
-        "youtube_video",
-        "video_editing"
+        "ad_video"
       ],
       "reward_type": "fixed",
       "reward_min": 50000,
       "reward_max": 100000,
       "reward_label": "50,000円 〜 100,000円",
       "is_unspecified": false,
-      "proposals": 8,
-      "days_left": 13,
-      "deadline_label": "残り13日",
+      "proposals": 0,
+      "days_left": 5,
+      "deadline_label": "残り5日",
       "is_closed": false,
-      "posted_at": "2026-10-27 18:42",
+      "posted_at": "2026-10-28 08:23",
       "match_score": 94,
       "tags": [
         "高単価5万+",
-        "低倍率",
-        "継続案件"
+        "穴場(応募3件以下)"
       ]
     },
     {
@@ -1090,6 +1088,34 @@
       "deadline_label": "残り2日",
       "is_closed": false,
       "posted_at": "2026-10-16 09:17",
+      "match_score": 88,
+      "tags": [
+        "高単価5万+",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13563995",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【企業案件】継続案件・大量発注YouTubeチャンネル編集メンバー【動画編集】",
+      "url": "https://crowdworks.jp/public/jobs/13563995",
+      "description": "※チャンネル立上げメンバーあるいは、既存動画編集メンバー募集となります。 【 概要 】 youtubeの動画編集 文字入力、音声カット、BGMなど基本操作多めです！ 【 依頼内容 】 お仕事に依頼は以下の通りとな...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 11,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-10-27 18:42",
       "match_score": 88,
       "tags": [
         "高単価5万+",
@@ -1990,6 +2016,64 @@
       ]
     },
     {
+      "id": "cw_13564931",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続依頼】YouTubeチャンネルの分析・運用改善提案ができる方を募集します",
+      "url": "https://crowdworks.jp/public/jobs/13564931",
+      "description": "【募集概要】 合同会社ズイカクエディットでは、法人向けの動画編集サービスを展開しています。 現在、クライアントのYouTubeチャンネルを分析し、企画や構成、撮影方法などの改善提案を行っていただける方を募集しています。 単なる動...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 1,
+      "days_left": 4,
+      "deadline_label": "残り4日",
+      "is_closed": false,
+      "posted_at": "2026-10-28 08:46",
+      "match_score": 88,
+      "tags": [
+        "単価1万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13564853",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "車系・洗車系YouTube動画編集（バラエティ風テロップ歓迎）｜トーク動画／報酬1万円／継続依頼あり",
+      "url": "https://crowdworks.jp/public/jobs/13564853",
+      "description": "【依頼概要】車系・洗車に関するトーク動画編集をお願いできる方を募集します。 動画は30分～(トーク内容により変動)で、バラエティ番組風のテロップや演出を得意とする方を歓迎します。 ※場合によって他の案件も依頼することがあります。 ...",
+      "category": "video_editing",
+      "subcategories": [
+        "video_editing",
+        "youtube_video"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 2,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-10-28 07:49",
+      "match_score": 88,
+      "tags": [
+        "単価1万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cw_13560093",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -2286,34 +2370,6 @@
       "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-10-21 15:16",
-      "match_score": 82,
-      "tags": [
-        "単価2万+",
-        "低倍率"
-      ]
-    },
-    {
-      "id": "cw_13564414",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【副業から人生を変えたい方へ】動画編集スタッフ（未経験可・マニュアルあり）｜アパレル・旅行・グルメ系｜在宅OK",
-      "url": "https://crowdworks.jp/public/jobs/13564414",
-      "description": "ご覧いただきありがとうございます。 「今の生活を抜け出したい」「自分の力で稼ぐスキルを身につけたい」という本気の方を募集しています。 アパレル・旅行・グルメ系のショート動画（Instagram Reels / TikTok /...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 4,
-      "days_left": 2,
-      "deadline_label": "残り2日",
-      "is_closed": false,
-      "posted_at": "2026-10-27 23:18",
       "match_score": 82,
       "tags": [
         "単価2万+",
@@ -2771,7 +2827,7 @@
       "reward_max": 30000,
       "reward_label": "10,000円 〜 30,000円",
       "is_unspecified": false,
-      "proposals": 6,
+      "proposals": 8,
       "days_left": 4,
       "deadline_label": "残り4日",
       "is_closed": false,
@@ -2782,35 +2838,6 @@
         "低倍率",
         "継続案件",
         "プロ編集ソフト"
-      ]
-    },
-    {
-      "id": "cw_13564298",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【副業で一歩踏み出したい方へ✨】カフェの魅力を届けるショート動画制作｜継続依頼あり",
-      "url": "https://crowdworks.jp/public/jobs/13564298",
-      "description": "ご覧いただきありがとうございます！ 今の仕事と並行しながら、何か新しいスキルを身につけたい。 いつかは、自分の好きな理想の働き方を目指したい。 そんな思いを持つ方に向けた、カフェのPRショート動画制作のお仕事です！ 今...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_creation"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 7,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "is_closed": false,
-      "posted_at": "2026-10-27 22:02",
-      "match_score": 82,
-      "tags": [
-        "単価1万+",
-        "低倍率",
-        "継続案件"
       ]
     },
     {
@@ -3187,6 +3214,60 @@
       ]
     },
     {
+      "id": "cw_13564751",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【月40,000円も可！】音声生成＋動画編集のお仕事！",
+      "url": "https://crowdworks.jp/public/jobs/13564751",
+      "description": "数ある中から本案件をご覧いただきありがとうございます！ YouTubeで一緒にチャンネルを盛り上げたい！と思ってくださる編集者様を募集します！！ 今回は音声生成から動画編集まで、1本まるごとお任せしたいと思っています！ ...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 40000,
+      "reward_max": 40000,
+      "reward_label": "40,000円",
+      "is_unspecified": false,
+      "proposals": 11,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-10-28 05:39",
+      "match_score": 76,
+      "tags": [
+        "単価2万+"
+      ]
+    },
+    {
+      "id": "cw_13564414",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【副業から人生を変えたい方へ】動画編集スタッフ（未経験可・マニュアルあり）｜アパレル・旅行・グルメ系｜在宅OK",
+      "url": "https://crowdworks.jp/public/jobs/13564414",
+      "description": "ご覧いただきありがとうございます。 「今の生活を抜け出したい」「自分の力で稼ぐスキルを身につけたい」という本気の方を募集しています。 アパレル・旅行・グルメ系のショート動画（Instagram Reels / TikTok /...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 10,
+      "days_left": 2,
+      "deadline_label": "残り2日",
+      "is_closed": false,
+      "posted_at": "2026-10-27 23:18",
+      "match_score": 76,
+      "tags": [
+        "単価2万+"
+      ]
+    },
+    {
       "id": "cw_13557559",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3349,6 +3430,34 @@
       "deadline_label": "残り1日",
       "is_closed": false,
       "posted_at": "2026-10-22 14:20",
+      "match_score": 76,
+      "tags": [
+        "単価1万+",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13564298",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【副業で一歩踏み出したい方へ✨】カフェの魅力を届けるショート動画制作｜継続依頼あり",
+      "url": "https://crowdworks.jp/public/jobs/13564298",
+      "description": "ご覧いただきありがとうございます！ 今の仕事と並行しながら、何か新しいスキルを身につけたい。 いつかは、自分の好きな理想の働き方を目指したい。 そんな思いを持つ方に向けた、カフェのPRショート動画制作のお仕事です！ 今...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_creation"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 17,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-10-27 22:02",
       "match_score": 76,
       "tags": [
         "単価1万+",
@@ -3772,62 +3881,6 @@
       "tags": [
         "単価1万+",
         "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13564357",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "＼いつか″好き″を仕事に✨／女子旅・ホテル紹介のショート動画編集｜素材支給あり",
-      "url": "https://crowdworks.jp/public/jobs/13564357",
-      "description": "ご覧いただきありがとうございます！ SNSで素敵なホテルを見つけて、次の旅行先を考えたり、いつか泊まってみたい宿を保存したり。 そんな旅行の楽しみを、今度は動画をつくる側から広げてみませんか？ 今回は、女子旅をテーマに、...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 5,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "is_closed": false,
-      "posted_at": "2026-10-27 22:42",
-      "match_score": 76,
-      "tags": [
-        "単価1万+",
-        "低倍率"
-      ]
-    },
-    {
-      "id": "cw_13564409",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "お気に入りのコスメを紹介する美容リール編集｜ポーチの中身・愛用品紹介",
-      "url": "https://crowdworks.jp/public/jobs/13564409",
-      "description": "こんにちは！たくさんの募集の中からご覧いただき、ありがとうございます！ 今回は、普段使っているコスメやお気に入りの美容アイテムを紹介する、Instagramリールなどのショート動画編集をお願いできる方を募集します。 ポーチ...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 4,
-      "days_left": 4,
-      "deadline_label": "残り4日",
-      "is_closed": false,
-      "posted_at": "2026-10-27 23:14",
-      "match_score": 76,
-      "tags": [
-        "単価1万+",
-        "低倍率"
       ]
     },
     {
@@ -4381,35 +4434,6 @@
       ]
     },
     {
-      "id": "cw_13555279",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "30秒動画。After Effectsをご利用される方。1本3000円になります。継続案件でお願いできる方。",
-      "url": "https://crowdworks.jp/public/jobs/13555279",
-      "description": "【 概要 】 After Effectsでショート動画の作成をお願いします。 【 依頼内容 】 30秒ぐらいの尺になります。 お渡しするaiデータを元に制作をお願いします。 過去のファイル収集データはお渡し可能です。...",
-      "category": "motion_graphics",
-      "subcategories": [
-        "motion_graphics",
-        "tiktok_short"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 3000,
-      "reward_max": 5000,
-      "reward_label": "3,000円 〜 5,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 9,
-      "deadline_label": "残り9日",
-      "is_closed": false,
-      "posted_at": "2026-10-23 14:47",
-      "match_score": 76,
-      "tags": [
-        "穴場(応募3件以下)",
-        "継続案件",
-        "プロ編集ソフト"
-      ]
-    },
-    {
       "id": "cw_13555693",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -4911,7 +4935,7 @@
       "reward_max": 0,
       "reward_label": "予算相談・未定",
       "is_unspecified": true,
-      "proposals": 1,
+      "proposals": 2,
       "days_left": 4,
       "deadline_label": "残り4日",
       "is_closed": false,
@@ -5040,26 +5064,27 @@
       ]
     },
     {
-      "id": "cw_13564488",
+      "id": "cw_13565019",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
-      "title": "【初心者歓迎】自己啓発系ショート動画の編集をしてくださる方を募集！",
-      "url": "https://crowdworks.jp/public/jobs/13564488",
-      "description": "今回は、**20代向けの自己啓発をテーマにしたショート動画**を編集してくださる方を募集しています！ 「自分を変えたい」「新しいことに挑戦したい」「もっと成長したい」 そんな前向きな気持ちになれる動画を一緒に制作していただ...",
-      "category": "tiktok_short",
+      "title": "グルメ系ユーチューブ動画作成",
+      "url": "https://crowdworks.jp/public/jobs/13565019",
+      "description": "【 依頼内容 】 グルメ系YouTube動画の編集業務をお願いいたします。 【 作業ボリューム 】 月５本 【 納期 】 要相談 【 契約金額(税抜) 】 5000円 ※契約金額（税込）からシス...",
+      "category": "youtube_video",
       "subcategories": [
-        "tiktok_short"
+        "youtube_video",
+        "video_creation"
       ],
       "reward_type": "fixed",
       "reward_min": 0,
       "reward_max": 5000,
       "reward_label": "〜 5,000円",
       "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 7,
-      "deadline_label": "残り7日",
+      "proposals": 3,
+      "days_left": 14,
+      "deadline_label": "残り14日",
       "is_closed": false,
-      "posted_at": "2026-10-28 00:03",
+      "posted_at": "2026-10-28 09:35",
       "match_score": 76,
       "tags": [
         "5,000円+",
@@ -5182,6 +5207,60 @@
       ]
     },
     {
+      "id": "cw_13564357",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "＼いつか″好き″を仕事に✨／女子旅・ホテル紹介のショート動画編集｜素材支給あり",
+      "url": "https://crowdworks.jp/public/jobs/13564357",
+      "description": "ご覧いただきありがとうございます！ SNSで素敵なホテルを見つけて、次の旅行先を考えたり、いつか泊まってみたい宿を保存したり。 そんな旅行の楽しみを、今度は動画をつくる側から広げてみませんか？ 今回は、女子旅をテーマに、...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 16,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-10-27 22:42",
+      "match_score": 70,
+      "tags": [
+        "単価1万+"
+      ]
+    },
+    {
+      "id": "cw_13564409",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "お気に入りのコスメを紹介する美容リール編集｜ポーチの中身・愛用品紹介",
+      "url": "https://crowdworks.jp/public/jobs/13564409",
+      "description": "こんにちは！たくさんの募集の中からご覧いただき、ありがとうございます！ 今回は、普段使っているコスメやお気に入りの美容アイテムを紹介する、Instagramリールなどのショート動画編集をお願いできる方を募集します。 ポーチ...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 14,
+      "days_left": 4,
+      "deadline_label": "残り4日",
+      "is_closed": false,
+      "posted_at": "2026-10-27 23:14",
+      "match_score": 70,
+      "tags": [
+        "単価1万+"
+      ]
+    },
+    {
       "id": "cw_13560952",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -5198,7 +5277,7 @@
       "reward_max": 30000,
       "reward_label": "10,000円 〜 30,000円",
       "is_unspecified": false,
-      "proposals": 25,
+      "proposals": 27,
       "days_left": 2,
       "deadline_label": "残り2日",
       "is_closed": false,
@@ -5253,7 +5332,7 @@
       "reward_max": 30000,
       "reward_label": "10,000円 〜 30,000円",
       "is_unspecified": false,
-      "proposals": 15,
+      "proposals": 23,
       "days_left": 4,
       "deadline_label": "残り4日",
       "is_closed": false,
@@ -5280,7 +5359,7 @@
       "reward_max": 30000,
       "reward_label": "10,000円 〜 30,000円",
       "is_unspecified": false,
-      "proposals": 19,
+      "proposals": 21,
       "days_left": 4,
       "deadline_label": "残り4日",
       "is_closed": false,
@@ -5826,87 +5905,6 @@
       "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-10-21 21:59",
-      "match_score": 70,
-      "tags": [
-        "単価1万+"
-      ]
-    },
-    {
-      "id": "cw_13554144",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【在宅ワーク】新店舗カフェのオープニングスタッフ求人PRショート動画編集スタッフ募集！",
-      "url": "https://crowdworks.jp/public/jobs/13554144",
-      "description": "数ある案件の中からご覧いただきありがとうございます！ 新しくオープンするカフェの魅力を伝え、 一緒に働くスタッフを募集するための 求人PRショート動画を発信する動画編集スタッフを募集します。 ━━━━━━━━━━━...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 10,
-      "days_left": 7,
-      "deadline_label": "残り7日",
-      "is_closed": false,
-      "posted_at": "2026-10-23 07:13",
-      "match_score": 70,
-      "tags": [
-        "単価1万+"
-      ]
-    },
-    {
-      "id": "cw_13557690",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "ショート動画編集のお仕事 / 音楽・歌についての情報発信🎧/ 20代歓迎",
-      "url": "https://crowdworks.jp/public/jobs/13557690",
-      "description": "ご覧いただきありがとうございます！ 普段はミュージシャン向けに音響サポートを行っている篠月と申します。 現在、SNSで歌や録音、音楽活動に役立つ情報を発信しており、今回はそのショート動画を編集してくださる方を募集します🎧 音楽が...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 19,
-      "days_left": 4,
-      "deadline_label": "残り4日",
-      "is_closed": false,
-      "posted_at": "2026-10-25 01:51",
-      "match_score": 70,
-      "tags": [
-        "単価1万+"
-      ]
-    },
-    {
-      "id": "cw_13534378",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "カフェ巡りが好きな方へ✨｜おしゃれな東京カフェ店舗のPRショート動画編集",
-      "url": "https://crowdworks.jp/public/jobs/13534378",
-      "description": "ご覧いただきありがとうございます！ 休日に気になるカフェを探して出かけたり、Instagramでおしゃれなカフェやスイーツを保存したり。 そんな時間が好きな一方で、これからの自分に活かせるスキルも身につけていきたいと感じている...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 29,
-      "days_left": 7,
-      "deadline_label": "残り7日",
-      "is_closed": false,
-      "posted_at": "2026-10-25 13:19",
       "match_score": 70,
       "tags": [
         "単価1万+"
