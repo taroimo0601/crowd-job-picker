@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-02 01:37",
+  "updated_at": "2026-11-02 10:19",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 80,
-    "ng_keyword_count": 5,
-    "total_excluded": 85
+    "ng_keyword_count": 7,
+    "total_excluded": 87
   },
   "password_required": false,
   "password_hash": "",
@@ -486,36 +486,6 @@
       "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-10-30 10:14",
-      "match_score": 99,
-      "tags": [
-        "高単価5万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13575040",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "継続案件・大量発注YouTubeチャンネル編集メンバー【動画編集】",
-      "url": "https://crowdworks.jp/public/jobs/13575040",
-      "description": "※チャンネル立上げメンバーあるいは、既存動画編集メンバー募集となります。 またAI×プレミアプロでサクッとクオリティ維持できる動画制作を学べる機会になります。 【 概要 】 youtubeの動画編集 文字入力、音声カット、...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_creation",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 50000,
-      "reward_max": 100000,
-      "reward_label": "50,000円 〜 100,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 13,
-      "deadline_label": "残り13日",
-      "is_closed": false,
-      "posted_at": "2026-11-01 22:21",
       "match_score": 99,
       "tags": [
         "高単価5万+",
@@ -1213,7 +1183,7 @@
       "reward_max": 150000,
       "reward_label": "100,000円 〜 150,000円",
       "is_unspecified": false,
-      "proposals": 1,
+      "proposals": 3,
       "days_left": 4,
       "deadline_label": "残り4日",
       "is_closed": false,
@@ -1251,6 +1221,36 @@
         "高単価5万+",
         "穴場(応募3件以下)",
         "プロ編集ソフト"
+      ]
+    },
+    {
+      "id": "cw_13575040",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "継続案件・大量発注YouTubeチャンネル編集メンバー【動画編集】",
+      "url": "https://crowdworks.jp/public/jobs/13575040",
+      "description": "※チャンネル立上げメンバーあるいは、既存動画編集メンバー募集となります。 またAI×プレミアプロでサクッとクオリティ維持できる動画制作を学べる機会になります。 【 概要 】 youtubeの動画編集 文字入力、音声カット、...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_creation",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 5,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-11-01 22:21",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "低倍率",
+        "継続案件"
       ]
     },
     {
@@ -1976,33 +1976,6 @@
       "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-10-31 20:37",
-      "match_score": 88,
-      "tags": [
-        "高単価5万+",
-        "低倍率"
-      ]
-    },
-    {
-      "id": "cw_13575087",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "編集スキル、もっと使える場所があったらいいのに――動画編集のお仕事",
-      "url": "https://crowdworks.jp/public/jobs/13575087",
-      "description": "「副業を始めたいけど、何をすればいいか迷っている」「動画の扱いは慣れているのに、活かせる場所がない」――そんな気持ちを抱えている方に読んでほしい募集です。 ここで担当していただくのは、動画編集の仕事。特定の業界に特化した難しい内...",
-      "category": "video_editing",
-      "subcategories": [
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 100000,
-      "reward_max": 150000,
-      "reward_label": "100,000円 〜 150,000円",
-      "is_unspecified": false,
-      "proposals": 8,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "is_closed": false,
-      "posted_at": "2026-11-01 22:45",
       "match_score": 88,
       "tags": [
         "高単価5万+",
@@ -2859,35 +2832,6 @@
       ]
     },
     {
-      "id": "cw_13575252",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【月10万以上】エンタメ系YouTube編集者大募集！！",
-      "url": "https://crowdworks.jp/public/jobs/13575252",
-      "description": "【YouTube動画編集者募集｜エンタメ系・継続案件あり】 ホスト系エンタメ系のYouTube動画編集をお任せできる方を募集しています！ 出演者のキャラクターや会話の面白さを、編集で引き出すのが得意な方を探しております。 ⸻ ...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 15004,
-      "reward_max": 15004,
-      "reward_label": "15,004円",
-      "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-02 01:19",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
       "id": "cw_13562052",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3470,6 +3414,32 @@
         "単価1万+",
         "穴場(応募3件以下)",
         "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13575087",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "編集スキル、もっと使える場所があったらいいのに――動画編集のお仕事",
+      "url": "https://crowdworks.jp/public/jobs/13575087",
+      "description": "「副業を始めたいけど、何をすればいいか迷っている」「動画の扱いは慣れているのに、活かせる場所がない」――そんな気持ちを抱えている方に読んでほしい募集です。 ここで担当していただくのは、動画編集の仕事。特定の業界に特化した難しい内...",
+      "category": "video_editing",
+      "subcategories": [
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 100000,
+      "reward_max": 150000,
+      "reward_label": "100,000円 〜 150,000円",
+      "is_unspecified": false,
+      "proposals": 18,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-11-01 22:45",
+      "match_score": 82,
+      "tags": [
+        "高単価5万+"
       ]
     },
     {
@@ -4196,6 +4166,35 @@
         "単価2万+",
         "低倍率",
         "プロ編集ソフト"
+      ]
+    },
+    {
+      "id": "cw_13575252",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【月10万以上】エンタメ系YouTube編集者大募集！！",
+      "url": "https://crowdworks.jp/public/jobs/13575252",
+      "description": "【YouTube動画編集者募集｜エンタメ系・継続案件あり】 ホスト系エンタメ系のYouTube動画編集をお任せできる方を募集しています！ 出演者のキャラクターや会話の面白さを、編集で引き出すのが得意な方を探しております。 ⸻ ...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 15004,
+      "reward_max": 15004,
+      "reward_label": "15,004円",
+      "is_unspecified": false,
+      "proposals": 5,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-02 01:19",
+      "match_score": 82,
+      "tags": [
+        "単価1万+",
+        "低倍率",
+        "継続案件"
       ]
     },
     {
@@ -5034,34 +5033,6 @@
       ]
     },
     {
-      "id": "cw_13575241",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "副業のスタートに⭐️｜話題のホテル・旅館を紹介するSNSショート動画編集",
-      "url": "https://crowdworks.jp/public/jobs/13575241",
-      "description": "ご覧いただきありがとうございます！ 「休日や連休には、少し特別なホテルに泊まってみたい」 「SNSでおしゃれなホテルや旅スポットを探すのが好き」 「いつか好きな旅行や旅しながら自由な働き方を目指して、たくさんのことに挑戦して...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 7,
-      "deadline_label": "残り7日",
-      "is_closed": false,
-      "posted_at": "2026-11-02 01:05",
-      "match_score": 82,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
       "id": "cw_13568614",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -5844,7 +5815,7 @@
       "reward_max": 50000,
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
-      "proposals": 28,
+      "proposals": 29,
       "days_left": 5,
       "deadline_label": "残り5日",
       "is_closed": false,
@@ -5934,6 +5905,34 @@
       "match_score": 76,
       "tags": [
         "単価2万+"
+      ]
+    },
+    {
+      "id": "cw_13573798",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【好きなカフェを仕事につなげたい方へ☕】お店の魅力を届けるPRショート動画制作｜継続依頼あり",
+      "url": "https://crowdworks.jp/public/jobs/13573798",
+      "description": "今の仕事を続けながら、新しいスキルを身につけてみたい。 好きなことを活かして、これまでとは違う経験をしてみたい。 そんな方に向けた、カフェやスイーツ店の魅力を発信するショート動画制作のお仕事です。 普段何気なく見ているカフェ...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_creation"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 29,
+      "days_left": 4,
+      "deadline_label": "残り4日",
+      "is_closed": false,
+      "posted_at": "2026-11-01 00:05",
+      "match_score": 76,
+      "tags": [
+        "単価1万+",
+        "継続案件"
       ]
     }
   ]
