@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06 05:29",
+  "updated_at": "2026-11-06 11:00",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 81,
@@ -2288,6 +2288,35 @@
       ]
     },
     {
+      "id": "cw_13585838",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続案件・月5〜20本】ショート動画編集者募集！｜ジャンル多数・20代歓迎",
+      "url": "https://crowdworks.jp/public/jobs/13585838",
+      "description": "ご覧いただきありがとうございます！ 案件数の増加に伴い、ショート動画の編集をお願いできる方を募集いたします！ 単発ではなく、継続的にお仕事をお願いできる方を探しております。 【依頼内容】 Instagramリー...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 2,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-06 10:40",
+      "match_score": 94,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cw_13569160",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -2631,33 +2660,6 @@
       "tags": [
         "高単価5万+",
         "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13584909",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【美容系SNS・ショート動画】ディレクター募集！ 企画に関わりたい方！",
-      "url": "https://crowdworks.jp/public/jobs/13584909",
-      "description": "ご覧いただきありがとうございます！ ショート動画のディレクション業務をお願いできる方を探しております！ 美容系の商材が多いため、美容が好きな女性大歓迎です。 基本的に平日日中連絡・MTGができる方ご応募お待ちしております。 ...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 50000,
-      "reward_max": 100000,
-      "reward_label": "50,000円 〜 100,000円",
-      "is_unspecified": false,
-      "proposals": 8,
-      "days_left": 13,
-      "deadline_label": "残り13日",
-      "is_closed": false,
-      "posted_at": "2026-11-05 19:24",
-      "match_score": 88,
-      "tags": [
-        "高単価5万+",
-        "低倍率"
       ]
     },
     {
@@ -4735,11 +4737,37 @@
       "reward_max": 150000,
       "reward_label": "100,000円 〜 150,000円",
       "is_unspecified": false,
-      "proposals": 11,
+      "proposals": 14,
       "days_left": 13,
       "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-11-05 18:24",
+      "match_score": 82,
+      "tags": [
+        "高単価5万+"
+      ]
+    },
+    {
+      "id": "cw_13584909",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【美容系SNS・ショート動画】ディレクター募集！ 企画に関わりたい方！",
+      "url": "https://crowdworks.jp/public/jobs/13584909",
+      "description": "ご覧いただきありがとうございます！ ショート動画のディレクション業務をお願いできる方を探しております！ 美容系の商材が多いため、美容が好きな女性大歓迎です。 基本的に平日日中連絡・MTGができる方ご応募お待ちしております。 ...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 12,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-11-05 19:24",
       "match_score": 82,
       "tags": [
         "高単価5万+"
@@ -5896,36 +5924,6 @@
       "tags": [
         "単価1万+",
         "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "lc_vid_01",
-      "platform": "lancers",
-      "platform_name": "ランサーズ",
-      "title": "【1本12,000円〜・長期継続】ビジネス・金融解説系YouTube動画（15分尺）の編集パートナー募集（Premiere Pro）",
-      "url": "https://www.lancers.jp/work/search/multimedia/movie?open=1&keyword=YouTube+%E5%8B%95%E7%94%BB%E7%B7%A8%E9%9B%86",
-      "description": "完成尺12〜15分のYouTube長尺解説動画のジェットカット、テロップ挿入、BGM・SE設定をお願いします。デザインテンプレート完備で週2〜3本の継続依頼が可能です。",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing",
-        "video_creation"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 12000,
-      "reward_max": 20000,
-      "reward_label": "12,000円 〜 20,000円",
-      "is_unspecified": false,
-      "proposals": 4,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "posted_at": "2026-10-22 17:00",
-      "match_score": 82,
-      "tags": [
-        "単価1万+",
-        "低倍率",
-        "継続案件",
-        "プロ編集ソフト"
       ]
     }
   ]
