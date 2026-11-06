@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-06 20:52",
+  "updated_at": "2026-11-07 04:52",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 80,
-    "ng_keyword_count": 5,
-    "total_excluded": 85
+    "ng_keyword_count": 3,
+    "total_excluded": 83
   },
   "password_required": false,
   "password_hash": "",
@@ -565,8 +565,8 @@
       "reward_label": "時給 2,000円 〜 3,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 2,
-      "deadline_label": "残り2日",
+      "days_left": 1,
+      "deadline_label": "残り1日",
       "is_closed": false,
       "posted_at": "2026-10-26 14:40",
       "match_score": 96,
@@ -983,8 +983,8 @@
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 6,
-      "deadline_label": "残り6日",
+      "days_left": 5,
+      "deadline_label": "残り5日",
       "is_closed": false,
       "posted_at": "2026-10-29 16:02",
       "match_score": 94,
@@ -1917,9 +1917,9 @@
       "reward_max": 100000,
       "reward_label": "50,000円 〜 100,000円",
       "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 3,
-      "deadline_label": "残り3日",
+      "proposals": 2,
+      "days_left": 2,
+      "deadline_label": "残り2日",
       "is_closed": false,
       "posted_at": "2026-11-06 16:15",
       "match_score": 94,
@@ -1947,9 +1947,9 @@
       "reward_max": 100000,
       "reward_label": "50,000円 〜 100,000円",
       "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 14,
-      "deadline_label": "残り14日",
+      "proposals": 1,
+      "days_left": 13,
+      "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-11-06 16:01",
       "match_score": 94,
@@ -2375,6 +2375,35 @@
       ]
     },
     {
+      "id": "cw_13587750",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【長期案件/VTuber好き大歓迎！】最大手VTuberのYouTube切り抜き動画の編集者さんを募集します！",
+      "url": "https://crowdworks.jp/public/jobs/13587750",
+      "description": "数あるお仕事の中からご興味を持って頂き、誠にありがとうございます！ 【 概要 】 私が運営するVTuberさんの切り抜きチャンネルで、動画を一緒に制作してくださる編集者さんを募集しています！ 「視聴者に刺さるテンポ感」や「演...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "char_animation_prod"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 2,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-11-06 23:13",
+      "match_score": 94,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cw_13569160",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -2511,8 +2540,8 @@
       "reward_label": "時給 2,000円",
       "is_unspecified": false,
       "proposals": 1,
-      "days_left": 2,
-      "deadline_label": "残り2日",
+      "days_left": 1,
+      "deadline_label": "残り1日",
       "is_closed": false,
       "posted_at": "2026-10-26 14:40",
       "match_score": 90,
@@ -3722,9 +3751,9 @@
       "reward_max": 50000,
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 3,
-      "deadline_label": "残り3日",
+      "proposals": 1,
+      "days_left": 2,
+      "deadline_label": "残り2日",
       "is_closed": false,
       "posted_at": "2026-11-06 16:16",
       "match_score": 88,
@@ -4672,6 +4701,65 @@
       ]
     },
     {
+      "id": "cw_13587984",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続案件】YouTube動画編集者募集｜1本20,000〜30,000円｜クリエイティブな提案・AI活用ができる方歓迎！",
+      "url": "https://crowdworks.jp/public/jobs/13587984",
+      "description": "ご覧いただきありがとうございます！ YouTube動画制作において、継続的にご協力いただける動画編集者の方を募集しております。 今回は、ただ指示通りに編集するだけでなく、視聴者目線で「どうすればもっと面白くなるか」「どうすれば最後...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_creation",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-07 04:21",
+      "match_score": 88,
+      "tags": [
+        "単価1万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13587916",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【ヒカル切り抜き】動画タイトル・見出しテロップの企画考案（元動画のカット・テロップ・SE作業なし／長期継続あり／ヒカル好き歓迎）",
+      "url": "https://crowdworks.jp/public/jobs/13587916",
+      "description": "■ お仕事の概要 ご覧いただきありがとうございます！ YouTube「ヒカル」さんの切り抜きチャンネルを運営しております。 元動画側で「カット」「フルテロップ」「SE」などの編集は完了していますので、本案件では「思わずクリックし...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 3,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-07 00:54",
+      "match_score": 88,
+      "tags": [
+        "単価1万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cw_13572068",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -4721,7 +4809,7 @@
       "proposals": 0,
       "days_left": 7,
       "deadline_label": "募集中",
-      "posted_at": "2026-11-06 05:30",
+      "posted_at": "2026-11-07 04:52",
       "match_score": 88,
       "tags": [
         "時給制",
@@ -4825,8 +4913,8 @@
       "reward_label": "100,000円 〜 150,000円",
       "is_unspecified": false,
       "proposals": 19,
-      "days_left": 13,
-      "deadline_label": "残り13日",
+      "days_left": 12,
+      "deadline_label": "残り12日",
       "is_closed": false,
       "posted_at": "2026-11-05 18:24",
       "match_score": 82,
@@ -5355,8 +5443,8 @@
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
       "proposals": 6,
-      "days_left": 5,
-      "deadline_label": "残り5日",
+      "days_left": 4,
+      "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-10-28 18:43",
       "match_score": 82,
@@ -5838,92 +5926,6 @@
       "match_score": 82,
       "tags": [
         "単価2万+",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13583218",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "📸【20代～30代前半・未経験OK！】「SNS映えする料理」をテーマにしたショート動画編集者さんを募集します✨",
-      "url": "https://crowdworks.jp/public/jobs/13583218",
-      "description": "ご覧いただきありがとうございます！ 今回は、20代～30代前半の方を対象に、見た目がおしゃれで思わず写真や動画を撮りたくなるような、SNS映えする料理を紹介するショート動画を編集してくださる方を募集します😊 カラフルで華や...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 4,
-      "days_left": 4,
-      "deadline_label": "残り4日",
-      "is_closed": false,
-      "posted_at": "2026-11-05 14:43",
-      "match_score": 82,
-      "tags": [
-        "単価2万+",
-        "低倍率"
-      ]
-    },
-    {
-      "id": "cw_13554092",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【Premiere Pro必須】企業のYouTube動画編集※pcスペック記載必須（Windows対象外）",
-      "url": "https://crowdworks.jp/public/jobs/13554092",
-      "description": "【 依頼内容 】 ビジネス系YouTubeチャンネルの動画編集。 フォーマットあり premiere Pro使用(一部フォトショップ使用） 【 作業ボリューム 】 1本お願いいたします！ （完成尺は、素材尺(1時間ほど...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 20000,
-      "reward_max": 20000,
-      "reward_label": "20,000円",
-      "is_unspecified": false,
-      "proposals": 4,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-10-23 03:02",
-      "match_score": 82,
-      "tags": [
-        "単価2万+",
-        "低倍率",
-        "プロ編集ソフト"
-      ]
-    },
-    {
-      "id": "cw_13575252",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【月10万以上】エンタメ系YouTube編集者大募集！！",
-      "url": "https://crowdworks.jp/public/jobs/13575252",
-      "description": "【YouTube動画編集者募集｜エンタメ系・継続案件あり】 ホスト系エンタメ系のYouTube動画編集をお任せできる方を募集しています！ 出演者のキャラクターや会話の面白さを、編集で引き出すのが得意な方を探しております。 ⸻ ...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 15004,
-      "reward_max": 15004,
-      "reward_label": "15,004円",
-      "is_unspecified": false,
-      "proposals": 5,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-02 01:19",
-      "match_score": 82,
-      "tags": [
-        "単価1万+",
-        "低倍率",
         "継続案件"
       ]
     }
