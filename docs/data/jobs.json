@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07 04:52",
+  "updated_at": "2026-11-07 10:41",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 80,
@@ -2391,7 +2391,7 @@
       "reward_max": 50000,
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
-      "proposals": 2,
+      "proposals": 3,
       "days_left": 13,
       "deadline_label": "残り13日",
       "is_closed": false,
@@ -3763,6 +3763,65 @@
       ]
     },
     {
+      "id": "cw_13588063",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続依頼・単価アップあり】YouTube会話劇アニメの動画編集者募集｜参考動画のクオリティ重視",
+      "url": "https://crowdworks.jp/public/jobs/13588063",
+      "description": "ご覧いただきありがとうございます！ YouTubeチャンネル「BIRDLAND」を運営しております。 https://www.youtube.com/@BIRDLAND-music 今回、新たに会話劇アニメーションの制作を開...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 8,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-07 08:50",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "低倍率",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13588052",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【昇級昇格あり】長期的に動画編集をご依頼できる方を緊急募集",
+      "url": "https://crowdworks.jp/public/jobs/13588052",
+      "description": "【概要】 ご覧いただきありがとうございます！ 現在、SNS・YouTube向け動画のご依頼増加に伴い、 継続してご一緒できる動画編集スタッフを募集しております。 実務経験が浅い方でも安心してご応募いただけます。 【依...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 7,
+      "days_left": 5,
+      "deadline_label": "残り5日",
+      "is_closed": false,
+      "posted_at": "2026-11-07 08:34",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "低倍率",
+        "継続案件",
+        "急募"
+      ]
+    },
+    {
       "id": "cc_vid_02",
       "platform": "coconala",
       "platform_name": "ココナラ（公開依頼）",
@@ -4701,16 +4760,15 @@
       ]
     },
     {
-      "id": "cw_13587984",
+      "id": "cw_13588194",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
-      "title": "【継続案件】YouTube動画編集者募集｜1本20,000〜30,000円｜クリエイティブな提案・AI活用ができる方歓迎！",
-      "url": "https://crowdworks.jp/public/jobs/13587984",
-      "description": "ご覧いただきありがとうございます！ YouTube動画制作において、継続的にご協力いただける動画編集者の方を募集しております。 今回は、ただ指示通りに編集するだけでなく、視聴者目線で「どうすればもっと面白くなるか」「どうすれば最後...",
+      "title": "情報系 YouTube 動画の編集業務",
+      "url": "https://crowdworks.jp/public/jobs/13588194",
+      "description": "【継続・単価アップあり】AI解説YouTubeの動画編集者募集 AIツールの使い方を紹介する、完成尺10〜15分のYouTube動画の編集をお願いします。 操作画面や説明を、初心者にもわかりやすく見せられる方を募集します。 ■ ...",
       "category": "youtube_video",
       "subcategories": [
         "youtube_video",
-        "video_creation",
         "video_editing"
       ],
       "reward_type": "fixed",
@@ -4722,36 +4780,7 @@
       "days_left": 14,
       "deadline_label": "残り14日",
       "is_closed": false,
-      "posted_at": "2026-11-07 04:21",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13587916",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【ヒカル切り抜き】動画タイトル・見出しテロップの企画考案（元動画のカット・テロップ・SE作業なし／長期継続あり／ヒカル好き歓迎）",
-      "url": "https://crowdworks.jp/public/jobs/13587916",
-      "description": "■ お仕事の概要 ご覧いただきありがとうございます！ YouTube「ヒカル」さんの切り抜きチャンネルを運営しております。 元動画側で「カット」「フルテロップ」「SE」などの編集は完了していますので、本案件では「思わずクリックし...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-07 00:54",
+      "posted_at": "2026-11-07 10:34",
       "match_score": 88,
       "tags": [
         "単価1万+",
@@ -4809,7 +4838,7 @@
       "proposals": 0,
       "days_left": 7,
       "deadline_label": "募集中",
-      "posted_at": "2026-11-07 04:52",
+      "posted_at": "2026-11-07 10:41",
       "match_score": 88,
       "tags": [
         "時給制",
@@ -4912,7 +4941,7 @@
       "reward_max": 150000,
       "reward_label": "100,000円 〜 150,000円",
       "is_unspecified": false,
-      "proposals": 19,
+      "proposals": 20,
       "days_left": 12,
       "deadline_label": "残り12日",
       "is_closed": false,
@@ -5899,34 +5928,6 @@
       "tags": [
         "単価2万+",
         "低倍率"
-      ]
-    },
-    {
-      "id": "cw_13583278",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【継続依頼】ビジネス系YouTube動画 約20分程度の編集 ※参考プロマネあり",
-      "url": "https://crowdworks.jp/public/jobs/13583278",
-      "description": "【 依頼内容 】 ビジネス系YouTube動画のテロップ入れをお願いいたします 参考プロマネ・参考チャンネルの共有があります 【業務内容】 YouTube動画素材のフル編集 【業務の流れ】 素材尺30〜40分の素材...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 21,
-      "days_left": 1,
-      "deadline_label": "残り1日",
-      "is_closed": false,
-      "posted_at": "2026-11-05 16:07",
-      "match_score": 82,
-      "tags": [
-        "単価2万+",
-        "継続案件"
       ]
     }
   ]
