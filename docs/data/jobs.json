@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-08 10:09",
+  "updated_at": "2026-11-08 20:05",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 83,
-    "ng_keyword_count": 3,
-    "total_excluded": 86
+    "closed_count": 0,
+    "ng_keyword_count": 0,
+    "total_excluded": 0
   },
   "password_required": false,
   "password_hash": "",
@@ -4925,7 +4925,7 @@
       "proposals": 0,
       "days_left": 7,
       "deadline_label": "募集中",
-      "posted_at": "2026-11-08 10:10",
+      "posted_at": "2026-11-08 20:05",
       "match_score": 88,
       "tags": [
         "時給制",
