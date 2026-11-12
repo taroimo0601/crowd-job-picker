@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-12 21:17",
+  "updated_at": "2026-11-13 05:40",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 81,
+    "closed_count": 82,
     "ng_keyword_count": 2,
-    "total_excluded": 83
+    "total_excluded": 84
   },
   "password_required": false,
   "password_hash": "",
@@ -771,8 +771,8 @@
       "reward_label": "時給 2,000円 〜 3,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 11,
-      "deadline_label": "残り11日",
+      "days_left": 10,
+      "deadline_label": "残り10日",
       "is_closed": false,
       "posted_at": "2026-11-09 19:55",
       "match_score": 96,
@@ -2945,8 +2945,8 @@
       "reward_label": "時給 5,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 12,
-      "deadline_label": "残り12日",
+      "days_left": 11,
+      "deadline_label": "残り11日",
       "is_closed": false,
       "posted_at": "2026-11-10 16:16",
       "match_score": 90,
@@ -4618,8 +4618,8 @@
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
       "proposals": 3,
-      "days_left": 11,
-      "deadline_label": "残り11日",
+      "days_left": 10,
+      "deadline_label": "残り10日",
       "is_closed": false,
       "posted_at": "2026-11-09 17:51",
       "match_score": 88,
@@ -5883,40 +5883,10 @@
       "reward_label": "10,000円 〜 30,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 14,
-      "deadline_label": "残り14日",
+      "days_left": 13,
+      "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-11-12 09:59",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13599789",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【継続・月4本】海外向けYouTube（英語）のドキュメンタリー動画編集｜図解・地図・グラフのモーショングラフィックス",
-      "url": "https://crowdworks.jp/public/jobs/13599789",
-      "description": "はじめまして。中野と申します。 2027年に立ち上げる海外向け（英語）YouTubeチャンネルの動画編集者を募集します。 日本の企業や社会の出来事を、一次資料をもとに物語として解説するドキュメンタリー形式のチャンネルです。顔出しや...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "motion_graphics",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 1,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-12 21:01",
       "match_score": 88,
       "tags": [
         "単価1万+",
@@ -5971,9 +5941,9 @@
       "reward_max": 5000,
       "reward_label": "時給 5,000円",
       "is_unspecified": false,
-      "proposals": 4,
-      "days_left": 12,
-      "deadline_label": "残り12日",
+      "proposals": 5,
+      "days_left": 11,
+      "deadline_label": "残り11日",
       "is_closed": false,
       "posted_at": "2026-11-10 16:14",
       "match_score": 84,
@@ -5981,6 +5951,32 @@
         "時給制",
         "高時給2,000円+",
         "低倍率"
+      ]
+    },
+    {
+      "id": "cw_13584788",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "教材動画の編集",
+      "url": "https://crowdworks.jp/public/jobs/13584788",
+      "description": "【 概要 】 通信教育で使用する映像教材の編集をお願いします。 データ量が大きいので、京都で一度データの受け渡し方法などの相談のできる方。 【 依頼内容 】 撮影素材を提供しますので、 20~30分程度の教材のカ...",
+      "category": "video_editing",
+      "subcategories": [
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 100000,
+      "reward_max": 150000,
+      "reward_label": "100,000円 〜 150,000円",
+      "is_unspecified": false,
+      "proposals": 25,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-11-05 18:24",
+      "match_score": 82,
+      "tags": [
+        "高単価5万+"
       ]
     }
   ]
