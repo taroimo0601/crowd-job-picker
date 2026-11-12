@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-12 11:43",
+  "updated_at": "2026-11-12 21:17",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 83,
+    "closed_count": 81,
     "ng_keyword_count": 2,
-    "total_excluded": 85
+    "total_excluded": 83
   },
   "password_required": false,
   "password_hash": "",
@@ -2957,35 +2957,6 @@
       ]
     },
     {
-      "id": "cw_13594840",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "12/17(木)大阪での撮影カメラマン募集 （Instagramのリール動画撮影）",
-      "url": "https://crowdworks.jp/public/jobs/13594840",
-      "description": "【 依頼内容 】 採用目的のショート動画撮影の業務をお願いいたします。 業務 ・ショート動画撮影 参考映像 https://www.instagram.com/reel/DWkzDlQCq8i/?utm_source...",
-      "category": "video_shooting",
-      "subcategories": [
-        "video_shooting",
-        "tiktok_short"
-      ],
-      "reward_type": "hourly",
-      "reward_min": 5000,
-      "reward_max": 5000,
-      "reward_label": "時給 5,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 12,
-      "deadline_label": "残り12日",
-      "is_closed": false,
-      "posted_at": "2026-11-10 16:14",
-      "match_score": 90,
-      "tags": [
-        "時給制",
-        "高時給2,000円+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
       "id": "cw_13581610",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3097,6 +3068,35 @@
       "deadline_label": "残り14日",
       "is_closed": false,
       "posted_at": "2026-11-09 19:55",
+      "match_score": 90,
+      "tags": [
+        "時給制",
+        "高時給2,000円+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13599241",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "◢◤時間単価 2,500円｜動画制作◢◤40代女性をターゲットにした化粧品のSNS向け動画制作♪(システム利用料0円）",
+      "url": "https://crowdworks.jp/public/jobs/13599241",
+      "description": "■企業情報 医薬部外品・化粧品・一般健康食品などの開発・製造・販売をされている企業様です。 ＼本案件では、40代女性をターゲットにした化粧品ブランドに携わっていただきます！／ ■業務内容 ●SNS向けの縦型動画制作 └...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_creation"
+      ],
+      "reward_type": "hourly",
+      "reward_min": 2000,
+      "reward_max": 3000,
+      "reward_label": "時給 2,000円 〜 3,000円",
+      "is_unspecified": false,
+      "proposals": 2,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-12 16:01",
       "match_score": 90,
       "tags": [
         "時給制",
@@ -4658,61 +4658,6 @@
       ]
     },
     {
-      "id": "cw_13598227",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【🎬SNS運用・完全在宅】​20代×SNSショート動画の作成メンバーを募集！",
-      "url": "https://crowdworks.jp/public/jobs/13598227",
-      "description": "ご覧いただきありがとうございます！ 日常や20代の生活で役立つ「お金・税金・知らなきゃ損する裏技」を30秒～60秒のショート動画で一緒に届けてくれる仲間を募集します！ 立ち上げ初期のため、試行錯誤しながら一緒にアカウントを盛り...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 10,
-      "deadline_label": "残り10日",
-      "is_closed": false,
-      "posted_at": "2026-11-12 09:13",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "cw_13598472",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "🍳【20代～30代前半・未経験OK！】「おすすめしたい調理器具紹介」をテーマにしたショート動画編集者さんを募集します✨",
-      "url": "https://crowdworks.jp/public/jobs/13598472",
-      "description": "ご覧いただきありがとうございます！ 今回は、20代～30代前半の方を対象に、普段の料理をもっと便利に、楽しくしてくれるおすすめの調理器具を紹介するショート動画を編集してくださる方を募集します😊 毎日の料理で活躍する便利グッ...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 1,
-      "days_left": 5,
-      "deadline_label": "残り5日",
-      "is_closed": false,
-      "posted_at": "2026-11-12 11:06",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
       "id": "cc_vid_02",
       "platform": "coconala",
       "platform_name": "ココナラ（公開依頼）",
@@ -5937,11 +5882,41 @@
       "reward_max": 30000,
       "reward_label": "10,000円 〜 30,000円",
       "is_unspecified": false,
-      "proposals": 0,
+      "proposals": 2,
       "days_left": 14,
       "deadline_label": "残り14日",
       "is_closed": false,
       "posted_at": "2026-11-12 09:59",
+      "match_score": 88,
+      "tags": [
+        "単価1万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13599789",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続・月4本】海外向けYouTube（英語）のドキュメンタリー動画編集｜図解・地図・グラフのモーショングラフィックス",
+      "url": "https://crowdworks.jp/public/jobs/13599789",
+      "description": "はじめまして。中野と申します。 2027年に立ち上げる海外向け（英語）YouTubeチャンネルの動画編集者を募集します。 日本の企業や社会の出来事を、一次資料をもとに物語として解説するドキュメンタリー形式のチャンネルです。顔出しや...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "motion_graphics",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 1,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-12 21:01",
       "match_score": 88,
       "tags": [
         "単価1万+",
@@ -5977,6 +5952,35 @@
         "時給制",
         "穴場(応募3件以下)",
         "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13594840",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "12/17(木)大阪での撮影カメラマン募集 （Instagramのリール動画撮影）",
+      "url": "https://crowdworks.jp/public/jobs/13594840",
+      "description": "【 依頼内容 】 採用目的のショート動画撮影の業務をお願いいたします。 業務 ・ショート動画撮影 参考映像 https://www.instagram.com/reel/DWkzDlQCq8i/?utm_source...",
+      "category": "video_shooting",
+      "subcategories": [
+        "video_shooting",
+        "tiktok_short"
+      ],
+      "reward_type": "hourly",
+      "reward_min": 5000,
+      "reward_max": 5000,
+      "reward_label": "時給 5,000円",
+      "is_unspecified": false,
+      "proposals": 4,
+      "days_left": 12,
+      "deadline_label": "残り12日",
+      "is_closed": false,
+      "posted_at": "2026-11-10 16:14",
+      "match_score": 84,
+      "tags": [
+        "時給制",
+        "高時給2,000円+",
+        "低倍率"
       ]
     }
   ]
