@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-13 20:55",
+  "updated_at": "2026-11-14 05:21",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 81,
+    "closed_count": 84,
     "ng_keyword_count": 2,
-    "total_excluded": 83
+    "total_excluded": 86
   },
   "password_required": false,
   "password_hash": "",
@@ -771,8 +771,8 @@
       "reward_label": "時給 2,000円 〜 3,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 10,
-      "deadline_label": "残り10日",
+      "days_left": 9,
+      "deadline_label": "残り9日",
       "is_closed": false,
       "posted_at": "2026-11-09 19:55",
       "match_score": 96,
@@ -2301,34 +2301,6 @@
       ]
     },
     {
-      "id": "cw_13601867",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【NARUTO好き大歓迎！】YouTube動画の編集者さんを大募集！早期単価アップあり／ご自身のペースでOK！",
-      "url": "https://crowdworks.jp/public/jobs/13601867",
-      "description": "募集要項をご覧いただきありがとうございます！ 現在は主に、漫画「NARUTO」の考察・解説動画を編集していただける方を大募集中です！ 【当案件の魅力】 ①NARUTO界隈を盛り上げるお仕事 みなさまが作ってくださる動画...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "ar_vr"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 50000,
-      "reward_max": 100000,
-      "reward_label": "50,000円 〜 100,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 7,
-      "deadline_label": "残り7日",
-      "is_closed": false,
-      "posted_at": "2026-11-13 19:34",
-      "match_score": 94,
-      "tags": [
-        "高単価5万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
       "id": "cw_13552909",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -2945,8 +2917,8 @@
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
       "proposals": 3,
-      "days_left": 5,
-      "deadline_label": "残り5日",
+      "days_left": 4,
+      "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-11-13 19:57",
       "match_score": 94,
@@ -3003,8 +2975,8 @@
       "reward_label": "時給 5,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 11,
-      "deadline_label": "残り11日",
+      "days_left": 10,
+      "deadline_label": "残り10日",
       "is_closed": false,
       "posted_at": "2026-11-10 16:16",
       "match_score": 90,
@@ -3474,6 +3446,34 @@
       ]
     },
     {
+      "id": "cw_13601867",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【NARUTO好き大歓迎！】YouTube動画の編集者さんを大募集！早期単価アップあり／ご自身のペースでOK！",
+      "url": "https://crowdworks.jp/public/jobs/13601867",
+      "description": "募集要項をご覧いただきありがとうございます！ 現在は主に、漫画「NARUTO」の考察・解説動画を編集していただける方を大募集中です！ 【当案件の魅力】 ①NARUTO界隈を盛り上げるお仕事 みなさまが作ってくださる動画...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "ar_vr"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 6,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-11-13 19:34",
+      "match_score": 88,
+      "tags": [
+        "高単価5万+",
+        "低倍率"
+      ]
+    },
+    {
       "id": "cw_13595735",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3751,6 +3751,65 @@
       "tags": [
         "高単価5万+",
         "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13602322",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【営業パートナー募集】映像制作×SNSマーケティング事業を一緒に拡大してくれる方",
+      "url": "https://crowdworks.jp/public/jobs/13602322",
+      "description": "■ 募集概要 ご覧いただきありがとうございます。 映像制作チーム「Video Create」を運営しております。 現在、企業向けの映像制作に加え、SNSマーケターと連携し、 戦略設計から動画制作・クリエイティブまで一貫して...",
+      "category": "video_creation",
+      "subcategories": [
+        "video_creation",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 5,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-14 00:43",
+      "match_score": 88,
+      "tags": [
+        "高単価5万+",
+        "低倍率"
+      ]
+    },
+    {
+      "id": "cw_13602102",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続＆単価UPあり】SNS縦長動画広告の編集クリエイター5名募集！【週6本〜/月まとめ払い/Premiere必須】",
+      "url": "https://crowdworks.jp/public/jobs/13602102",
+      "description": "■概要 TikTok、Instagramリール、YouTubeショート等で使用する縦長動画広告（15秒〜60秒程度）の編集を担当していただける動画クリエイターを5名募集いたします。 ※今回は単発ではなく、テスト制作を通過された方に...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "ad_video",
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 15,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-11-13 21:55",
+      "match_score": 88,
+      "tags": [
+        "高単価5万+",
+        "継続案件",
+        "プロ編集ソフト"
       ]
     },
     {
@@ -4676,8 +4735,8 @@
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
       "proposals": 3,
-      "days_left": 10,
-      "deadline_label": "残り10日",
+      "days_left": 9,
+      "deadline_label": "残り9日",
       "is_closed": false,
       "posted_at": "2026-11-09 17:51",
       "match_score": 88,
@@ -4716,35 +4775,6 @@
       ]
     },
     {
-      "id": "cw_13601864",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【NARUTO好き大歓迎！】ショート動画の編集者さんを大募集！早期単価アップあり／ご自身のペースでOK！",
-      "url": "https://crowdworks.jp/public/jobs/13601864",
-      "description": "募集要項をご覧いただきありがとうございます！ 現在は主に、漫画「NARUTO」の考察・解説動画を編集していただける方を大募集中です！ 【当案件の魅力】 ①NARUTO界隈を盛り上げるお仕事 みなさまが作ってくださる動画...",
-      "category": "ar_vr",
-      "subcategories": [
-        "ar_vr",
-        "youtube_video",
-        "tiktok_short"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 7,
-      "deadline_label": "残り7日",
-      "is_closed": false,
-      "posted_at": "2026-11-13 19:33",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
       "id": "cw_13601170",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -4761,9 +4791,9 @@
       "reward_max": 50000,
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 14,
-      "deadline_label": "残り14日",
+      "proposals": 1,
+      "days_left": 13,
+      "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-11-13 14:57",
       "match_score": 88,
@@ -5940,36 +5970,6 @@
       "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-11-11 10:07",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件",
-        "プロ編集ソフト"
-      ]
-    },
-    {
-      "id": "cw_13595217",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【YouTube動画編集者募集】継続案件あり｜週20時間以上｜Premiere Pro",
-      "url": "https://crowdworks.jp/public/jobs/13595217",
-      "description": "ビジネス系YouTubeの長尺動画を、継続してお願いできる編集者さんを募集しています！ ディレクターを務める長野篤史と申します。 私のXはこちらです。 @AtsuMovie0314 ◆こんな方を募集しています ・週2...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 13,
-      "deadline_label": "残り13日",
-      "is_closed": false,
-      "posted_at": "2026-11-11 09:58",
       "match_score": 88,
       "tags": [
         "単価1万+",
