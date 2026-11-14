@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-14 10:59",
+  "updated_at": "2026-11-14 20:15",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 0,
-    "ng_keyword_count": 0,
-    "total_excluded": 0
+    "closed_count": 83,
+    "ng_keyword_count": 2,
+    "total_excluded": 85
   },
   "password_required": false,
   "password_hash": "",
@@ -2899,36 +2899,6 @@
       ]
     },
     {
-      "id": "cw_13601898",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【経験者大募集！】VTuberの切り抜きYouTubeの動画編集者募集！【長期採用/マニュアル完備/Vtuber好き大歓迎】",
-      "url": "https://crowdworks.jp/public/jobs/13601898",
-      "description": "数あるお仕事の中からご興味を持って頂き、誠にありがとうございます！ 【 概要 】 私が運営するVTuberさんの切り抜きチャンネルで、動画を一緒に制作してくださる編集者さんを募集しています！ 「視聴者に刺さるテンポ感」や「演...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "char_animation_prod",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 4,
-      "deadline_label": "残り4日",
-      "is_closed": false,
-      "posted_at": "2026-11-13 19:57",
-      "match_score": 94,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
       "id": "cw_13569160",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3770,7 +3740,7 @@
       "reward_max": 100000,
       "reward_label": "50,000円 〜 100,000円",
       "is_unspecified": false,
-      "proposals": 5,
+      "proposals": 7,
       "days_left": 14,
       "deadline_label": "残り14日",
       "is_closed": false,
@@ -3782,34 +3752,31 @@
       ]
     },
     {
-      "id": "cw_13602102",
+      "id": "cw_13602449",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
-      "title": "【継続＆単価UPあり】SNS縦長動画広告の編集クリエイター5名募集！【週6本〜/月まとめ払い/Premiere必須】",
-      "url": "https://crowdworks.jp/public/jobs/13602102",
-      "description": "■概要 TikTok、Instagramリール、YouTubeショート等で使用する縦長動画広告（15秒〜60秒程度）の編集を担当していただける動画クリエイターを5名募集いたします。 ※今回は単発ではなく、テスト制作を通過された方に...",
-      "category": "tiktok_short",
+      "title": "【実績必須】犬用デンタルケア商品LPの図解アニメーション制作（3本）",
+      "url": "https://crowdworks.jp/public/jobs/13602449",
+      "description": "犬用オーラルケア商品のLP（スマホ向け）に載せる、図解アニメーション3本の制作をお願いします。 イラスト制作からアニメーション、書き出しまで一貫して対応できる、モーショングラフィックスの経験者を探しています。 ■ 求めるクオリ...",
+      "category": "char_animation_prod",
       "subcategories": [
-        "tiktok_short",
-        "ad_video",
-        "youtube_video",
-        "video_editing"
+        "char_animation_prod",
+        "motion_graphics"
       ],
       "reward_type": "fixed",
       "reward_min": 50000,
       "reward_max": 100000,
       "reward_label": "50,000円 〜 100,000円",
       "is_unspecified": false,
-      "proposals": 15,
-      "days_left": 13,
-      "deadline_label": "残り13日",
+      "proposals": 7,
+      "days_left": 7,
+      "deadline_label": "残り7日",
       "is_closed": false,
-      "posted_at": "2026-11-13 21:55",
+      "posted_at": "2026-11-14 07:50",
       "match_score": 88,
       "tags": [
         "高単価5万+",
-        "継続案件",
-        "プロ編集ソフト"
+        "低倍率"
       ]
     },
     {
@@ -3838,6 +3805,36 @@
       "tags": [
         "単価2万+",
         "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13601898",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【経験者大募集！】VTuberの切り抜きYouTubeの動画編集者募集！【長期採用/マニュアル完備/Vtuber好き大歓迎】",
+      "url": "https://crowdworks.jp/public/jobs/13601898",
+      "description": "数あるお仕事の中からご興味を持って頂き、誠にありがとうございます！ 【 概要 】 私が運営するVTuberさんの切り抜きチャンネルで、動画を一緒に制作してくださる編集者さんを募集しています！ 「視聴者に刺さるテンポ感」や「演...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "char_animation_prod",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 5,
+      "days_left": 4,
+      "deadline_label": "残り4日",
+      "is_closed": false,
+      "posted_at": "2026-11-13 19:57",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "低倍率",
+        "継続案件"
       ]
     },
     {
