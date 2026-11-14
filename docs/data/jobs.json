@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-14 05:21",
+  "updated_at": "2026-11-14 10:59",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 84,
-    "ng_keyword_count": 2,
-    "total_excluded": 86
+    "closed_count": 0,
+    "ng_keyword_count": 0,
+    "total_excluded": 0
   },
   "password_required": false,
   "password_hash": "",
