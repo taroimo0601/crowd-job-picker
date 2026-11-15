@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-15 10:32",
+  "updated_at": "2026-11-15 20:47",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 84,
-    "ng_keyword_count": 3,
-    "total_excluded": 87
+    "closed_count": 85,
+    "ng_keyword_count": 1,
+    "total_excluded": 86
   },
   "password_required": false,
   "password_hash": "",
@@ -2899,37 +2899,6 @@
       ]
     },
     {
-      "id": "cw_13603569",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【継続あり】YouTube動画編集者募集｜Final Cut Pro／長尺＋ショート動画制作",
-      "url": "https://crowdworks.jp/public/jobs/13603569",
-      "description": "税金・海外移住をテーマとしたYouTubeチャンネルの動画編集を担当していただける方を募集しています。 「これまでの動画編集経験を活かしたい」 「継続的にYouTube動画の制作に携わりたい」 「視聴者への伝わりやすさや、飽...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing",
-        "tiktok_short",
-        "video_creation"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 1,
-      "days_left": 3,
-      "deadline_label": "残り3日",
-      "is_closed": false,
-      "posted_at": "2026-11-15 00:53",
-      "match_score": 94,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
       "id": "cw_13569160",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3808,6 +3777,37 @@
       "tags": [
         "単価2万+",
         "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13603569",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続あり】YouTube動画編集者募集｜Final Cut Pro／長尺＋ショート動画制作",
+      "url": "https://crowdworks.jp/public/jobs/13603569",
+      "description": "税金・海外移住をテーマとしたYouTubeチャンネルの動画編集を担当していただける方を募集しています。 「これまでの動画編集経験を活かしたい」 「継続的にYouTube動画の制作に携わりたい」 「視聴者への伝わりやすさや、飽...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing",
+        "tiktok_short",
+        "video_creation"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 5,
+      "days_left": 3,
+      "deadline_label": "残り3日",
+      "is_closed": false,
+      "posted_at": "2026-11-15 00:53",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "低倍率",
+        "継続案件"
       ]
     },
     {
@@ -4917,6 +4917,35 @@
       ]
     },
     {
+      "id": "cw_13604303",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "「豚吼」ミュージックビデオのプランニング、撮影、動画編集（ラップ、ヒップホップ）",
+      "url": "https://crowdworks.jp/public/jobs/13604303",
+      "description": "【 依頼内容 】 ・「豚吼」の楽曲についてミュージックビデオのプランニング、撮影、動画編集をお願いいたします。 https://www.youtube.com/@tongkoh ・今後1〜2ヶ月に1曲発表を続ける予定で、毎回1...",
+      "category": "mv_singing",
+      "subcategories": [
+        "mv_singing",
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 20000,
+      "reward_max": 20000,
+      "reward_label": "20,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 7,
+      "deadline_label": "残り7日",
+      "is_closed": false,
+      "posted_at": "2026-11-15 18:07",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
       "id": "cw_13553747",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -5941,36 +5970,6 @@
       "deadline_label": "残り1日",
       "is_closed": false,
       "posted_at": "2026-11-14 22:55",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13598030",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【登録者58万人】人気YouTubeチャンネル「サムの本解説」動画編集者募集！｜VYOND経験者・継続案件",
-      "url": "https://crowdworks.jp/public/jobs/13598030",
-      "description": "数ある募集の中からご覧いただき、ありがとうございます。 この度、**チャンネル登録者58万人のYouTubeチャンネル「サムの本解説」**にて、動画編集を担当していただける方を募集いたします。 「サムの本解説」は、書籍の内容をわか...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "character_animation",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 11,
-      "deadline_label": "残り11日",
-      "is_closed": false,
-      "posted_at": "2026-11-12 09:59",
       "match_score": 88,
       "tags": [
         "単価1万+",
