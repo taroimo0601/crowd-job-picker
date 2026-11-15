@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15 03:39",
+  "updated_at": "2026-11-15 10:32",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 84,
@@ -2899,35 +2899,6 @@
       ]
     },
     {
-      "id": "cw_13603606",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "鉄道・交通系YouTubeチャンネルの動画編集募集【継続依頼前提】",
-      "url": "https://crowdworks.jp/public/jobs/13603606",
-      "description": "ご覧いただきありがとうございます。 この度当方で運営しています、交通系・鉄道系YouTubeチャンネルの解説動画について、動画編集を手伝ってくれる方を募集します。 【業務内容・スキル及び環境】 内容 フルテロップ入れ（テ...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-15 01:57",
-      "match_score": 94,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
       "id": "cw_13603569",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -2946,7 +2917,7 @@
       "reward_max": 50000,
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
-      "proposals": 0,
+      "proposals": 1,
       "days_left": 3,
       "deadline_label": "残り3日",
       "is_closed": false,
@@ -3805,34 +3776,6 @@
       "deadline_label": "残り14日",
       "is_closed": false,
       "posted_at": "2026-11-14 00:43",
-      "match_score": 88,
-      "tags": [
-        "高単価5万+",
-        "低倍率"
-      ]
-    },
-    {
-      "id": "cw_13602449",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【実績必須】犬用デンタルケア商品LPの図解アニメーション制作（3本）",
-      "url": "https://crowdworks.jp/public/jobs/13602449",
-      "description": "犬用オーラルケア商品のLP（スマホ向け）に載せる、図解アニメーション3本の制作をお願いします。 イラスト制作からアニメーション、書き出しまで一貫して対応できる、モーショングラフィックスの経験者を探しています。 ■ 求めるクオリ...",
-      "category": "char_animation_prod",
-      "subcategories": [
-        "char_animation_prod",
-        "motion_graphics"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 50000,
-      "reward_max": 100000,
-      "reward_label": "50,000円 〜 100,000円",
-      "is_unspecified": false,
-      "proposals": 8,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "is_closed": false,
-      "posted_at": "2026-11-14 07:50",
       "match_score": 88,
       "tags": [
         "高単価5万+",
@@ -5968,6 +5911,66 @@
       "deadline_label": "残り14日",
       "is_closed": false,
       "posted_at": "2026-11-10 16:26",
+      "match_score": 88,
+      "tags": [
+        "単価1万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13603418",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【ぶいすぽ好きな方！動画編集 不要！】YouTube見るだけ！面白シーン記入するお仕事！ 初心者・学生・主婦歓迎！",
+      "url": "https://crowdworks.jp/public/jobs/13603418",
+      "description": "Vtuberが好きでYouTubeでぶいすぽの配信を見ている方への募集です。 YouTube動画を見ていただき、面白かったシーンをメモしていただくお仕事です。 動画編集のスキルは不要です！長期的にやっていただけて動画編集の希望があ...",
+      "category": "char_animation_prod",
+      "subcategories": [
+        "char_animation_prod",
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 1,
+      "deadline_label": "残り1日",
+      "is_closed": false,
+      "posted_at": "2026-11-14 22:55",
+      "match_score": 88,
+      "tags": [
+        "単価1万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13598030",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【登録者58万人】人気YouTubeチャンネル「サムの本解説」動画編集者募集！｜VYOND経験者・継続案件",
+      "url": "https://crowdworks.jp/public/jobs/13598030",
+      "description": "数ある募集の中からご覧いただき、ありがとうございます。 この度、**チャンネル登録者58万人のYouTubeチャンネル「サムの本解説」**にて、動画編集を担当していただける方を募集いたします。 「サムの本解説」は、書籍の内容をわか...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "character_animation",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 3,
+      "days_left": 11,
+      "deadline_label": "残り11日",
+      "is_closed": false,
+      "posted_at": "2026-11-12 09:59",
       "match_score": 88,
       "tags": [
         "単価1万+",
