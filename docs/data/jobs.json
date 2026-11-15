@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-15 20:47",
+  "updated_at": "2026-11-16 04:16",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 85,
-    "ng_keyword_count": 1,
-    "total_excluded": 86
+    "ng_keyword_count": 2,
+    "total_excluded": 87
   },
   "password_required": false,
   "password_hash": "",
@@ -771,8 +771,8 @@
       "reward_label": "時給 2,000円 〜 3,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 8,
-      "deadline_label": "残り8日",
+      "days_left": 7,
+      "deadline_label": "残り7日",
       "is_closed": false,
       "posted_at": "2026-11-09 19:55",
       "match_score": 96,
@@ -2899,6 +2899,34 @@
       ]
     },
     {
+      "id": "cw_13604773",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【添削だけで月数万円〜】動画添削スタッフ募集｜マニュアル・見本動画つき・長期歓迎",
+      "url": "https://crowdworks.jp/public/jobs/13604773",
+      "description": "ご覧いただき、ありがとうございます。 ■ 概要 弊社では、YouTubeなどの動画を月に400本以上制作しています。 依頼の本数が多いため、完成した動画の添削（チェック）だけを お願いできる方を募集します。 完成...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 7,
+      "deadline_label": "残り7日",
+      "is_closed": false,
+      "posted_at": "2026-11-16 04:09",
+      "match_score": 94,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cw_13569160",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -2945,8 +2973,8 @@
       "reward_label": "時給 5,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 9,
-      "deadline_label": "残り9日",
+      "days_left": 8,
+      "deadline_label": "残り8日",
       "is_closed": false,
       "posted_at": "2026-11-10 16:16",
       "match_score": 90,
@@ -4735,8 +4763,8 @@
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
       "proposals": 3,
-      "days_left": 8,
-      "deadline_label": "残り8日",
+      "days_left": 7,
+      "deadline_label": "残り7日",
       "is_closed": false,
       "posted_at": "2026-11-09 17:51",
       "match_score": 88,
@@ -4934,9 +4962,9 @@
       "reward_max": 20000,
       "reward_label": "20,000円",
       "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 7,
-      "deadline_label": "残り7日",
+      "proposals": 1,
+      "days_left": 6,
+      "deadline_label": "残り6日",
       "is_closed": false,
       "posted_at": "2026-11-15 18:07",
       "match_score": 88,
@@ -5940,36 +5968,6 @@
       "deadline_label": "残り14日",
       "is_closed": false,
       "posted_at": "2026-11-10 16:26",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13603418",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【ぶいすぽ好きな方！動画編集 不要！】YouTube見るだけ！面白シーン記入するお仕事！ 初心者・学生・主婦歓迎！",
-      "url": "https://crowdworks.jp/public/jobs/13603418",
-      "description": "Vtuberが好きでYouTubeでぶいすぽの配信を見ている方への募集です。 YouTube動画を見ていただき、面白かったシーンをメモしていただくお仕事です。 動画編集のスキルは不要です！長期的にやっていただけて動画編集の希望があ...",
-      "category": "char_animation_prod",
-      "subcategories": [
-        "char_animation_prod",
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 1,
-      "deadline_label": "残り1日",
-      "is_closed": false,
-      "posted_at": "2026-11-14 22:55",
       "match_score": 88,
       "tags": [
         "単価1万+",
