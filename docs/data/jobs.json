@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-16 04:16",
+  "updated_at": "2026-11-16 10:36",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 85,
+    "closed_count": 88,
     "ng_keyword_count": 2,
-    "total_excluded": 87
+    "total_excluded": 90
   },
   "password_required": false,
   "password_hash": "",
@@ -1135,6 +1135,34 @@
       "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-11-12 09:01",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13601264",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【高単価報酬型】SNS運用スタッフ募集｜TikTok・Instagram・YouTube Shorts",
+      "url": "https://crowdworks.jp/public/jobs/13601264",
+      "description": "数ある募集の中からご覧いただきありがとうございます！ 今回、新規事業の立ち上げに伴い、SNSを活用した運用スタッフを募集しています！ TikTok・Instagram・YouTube ShortsなどのSNSを活用し、ショ...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "youtube_video"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 200000,
+      "reward_max": 250000,
+      "reward_label": "200,000円 〜 250,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 11,
+      "deadline_label": "残り11日",
+      "is_closed": false,
+      "posted_at": "2026-11-16 10:01",
       "match_score": 94,
       "tags": [
         "高単価5万+",
@@ -2294,6 +2322,33 @@
       "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-11-11 13:47",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13602032",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【主婦歓迎・月5万円可】ビジネス動画の編集者募集",
+      "url": "https://crowdworks.jp/public/jobs/13602032",
+      "description": "お疲れ様です！ 弊社の動画編集チームに入っていただける動画編集者を2～3名募集いたします。 案件はたくさんあるので月5万円以上稼ぐことも可能です！ お力添えいただける方をお待ちしています！ ■ 依頼概要 5～30分前後の横動...",
+      "category": "video_editing",
+      "subcategories": [
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 2,
+      "days_left": 11,
+      "deadline_label": "残り11日",
+      "is_closed": false,
+      "posted_at": "2026-11-16 10:01",
       "match_score": 94,
       "tags": [
         "高単価5万+",
@@ -4831,6 +4886,60 @@
       ]
     },
     {
+      "id": "cw_13602556",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【🎬動画編集ができる方へ！】編集だけで終わらない、SNS運用のお仕事｜実務未経験歓迎",
+      "url": "https://crowdworks.jp/public/jobs/13602556",
+      "description": "ご覧いただきありがとうございます！ 「動画編集を勉強したけど、なかなか案件が取れない」 「カットやテロップ入れの仕事ばかりで、単価が上がらない」 「動画を作るだけでなく、もっと仕事の幅を広げたい！」 そんな方を募集して...",
+      "category": "video_editing",
+      "subcategories": [
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 1,
+      "days_left": 12,
+      "deadline_label": "残り12日",
+      "is_closed": false,
+      "posted_at": "2026-11-16 10:26",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13602567",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "🌟【動画編集の経験を活かしたい方へ】SNS運用にも挑戦できるお仕事｜初心者さんも歓迎！🌟",
+      "url": "https://crowdworks.jp/public/jobs/13602567",
+      "description": "こんにちは！ たくさんの募集の中からご覧いただきありがとうございます☺️ 動画編集を勉強して、カットやテロップ入れもできるようになった。 でも、いざお仕事を探してみると、 「応募してもなかなか案件につながらない」 ...",
+      "category": "video_editing",
+      "subcategories": [
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 1,
+      "days_left": 12,
+      "deadline_label": "残り12日",
+      "is_closed": false,
+      "posted_at": "2026-11-16 10:26",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
       "id": "cc_vid_02",
       "platform": "coconala",
       "platform_name": "ココナラ（公開依頼）",
@@ -5850,129 +5959,6 @@
         "穴場(応募3件以下)",
         "継続案件",
         "急募"
-      ]
-    },
-    {
-      "id": "cw_13589208",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【ぶいすぽ好きな方！動画編集 不要！】YouTube見るだけ！面白シーン記入するお仕事！ 初心者・学生・主婦歓迎！",
-      "url": "https://crowdworks.jp/public/jobs/13589208",
-      "description": "Vtuberが好きでYouTubeでぶいすぽの配信を見ている方への募集です。 YouTube動画を見ていただき、面白かったシーンをメモしていただくお仕事です。 動画編集のスキルは不要です！長期的にやっていただけて動画編集の希望があ...",
-      "category": "char_animation_prod",
-      "subcategories": [
-        "char_animation_prod",
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 1,
-      "deadline_label": "残り1日",
-      "is_closed": false,
-      "posted_at": "2026-11-07 23:47",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13591649",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【学生・フリーター・主婦・主夫・高齢者歓迎！】“スキマ時間”にYouTubeショート動画の編集者急募集！【継続有】",
-      "url": "https://crowdworks.jp/public/jobs/13591649",
-      "description": "ご覧いただきありがとうございます！ YouTubeのショート動画編集をお手伝いいただける方を募集いたします。 テキスト（＝原稿）はこちらから提供しますので、 マニュアルや参考チャンネルに従った編集していただくお仕事です。...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 1,
-      "days_left": 2,
-      "deadline_label": "残り2日",
-      "is_closed": false,
-      "posted_at": "2026-11-09 19:31",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件",
-        "急募"
-      ]
-    },
-    {
-      "id": "cw_13591420",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "❋面談基本無し❋【長期・継続案件/フルリモ】SNS向け縦型ショートドラマの切り抜き動画編集者",
-      "url": "https://crowdworks.jp/public/jobs/13591420",
-      "description": "・継続案件 1日1本、月々約30本の動画制作＋投稿をお願いいたします(本数は応相談) ||◤業務概要 ・ショートドラマ切り抜き、Tiktok、Instagram、YouTubeなどに掲載するショート動画を制作 ・アカウ...",
-      "category": "cm_pv_drama",
-      "subcategories": [
-        "cm_pv_drama",
-        "youtube_video",
-        "tiktok_short",
-        "video_creation",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-09 19:31",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13594867",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【高単価】【1万円～】台本＋編集、ビジネス系YouTube動画の編集メンバー募集",
-      "url": "https://crowdworks.jp/public/jobs/13594867",
-      "description": "事業拡大に伴い、台本制作と動画編集できる方を募集いたします！！ ビジネス系をご依頼したいです！ かなり安定して本数お願いできるかつ、継続の案件となります🙇‍♂️ 【採用フロー】 応募→テスト案件→審査→採用 ※テ...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_script",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 10000,
-      "reward_label": "10,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-10 16:26",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
       ]
     }
   ]
