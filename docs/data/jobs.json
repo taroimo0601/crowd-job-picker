@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-18 12:22",
+  "updated_at": "2026-11-18 21:43",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 84,
-    "ng_keyword_count": 0,
+    "closed_count": 82,
+    "ng_keyword_count": 2,
     "total_excluded": 84
   },
   "password_required": false,
@@ -1249,35 +1249,6 @@
       "tags": [
         "高単価5万+",
         "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "cw_13572466",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【月額15万〜20万円/継続案件】SNSアカウント（YouTube/TikTok/Instagram等）の専属運用ディレクター",
-      "url": "https://crowdworks.jp/public/jobs/13572466",
-      "description": "事業拡大に伴い、弊社が獲得したクライアント企業のSNSアカウント（YouTube Shorts / TikTok / Instagram等）を丸ごとディレクションしていただける専属SNSディレクターを募集いたします。 弊社が営業の1次...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "youtube_video"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 150000,
-      "reward_max": 200000,
-      "reward_label": "150,000円 〜 200,000円",
-      "is_unspecified": false,
-      "proposals": 6,
-      "days_left": 13,
-      "deadline_label": "残り13日",
-      "is_closed": false,
-      "posted_at": "2026-10-30 23:10",
-      "match_score": 94,
-      "tags": [
-        "高単価5万+",
-        "低倍率",
-        "継続案件"
       ]
     },
     {
@@ -3590,6 +3561,34 @@
       ]
     },
     {
+      "id": "cw_13572466",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【月額15万〜20万円/継続案件】SNSアカウント（YouTube/TikTok/Instagram等）の専属運用ディレクター",
+      "url": "https://crowdworks.jp/public/jobs/13572466",
+      "description": "事業拡大に伴い、弊社が獲得したクライアント企業のSNSアカウント（YouTube Shorts / TikTok / Instagram等）を丸ごとディレクションしていただける専属SNSディレクターを募集いたします。 弊社が営業の1次...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "youtube_video"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 150000,
+      "reward_max": 200000,
+      "reward_label": "150,000円 〜 200,000円",
+      "is_unspecified": false,
+      "proposals": 28,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-18 16:53",
+      "match_score": 88,
+      "tags": [
+        "高単価5万+",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cw_13584849",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3727,34 +3726,6 @@
       "tags": [
         "高単価5万+",
         "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13609278",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【完全在宅・時給1,540円〜】カー用品・キャンプ用品の広告動画・画像制作｜どちらかの経験でOK◎改善提案も歓迎✨",
-      "url": "https://crowdworks.jp/public/jobs/13609278",
-      "description": "＼ ＼ カー用品・キャンプ用品ブランドの広告クリエイティブを、あなたの手で ／／ Facebook・Instagram・Amazon広告で使う 商品の魅力を伝える広告動画（カット割り・テロップ入れなど）や 広告...",
-      "category": "ad_video",
-      "subcategories": [
-        "ad_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 50000,
-      "reward_max": 100000,
-      "reward_label": "50,000円 〜 100,000円",
-      "is_unspecified": false,
-      "proposals": 6,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "is_closed": false,
-      "posted_at": "2026-11-18 02:39",
-      "match_score": 88,
-      "tags": [
-        "高単価5万+",
-        "低倍率"
       ]
     },
     {
@@ -5202,12 +5173,12 @@
       ]
     },
     {
-      "id": "cw_13609486",
+      "id": "cw_13610954",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
-      "title": "💰【20代～30代前半・未経験OK！】「格安で行ける旅行先紹介」をテーマにしたショート動画編集者さんを募集します✨",
-      "url": "https://crowdworks.jp/public/jobs/13609486",
-      "description": "ご覧いただきありがとうございます！ 今回は、20代～30代前半の方を対象に、費用を抑えながら楽しめるお得な旅行先や、リーズナブルに満喫できるおすすめの観光地を紹介するショート動画を編集してくださる方を募集します😊 宿泊費や...",
+      "title": "【🎬SNS運用・立ち上げメンバー募集４】一人暮らしのリアルを届けるショート動画編集をお願いします！",
+      "url": "https://crowdworks.jp/public/jobs/13610954",
+      "description": "ご覧いただきありがとうございます！ 当アカウントでは主に記事制作メインでお仕事依頼させていただきましたが、 この度、新規で美容系SNSアカウントを立ち上げることになり、動画編集メンバーを募集します🎬✨ 一人暮らしをしている2...",
       "category": "tiktok_short",
       "subcategories": [
         "tiktok_short",
@@ -5218,11 +5189,11 @@
       "reward_max": 50000,
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 5,
-      "deadline_label": "残り5日",
+      "proposals": 0,
+      "days_left": 7,
+      "deadline_label": "残り7日",
       "is_closed": false,
-      "posted_at": "2026-11-18 09:50",
+      "posted_at": "2026-11-18 21:38",
       "match_score": 88,
       "tags": [
         "単価2万+",
@@ -5956,6 +5927,35 @@
         "単価1万+",
         "穴場(応募3件以下)",
         "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13594840",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "12/17(木)大阪での撮影カメラマン募集 （Instagramのリール動画撮影）",
+      "url": "https://crowdworks.jp/public/jobs/13594840",
+      "description": "【 依頼内容 】 採用目的のショート動画撮影の業務をお願いいたします。 業務 ・ショート動画撮影 参考映像 https://www.instagram.com/reel/DWkzDlQCq8i/?utm_source...",
+      "category": "video_shooting",
+      "subcategories": [
+        "video_shooting",
+        "tiktok_short"
+      ],
+      "reward_type": "hourly",
+      "reward_min": 5000,
+      "reward_max": 5000,
+      "reward_label": "時給 5,000円",
+      "is_unspecified": false,
+      "proposals": 5,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-11-10 16:14",
+      "match_score": 84,
+      "tags": [
+        "時給制",
+        "高時給2,000円+",
+        "低倍率"
       ]
     }
   ]
