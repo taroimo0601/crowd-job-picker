@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-19 11:57",
+  "updated_at": "2026-11-19 21:34",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 85,
-    "ng_keyword_count": 4,
-    "total_excluded": 89
+    "ng_keyword_count": 1,
+    "total_excluded": 86
   },
   "password_required": false,
   "password_hash": "",
@@ -1532,6 +1532,33 @@
       ]
     },
     {
+      "id": "mw_37102",
+      "platform": "mamaworks",
+      "platform_name": "ママワークス",
+      "title": "動画ディレクター / 業務委託 【完全在宅】未経験OK◎動画・SNS業界へ！在宅で学びながら、チームを支える進行サポートに挑戦できるチャンスです！ 株式会社ZEALS A",
+      "url": "https://mamaworks.jp/job/37102",
+      "description": "動画ディレクター / 業務委託 【完全在宅】未経験OK◎動画・SNS業界へ！在宅で学びながら、チームを支える進行サポートに挑戦できるチャンスです！ 株式会社ZEALS AI Agency 「動画が好き」を仕事にするチャンスを待っていませんか？ 未経験からディレクターへ 立ち上げメンバーとして新しいキャリアをスタート▷▷ ✦✦✦ 株式会社ZEALS AI Agencyについて ✦✦✦ 当社は、2026年4月から新しく始動した、「広告運用」",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_creation"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 112000,
+      "reward_max": 112000,
+      "reward_label": "112,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 7,
+      "deadline_label": "募集中",
+      "posted_at": "2026-11-19 21:35",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
       "id": "cw_13570089",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -2548,6 +2575,35 @@
       "tags": [
         "高単価5万+",
         "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13612843",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【営業パートナー急募】映像制作×SNSマーケティング事業を一緒に拡大してくれる方",
+      "url": "https://crowdworks.jp/public/jobs/13612843",
+      "description": "■ 募集概要 ご覧いただきありがとうございます。 映像制作チーム「Video Create」を運営しております。 現在、企業向けの映像制作に加え、SNSマーケターと連携し、 戦略設計から動画制作・クリエイティブまで一貫して...",
+      "category": "video_creation",
+      "subcategories": [
+        "video_creation",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 1,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-19 18:27",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)",
+        "急募"
       ]
     },
     {
@@ -5341,6 +5397,36 @@
       ]
     },
     {
+      "id": "cw_13612743",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【経験者大募集！】VTuberの切り抜きYouTubeの動画編集者募集！【長期採用/マニュアル完備/Vtuber好き大歓迎】",
+      "url": "https://crowdworks.jp/public/jobs/13612743",
+      "description": "数あるお仕事の中からご興味を持って頂き、誠にありがとうございます！ 【 概要 】 私が運営するVTuberさんの切り抜きチャンネルで、動画を一緒に制作してくださる編集者さんを募集しています！ 「視聴者に刺さるテンポ感」や「演...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "char_animation_prod",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 5,
+      "days_left": 3,
+      "deadline_label": "残り3日",
+      "is_closed": false,
+      "posted_at": "2026-11-19 17:27",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "低倍率",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cc_vid_02",
       "platform": "coconala",
       "platform_name": "ココナラ（公開依頼）",
@@ -5856,95 +5942,6 @@
       "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-10-26 05:54",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13558023",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【長期・専任枠あり】総フォロワー15万人以上！YouTube動画編集者募集",
-      "url": "https://crowdworks.jp/public/jobs/13558023",
-      "description": "【募集本文】 ご覧いただき誠にありがとうございます！ 当方が運営・サポートする、総フォロワー15万人超えのYouTubeチャンネルにおける動画編集パートナー様を募集いたします。 編集マニュアルや制作フォーマット・指示出し体制が整...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 13,
-      "deadline_label": "残り13日",
-      "is_closed": false,
-      "posted_at": "2026-10-26 14:40",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13559386",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【継続案件】旅Vlog（YouTube）の動画編集とサムネイル作成｜Premiere Pro｜全5本",
-      "url": "https://crowdworks.jp/public/jobs/13559386",
-      "description": "■ 依頼の概要 個人の方が運営する、国内の旅Vlog（YouTube、横長）の編集とサムネイル作成をお願いできる方を募集します。 日本各地の一の宮（神社）や名店をめぐる旅を、ご本人が撮影した素材から1本の動画に仕上げていただくお仕...",
-      "category": "video_editing",
-      "subcategories": [
-        "video_editing",
-        "youtube_video"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 3,
-      "deadline_label": "残り3日",
-      "is_closed": false,
-      "posted_at": "2026-10-26 11:11",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件",
-        "プロ編集ソフト"
-      ]
-    },
-    {
-      "id": "cw_13560910",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【ぶいすぽ好きな方！動画編集 不要！】YouTube見るだけ！面白シーン記入するお仕事！ 初心者・学生・主婦歓迎！",
-      "url": "https://crowdworks.jp/public/jobs/13560910",
-      "description": "Vtuberが好きでYouTubeでぶいすぽの配信を見ている方への募集です。 YouTube動画を見ていただき、面白かったシーンをメモしていただくお仕事です。 動画編集のスキルは不要です！長期的にやっていただけて動画編集の希望があ...",
-      "category": "char_animation_prod",
-      "subcategories": [
-        "char_animation_prod",
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 3,
-      "deadline_label": "残り3日",
-      "is_closed": false,
-      "posted_at": "2026-10-26 22:22",
       "match_score": 88,
       "tags": [
         "単価1万+",
