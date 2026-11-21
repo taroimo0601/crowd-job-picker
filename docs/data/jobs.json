@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-21 12:00",
+  "updated_at": "2026-11-21 21:14",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 87,
-    "ng_keyword_count": 2,
-    "total_excluded": 89
+    "closed_count": 86,
+    "ng_keyword_count": 1,
+    "total_excluded": 87
   },
   "password_required": false,
   "password_hash": "",
@@ -2663,6 +2663,34 @@
       ]
     },
     {
+      "id": "cw_13616096",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【1契約9万円】営業パートナー募集",
+      "url": "https://crowdworks.jp/public/jobs/13616096",
+      "description": "■ 募集概要 ご覧いただきありがとうございます。 映像制作チーム「Video Create」を運営しております。 現在、企業向けの映像制作に加え、SNSマーケターと連携し、 戦略設計から動画制作・クリエイティブまで一貫して...",
+      "category": "video_creation",
+      "subcategories": [
+        "video_creation",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-21 12:03",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
       "id": "cw_13552909",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3858,7 +3886,7 @@
       "reward_max": 200000,
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
-      "proposals": 5,
+      "proposals": 6,
       "days_left": 9,
       "deadline_label": "残り9日",
       "is_closed": false,
@@ -5910,33 +5938,6 @@
         "時給制",
         "高時給2,000円+",
         "低倍率"
-      ]
-    },
-    {
-      "id": "cw_13606018",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "音楽アーティストのライブメイキングムービー制作",
-      "url": "https://crowdworks.jp/public/jobs/13606018",
-      "description": "メイキングムービーをディレクション、撮影、編集する仕事を依頼したく、 クリエイターの方を募集します。 お仕事の詳細： ▽映像編集・映像制作の目的・概要音楽アーティストのコンサートツアードキュメントムービーの制作 ▽求め...",
-      "category": "video_editing",
-      "subcategories": [
-        "video_editing",
-        "video_creation"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 250000,
-      "reward_max": 300000,
-      "reward_label": "250,000円 〜 300,000円",
-      "is_unspecified": false,
-      "proposals": 21,
-      "days_left": 9,
-      "deadline_label": "残り9日",
-      "is_closed": false,
-      "posted_at": "2026-11-16 15:14",
-      "match_score": 82,
-      "tags": [
-        "高単価5万+"
       ]
     }
   ]
