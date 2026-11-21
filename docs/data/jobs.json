@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-21 21:14",
+  "updated_at": "2026-11-22 04:57",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 86,
-    "ng_keyword_count": 1,
+    "closed_count": 87,
+    "ng_keyword_count": 0,
     "total_excluded": 87
   },
   "password_required": false,
@@ -857,8 +857,8 @@
       "reward_label": "時給 2,000円 〜 3,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 2,
-      "deadline_label": "残り2日",
+      "days_left": 1,
+      "deadline_label": "残り1日",
       "is_closed": false,
       "posted_at": "2026-11-09 19:55",
       "match_score": 96,
@@ -3375,6 +3375,35 @@
       ]
     },
     {
+      "id": "cw_13617009",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続依頼】20,000円～50,000円 YouTube動画編集（カット、テロップ、総合的な編集）【経験者のみ】",
+      "url": "https://crowdworks.jp/public/jobs/13617009",
+      "description": "【 依頼内容 】 YouTube動画編集（カット、テロップ、BGM/効果音選定、画角切替、デザイン総合的な編集など）業務をお願いいたします。 いくつかのジャンルからテスト案件をご対応いただき、内容を確認の上、本番案件をご依頼いた...",
+      "category": "video_editing",
+      "subcategories": [
+        "video_editing",
+        "youtube_video"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 3,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-22 04:11",
+      "match_score": 94,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cw_13569160",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3421,8 +3450,8 @@
       "reward_label": "時給 5,000円",
       "is_unspecified": false,
       "proposals": 2,
-      "days_left": 3,
-      "deadline_label": "残り3日",
+      "days_left": 2,
+      "deadline_label": "残り2日",
       "is_closed": false,
       "posted_at": "2026-11-10 16:16",
       "match_score": 90,
@@ -3887,8 +3916,8 @@
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
       "proposals": 6,
-      "days_left": 9,
-      "deadline_label": "残り9日",
+      "days_left": 8,
+      "deadline_label": "残り8日",
       "is_closed": false,
       "posted_at": "2026-11-17 09:02",
       "match_score": 88,
@@ -5909,35 +5938,6 @@
         "単価1万+",
         "穴場(応募3件以下)",
         "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13594840",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "12/17(木)大阪での撮影カメラマン募集 （Instagramのリール動画撮影）",
-      "url": "https://crowdworks.jp/public/jobs/13594840",
-      "description": "【 依頼内容 】 採用目的のショート動画撮影の業務をお願いいたします。 業務 ・ショート動画撮影 参考映像 https://www.instagram.com/reel/DWkzDlQCq8i/?utm_source...",
-      "category": "video_shooting",
-      "subcategories": [
-        "video_shooting",
-        "tiktok_short"
-      ],
-      "reward_type": "hourly",
-      "reward_min": 5000,
-      "reward_max": 5000,
-      "reward_label": "時給 5,000円",
-      "is_unspecified": false,
-      "proposals": 8,
-      "days_left": 3,
-      "deadline_label": "残り3日",
-      "is_closed": false,
-      "posted_at": "2026-11-10 16:14",
-      "match_score": 84,
-      "tags": [
-        "時給制",
-        "高時給2,000円+",
-        "低倍率"
       ]
     }
   ]
