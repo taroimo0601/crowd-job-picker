@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-21 05:57",
+  "updated_at": "2026-11-21 12:00",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 87,
-    "ng_keyword_count": 1,
-    "total_excluded": 88
+    "ng_keyword_count": 2,
+    "total_excluded": 89
   },
   "password_required": false,
   "password_hash": "",
@@ -3858,7 +3858,7 @@
       "reward_max": 200000,
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
-      "proposals": 4,
+      "proposals": 5,
       "days_left": 9,
       "deadline_label": "残り9日",
       "is_closed": false,
@@ -4035,34 +4035,6 @@
       "tags": [
         "高単価5万+",
         "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13615362",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【NARUTO好き大歓迎！】YouTube動画の編集者さんを大募集！AI編集歓迎／早期単価アップあり／ご自身のペースでOK！",
-      "url": "https://crowdworks.jp/public/jobs/13615362",
-      "description": "募集要項をご覧いただきありがとうございます！ 現在は主に、漫画「NARUTO」の考察・解説動画を編集していただける方を大募集中です！ 【当案件の魅力】 ①NARUTO界隈を盛り上げるお仕事 みなさまが作ってくださる動画...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "ar_vr"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 50000,
-      "reward_max": 100000,
-      "reward_label": "50,000円 〜 100,000円",
-      "is_unspecified": false,
-      "proposals": 8,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "is_closed": false,
-      "posted_at": "2026-11-20 20:15",
-      "match_score": 88,
-      "tags": [
-        "高単価5万+",
-        "低倍率"
       ]
     },
     {
@@ -5679,6 +5651,34 @@
         "単価2万+",
         "低倍率",
         "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13616086",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "YouTube動画編集＋サムネイル制作",
+      "url": "https://crowdworks.jp/public/jobs/13616086",
+      "description": "【 依頼内容 】 リフォーム会社のYouTube動画の編集業務をお願いいたします。 チャンネル名は、実際にお話しが進んでから公開いたします。 【 作業ボリューム 】 月間本数 ・ロング2本（8分〜18分程度、企画により ...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 30000,
+      "reward_label": "30,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 3,
+      "deadline_label": "残り3日",
+      "is_closed": false,
+      "posted_at": "2026-11-21 11:56",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
       ]
     },
     {
