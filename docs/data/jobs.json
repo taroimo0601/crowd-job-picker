@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-22 04:57",
+  "updated_at": "2026-11-22 10:56",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 87,
-    "ng_keyword_count": 0,
-    "total_excluded": 87
+    "ng_keyword_count": 1,
+    "total_excluded": 88
   },
   "password_required": false,
   "password_hash": "",
@@ -3375,35 +3375,6 @@
       ]
     },
     {
-      "id": "cw_13617009",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【継続依頼】20,000円～50,000円 YouTube動画編集（カット、テロップ、総合的な編集）【経験者のみ】",
-      "url": "https://crowdworks.jp/public/jobs/13617009",
-      "description": "【 依頼内容 】 YouTube動画編集（カット、テロップ、BGM/効果音選定、画角切替、デザイン総合的な編集など）業務をお願いいたします。 いくつかのジャンルからテスト案件をご対応いただき、内容を確認の上、本番案件をご依頼いた...",
-      "category": "video_editing",
-      "subcategories": [
-        "video_editing",
-        "youtube_video"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-22 04:11",
-      "match_score": 94,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
       "id": "cw_13569160",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -5933,6 +5904,36 @@
       "deadline_label": "残り7日",
       "is_closed": false,
       "posted_at": "2026-10-27 23:45",
+      "match_score": 88,
+      "tags": [
+        "単価1万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
+      "id": "cw_13616846",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【ぶいすぽ好きな方！動画編集 不要！】YouTube見るだけ！面白シーン記入するお仕事！ 初心者・学生・主婦歓迎！",
+      "url": "https://crowdworks.jp/public/jobs/13616846",
+      "description": "Vtuberが好きでYouTubeでぶいすぽの配信を見ている方への募集です。 YouTube動画を見ていただき、面白かったシーンをメモしていただくお仕事です。 動画編集のスキルは不要です！長期的にやっていただけて動画編集の希望があ...",
+      "category": "char_animation_prod",
+      "subcategories": [
+        "char_animation_prod",
+        "youtube_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 10000,
+      "reward_max": 30000,
+      "reward_label": "10,000円 〜 30,000円",
+      "is_unspecified": false,
+      "proposals": 1,
+      "days_left": 4,
+      "deadline_label": "残り4日",
+      "is_closed": false,
+      "posted_at": "2026-11-21 23:03",
       "match_score": 88,
       "tags": [
         "単価1万+",
