@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-23 05:11",
+  "updated_at": "2026-11-23 11:20",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 2,
-    "ng_keyword_count": 0,
-    "total_excluded": 2
+    "closed_count": 90,
+    "ng_keyword_count": 2,
+    "total_excluded": 92
   },
   "password_required": false,
   "password_hash": "",
@@ -3420,9 +3420,9 @@
       "reward_max": 5000,
       "reward_label": "時給 5,000円",
       "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 2,
-      "deadline_label": "残り2日",
+      "proposals": 3,
+      "days_left": 1,
+      "deadline_label": "残り1日",
       "is_closed": false,
       "posted_at": "2026-11-10 16:16",
       "match_score": 90,
@@ -3887,8 +3887,8 @@
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
       "proposals": 6,
-      "days_left": 8,
-      "deadline_label": "残り8日",
+      "days_left": 7,
+      "deadline_label": "残り7日",
       "is_closed": false,
       "posted_at": "2026-11-17 09:02",
       "match_score": 88,
