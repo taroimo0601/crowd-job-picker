@@ -1,9 +1,9 @@
 {
-  "updated_at": "2026-11-24 14:45",
+  "updated_at": "2026-11-25 03:41",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 91,
-    "ng_keyword_count": 1,
+    "closed_count": 90,
+    "ng_keyword_count": 2,
     "total_excluded": 92
   },
   "password_required": false,
@@ -2777,6 +2777,34 @@
       ]
     },
     {
+      "id": "cw_13622094",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【完全在宅・時給1,540円〜】カー用品・キャンプ用品の広告動画・画像制作｜どちらかの経験でOK◎改善提案も歓迎✨",
+      "url": "https://crowdworks.jp/public/jobs/13622094",
+      "description": "＼ ＼ カー用品・キャンプ用品ブランドの広告クリエイティブを、あなたの手で ／／ Facebook・Instagram・Amazon広告で使う 商品の魅力を伝える広告動画（カット割り・テロップ入れなど）や 広告...",
+      "category": "ad_video",
+      "subcategories": [
+        "ad_video",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 2,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-11-25 00:21",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
       "id": "cw_13552909",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3973,8 +4001,8 @@
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
       "proposals": 7,
-      "days_left": 6,
-      "deadline_label": "残り6日",
+      "days_left": 5,
+      "deadline_label": "残り5日",
       "is_closed": false,
       "posted_at": "2026-11-17 09:02",
       "match_score": 88,
@@ -4542,6 +4570,33 @@
         "高単価5万+",
         "低倍率",
         "プロ編集ソフト"
+      ]
+    },
+    {
+      "id": "cw_13621716",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【完全在宅・週10時間〜】SNS運用パートナー募集（投稿制作・運用サポート・分析改善／業務委託）",
+      "url": "https://crowdworks.jp/public/jobs/13621716",
+      "description": "数ある案件の中からご覧いただき、誠にありがとうございます。 現在、YouTube・Instagram等のSNSアカウント運用体制の強化に伴い、継続的にご協力いただける業務委託パートナーの方を募集しております。 ■ 業務内容 ...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 20,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-11-24 20:48",
+      "match_score": 88,
+      "tags": [
+        "高単価5万+",
+        "継続案件"
       ]
     },
     {
@@ -5812,11 +5867,39 @@
       "reward_max": 50000,
       "reward_label": "30,000円 〜 50,000円",
       "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 5,
-      "deadline_label": "残り5日",
+      "proposals": 2,
+      "days_left": 4,
+      "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-11-24 12:44",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13620700",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【鹿児島撮影 / 25,000円】企業SNS・ショート動画の撮影カメラマン募集",
+      "url": "https://crowdworks.jp/public/jobs/13620700",
+      "description": "企業様向けのInstagram・TikTokの撮影案件にて、下記日程にて鹿児島市内でご依頼できるカメラマンを募集しております。 弊社側で企画・構成・全体のディレクションを行いますが、当日はカメラマンとして、より良い画角や構図、撮影位...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_shooting"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 27500,
+      "reward_max": 27500,
+      "reward_label": "27,500円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 4,
+      "deadline_label": "残り4日",
+      "is_closed": false,
+      "posted_at": "2026-11-24 15:06",
       "match_score": 88,
       "tags": [
         "単価2万+",
@@ -5850,91 +5933,6 @@
         "単価2万+",
         "穴場(応募3件以下)",
         "急募"
-      ]
-    },
-    {
-      "id": "cw_13573724",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【1本2万円／継続案件】投資系YouTube動画編集｜Premiere Pro経験者募集",
-      "url": "https://crowdworks.jp/public/jobs/13573724",
-      "description": "ご覧いただきありがとうございます。 投資・資産運用系YouTubeチャンネルの動画編集をお任せできる方を募集しております。 カットやテロップ挿入だけでなく、図解や画面録画素材を活用し、専門的な内容も視聴者に分かりやすく伝え...",
-      "category": "video_editing",
-      "subcategories": [
-        "video_editing",
-        "youtube_video"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 20000,
-      "reward_max": 20000,
-      "reward_label": "20,000円",
-      "is_unspecified": false,
-      "proposals": 4,
-      "days_left": 13,
-      "deadline_label": "残り13日",
-      "is_closed": false,
-      "posted_at": "2026-10-31 22:42",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "低倍率",
-        "継続案件",
-        "プロ編集ソフト"
-      ]
-    },
-    {
-      "id": "cc_vid_03",
-      "platform": "coconala",
-      "platform_name": "ココナラ（公開依頼）",
-      "title": "【広告動画】新発売スキンケア商品のMeta広告（Instagram / Facebook）用縦型ショート動画3パターン制作",
-      "url": "https://coconala.com/requests/categories/22",
-      "description": "冒頭3秒のフック違いで3パターンの動画広告（各15〜30秒）を制作していただきたいです。商品撮影素材と訴求コピーはご支給します。",
-      "category": "ad_video",
-      "subcategories": [
-        "ad_video",
-        "tiktok_short",
-        "cm_pv_drama"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 20000,
-      "reward_max": 30000,
-      "reward_label": "20,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "posted_at": "2026-10-22 17:02",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "cw_13601856",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【動画撮影｜1本 20,000円】事例動画の撮影＠地方独立行政法人 那覇市立病院",
-      "url": "https://crowdworks.jp/public/jobs/13601856",
-      "description": "【当社について】 弊社Dr.JOYは「すべての医療従者に、次の一手を」をモットーに、医療業界の「働き方改革」支援システムを開発・運営する会社です。ビーコンを使った勤怠管理システムや、医師・薬剤師と関連企業担当者を繋ぐプラットフォーム...",
-      "category": "video_shooting",
-      "subcategories": [
-        "video_shooting"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 20000,
-      "reward_max": 22000,
-      "reward_label": "20,000円 〜 22,000円",
-      "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 2,
-      "deadline_label": "残り2日",
-      "is_closed": false,
-      "posted_at": "2026-11-13 19:28",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
       ]
     }
   ]
