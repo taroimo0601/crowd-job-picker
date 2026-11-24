@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-23 23:07",
+  "updated_at": "2026-11-24 14:45",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 90,
-    "ng_keyword_count": 3,
-    "total_excluded": 93
+    "closed_count": 91,
+    "ng_keyword_count": 1,
+    "total_excluded": 92
   },
   "password_required": false,
   "password_hash": "",
@@ -229,6 +229,37 @@
     }
   ],
   "jobs": [
+    {
+      "id": "cw_13619282",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【月額20〜30万円・フルリモート】YouTube・SNS動画の編集スタッフ｜長期継続",
+      "url": "https://crowdworks.jp/public/jobs/13619282",
+      "description": "YouTubeやSNS向けの動画編集を、在宅で継続してお任せします。カットやテロップ、色調補正に加え、サムネイルや簡単な販促素材も担当します。 Premiere ProとAfter Effectsでの編集経験を活かして、月額固定の案...",
+      "category": "video_editing",
+      "subcategories": [
+        "video_editing",
+        "motion_graphics",
+        "youtube_video"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 300000,
+      "reward_max": 300000,
+      "reward_label": "300,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-11-24 10:45",
+      "match_score": 99,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)",
+        "継続案件",
+        "プロ編集ソフト"
+      ]
+    },
     {
       "id": "cw_13558535",
       "platform": "crowdworks",
@@ -2691,6 +2722,61 @@
       ]
     },
     {
+      "id": "cw_13619150",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【募集】おもちゃの商品動画の撮影と撮り方のレクチャー（11/30・12/1）",
+      "url": "https://crowdworks.jp/public/jobs/13619150",
+      "description": "この度は、本案件に興味を持っていただきありがとうございます。 Instagram・TikTokなどのショート動画を中心に、企業のSNS運用を支援しています。 ■どんな案件？ 玩具メーカーさまのInstagramで使う、商品紹...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 2,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-11-24 10:45",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13617499",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【ショート動画編集】未経験OK☕カフェ・雑貨・グルメ好き歓迎！お店の魅力を動画で発信♪",
+      "url": "https://crowdworks.jp/public/jobs/13617499",
+      "description": "はじめまして！ ご覧いただきありがとうございます😊 今回は、InstagramやTikTokなどのSNSで使用する、店舗紹介のショート動画を編集してくださる方を募集します！ 地域で親しまれているお店や、魅力あふれるお店を...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 3,
+      "days_left": 1,
+      "deadline_label": "残り1日",
+      "is_closed": false,
+      "posted_at": "2026-11-24 10:10",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
       "id": "cw_13552909",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -3886,9 +3972,9 @@
       "reward_max": 200000,
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
-      "proposals": 6,
-      "days_left": 7,
-      "deadline_label": "残り7日",
+      "proposals": 7,
+      "days_left": 6,
+      "deadline_label": "残り6日",
       "is_closed": false,
       "posted_at": "2026-11-17 09:02",
       "match_score": 88,
@@ -5710,6 +5796,34 @@
       ]
     },
     {
+      "id": "cw_13620389",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "🌎【20代～30代前半・未経験OK！】「おすすめしたい観光地紹介」をテーマにしたショート動画編集者さんを募集します✨",
+      "url": "https://crowdworks.jp/public/jobs/13620389",
+      "description": "ご覧いただきありがとうございます！ 今回は「おすすめしたい観光地紹介」をテーマに、ショート動画を編集してくださる方を募集します！ 実際に訪れてよかった場所や、まだあまり知られていない穴場スポット、絶景が楽しめる観光地など...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_editing"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 5,
+      "deadline_label": "残り5日",
+      "is_closed": false,
+      "posted_at": "2026-11-24 12:44",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
       "id": "cc_vid_02",
       "platform": "coconala",
       "platform_name": "ココナラ（公開依頼）",
@@ -5821,124 +5935,6 @@
       "tags": [
         "単価2万+",
         "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "cw_13604303",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "「豚吼」ミュージックビデオのプランニング、撮影、動画編集（ラップ、ヒップホップ）",
-      "url": "https://crowdworks.jp/public/jobs/13604303",
-      "description": "【 依頼内容 】 ・「豚吼」の楽曲についてミュージックビデオのプランニング、撮影、動画編集をお願いいたします。 https://www.youtube.com/@tongkoh ・今後1〜2ヶ月に1曲発表を続ける予定で、毎回1...",
-      "category": "mv_singing",
-      "subcategories": [
-        "mv_singing",
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 20000,
-      "reward_max": 20000,
-      "reward_label": "20,000円",
-      "is_unspecified": false,
-      "proposals": 1,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "is_closed": false,
-      "posted_at": "2026-11-15 18:07",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "cw_13553747",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【経験者募集】YouTube動画撮影カメラマン募集｜シネマティック撮影経験者歓迎｜継続依頼あり",
-      "url": "https://crowdworks.jp/public/jobs/13553747",
-      "description": "数ある募集の中からご覧いただき、ありがとうございます。 株式会社BEARは、YouTubeを中心とした動画コンテンツの企画・制作・運用を行っている会社です。 現在、案件増加に伴い、動画撮影をお任せできるカメラマンを募集していま...",
-      "category": "video_shooting",
-      "subcategories": [
-        "video_shooting",
-        "ar_vr",
-        "youtube_video"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 19800,
-      "reward_max": 19800,
-      "reward_label": "19,800円",
-      "is_unspecified": false,
-      "proposals": 3,
-      "days_left": 1,
-      "deadline_label": "残り1日",
-      "is_closed": false,
-      "posted_at": "2026-10-22 21:12",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13564460",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【継続案件あり】大阪ミナミ｜TikTok・ショート動画撮影カメラマン募集！",
-      "url": "https://crowdworks.jp/public/jobs/13564460",
-      "description": "【募集概要】 ご覧いただきありがとうございます！ 現在、TikTok・Instagramを中心としたショート動画の制作・運用代行を行っております。 今回、大阪ミナミエリアを中心に動画撮影を担当していただけるカメラマンを募集いたし...",
-      "category": "video_shooting",
-      "subcategories": [
-        "video_shooting",
-        "tiktok_short"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 16500,
-      "reward_max": 16500,
-      "reward_label": "16,500円",
-      "is_unspecified": false,
-      "proposals": 0,
-      "days_left": 7,
-      "deadline_label": "残り7日",
-      "is_closed": false,
-      "posted_at": "2026-10-27 23:45",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13616846",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【ぶいすぽ好きな方！動画編集 不要！】YouTube見るだけ！面白シーン記入するお仕事！ 初心者・学生・主婦歓迎！",
-      "url": "https://crowdworks.jp/public/jobs/13616846",
-      "description": "Vtuberが好きでYouTubeでぶいすぽの配信を見ている方への募集です。 YouTube動画を見ていただき、面白かったシーンをメモしていただくお仕事です。 動画編集のスキルは不要です！長期的にやっていただけて動画編集の希望があ...",
-      "category": "char_animation_prod",
-      "subcategories": [
-        "char_animation_prod",
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 10000,
-      "reward_max": 30000,
-      "reward_label": "10,000円 〜 30,000円",
-      "is_unspecified": false,
-      "proposals": 1,
-      "days_left": 4,
-      "deadline_label": "残り4日",
-      "is_closed": false,
-      "posted_at": "2026-11-21 23:03",
-      "match_score": 88,
-      "tags": [
-        "単価1万+",
-        "穴場(応募3件以下)",
-        "継続案件"
       ]
     }
   ]
