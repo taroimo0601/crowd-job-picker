@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-25 13:48",
+  "updated_at": "2026-11-26 02:50",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 87,
-    "ng_keyword_count": 1,
-    "total_excluded": 88
+    "closed_count": 88,
+    "ng_keyword_count": 6,
+    "total_excluded": 94
   },
   "password_required": false,
   "password_hash": "",
@@ -597,34 +597,6 @@
       "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-11-20 11:03",
-      "match_score": 99,
-      "tags": [
-        "高単価5万+",
-        "穴場(応募3件以下)",
-        "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13622879",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【継続依頼あり】採用ショート動画の企画・運用｜TikTok・リール・ショートで求人応募を増やせる方を募集します",
-      "url": "https://crowdworks.jp/public/jobs/13622879",
-      "description": "ご覧いただきありがとうございます。 弊社株式会社ライトアップは東証グロースに上場しており、「全国、全ての中小企業を黒字にする」をビジョンに掲げ、新しいAIサービスの開発・提供に取り組んでおります。（コーポレートサイト：https...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 100000,
-      "reward_max": 150000,
-      "reward_label": "100,000円 〜 150,000円",
-      "is_unspecified": false,
-      "proposals": 1,
-      "days_left": 14,
-      "deadline_label": "残り14日",
-      "is_closed": false,
-      "posted_at": "2026-11-25 13:39",
       "match_score": 99,
       "tags": [
         "高単価5万+",
@@ -4058,8 +4030,8 @@
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
       "proposals": 7,
-      "days_left": 5,
-      "deadline_label": "残り5日",
+      "days_left": 4,
+      "deadline_label": "残り4日",
       "is_closed": false,
       "posted_at": "2026-11-17 09:02",
       "match_score": 88,
@@ -4234,34 +4206,6 @@
       "tags": [
         "高単価5万+",
         "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13622094",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【完全在宅・時給1,540円〜】カー用品・キャンプ用品の広告動画・画像制作｜どちらかの経験でOK◎改善提案も歓迎✨",
-      "url": "https://crowdworks.jp/public/jobs/13622094",
-      "description": "＼ ＼ カー用品・キャンプ用品ブランドの広告クリエイティブを、あなたの手で ／／ Facebook・Instagram・Amazon広告で使う 商品の魅力を伝える広告動画（カット割り・テロップ入れなど）や 広告...",
-      "category": "ad_video",
-      "subcategories": [
-        "ad_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 50000,
-      "reward_max": 100000,
-      "reward_label": "50,000円 〜 100,000円",
-      "is_unspecified": false,
-      "proposals": 7,
-      "days_left": 6,
-      "deadline_label": "残り6日",
-      "is_closed": false,
-      "posted_at": "2026-11-25 00:21",
-      "match_score": 88,
-      "tags": [
-        "高単価5万+",
-        "低倍率"
       ]
     },
     {
@@ -5929,6 +5873,62 @@
       "deadline_label": "残り3日",
       "is_closed": false,
       "posted_at": "2026-11-21 11:56",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13622629",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【九州撮影 / 25,000円】企業SNS・ショート動画の撮影カメラマン募集",
+      "url": "https://crowdworks.jp/public/jobs/13622629",
+      "description": "企業様向けのInstagram・TikTokの撮影案件にて、下記日程にて鹿児島市内でご依頼できるカメラマンを募集しております。 弊社側で企画・構成・全体のディレクションを行いますが、当日はカメラマンとして、より良い画角や構図、撮影位...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_shooting"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 27500,
+      "reward_max": 27500,
+      "reward_label": "27,500円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 3,
+      "deadline_label": "残り3日",
+      "is_closed": false,
+      "posted_at": "2026-11-25 11:43",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13620700",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【鹿児島撮影 / 25,000円】企業SNS・ショート動画の撮影カメラマン募集",
+      "url": "https://crowdworks.jp/public/jobs/13620700",
+      "description": "企業様向けのInstagram・TikTokの撮影案件にて、下記日程にて鹿児島市内でご依頼できるカメラマンを募集しております。 弊社側で企画・構成・全体のディレクションを行いますが、当日はカメラマンとして、より良い画角や構図、撮影位...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short",
+        "video_shooting"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 27500,
+      "reward_max": 27500,
+      "reward_label": "27,500円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 3,
+      "deadline_label": "残り3日",
+      "is_closed": false,
+      "posted_at": "2026-11-24 15:06",
       "match_score": 88,
       "tags": [
         "単価2万+",
