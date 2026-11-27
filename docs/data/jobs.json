@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-26 22:45",
+  "updated_at": "2026-11-27 12:57",
   "total_count": 200,
   "auto_excluded_stats": {
     "closed_count": 87,
@@ -929,6 +929,34 @@
       ]
     },
     {
+      "id": "cw_13626478",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "◎未経験者OK ▶︎ TikTok Instagram YouTubeを使ったSNS集客代行業務",
+      "url": "https://crowdworks.jp/public/jobs/13626478",
+      "description": "急ぎで人員確保したいので、SNS初心者も歓迎です！ 個々のレベルに合わせた業務体系をお作りします！ 【 業務内容 】 TikTok Instagram YouTube（いずれか1つ）を使ったSNS集客業務に取り組んでいた...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "tiktok_short"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 500000,
+      "reward_max": 1000000,
+      "reward_label": "500,000円 〜 1,000,000円",
+      "is_unspecified": false,
+      "proposals": 2,
+      "days_left": 14,
+      "deadline_label": "残り14日",
+      "is_closed": false,
+      "posted_at": "2026-11-27 08:45",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
       "id": "cw_13551489",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -1391,6 +1419,34 @@
       "deadline_label": "残り11日",
       "is_closed": false,
       "posted_at": "2026-11-16 10:01",
+      "match_score": 94,
+      "tags": [
+        "高単価5万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13626134",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【経験者限定】YouTubeチャンネル運用ディレクター募集！",
+      "url": "https://crowdworks.jp/public/jobs/13626134",
+      "description": "YouTubeチャンネルの運用ディレクターを募集します！ ビジネス系を中心に、医療・密着・対談・エンタメなど、幅広いジャンルのYouTubeチャンネルを運用しています。 単なる動画制作ではなく、チャンネルを成長させるための企画・制...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "video_creation"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 200000,
+      "reward_max": 250000,
+      "reward_label": "200,000円 〜 250,000円",
+      "is_unspecified": false,
+      "proposals": 0,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-11-27 08:37",
       "match_score": 94,
       "tags": [
         "高単価5万+",
@@ -3637,6 +3693,34 @@
       ]
     },
     {
+      "id": "cw_13626446",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【継続依頼/時給単価高め】YouTubeの切り抜き動画の編集者募集！ 【学生・主婦さん 大歓迎】",
+      "url": "https://crowdworks.jp/public/jobs/13626446",
+      "description": "数ある案件の中からご応募いただきありがとうございます！ 私たちはYouTubeの動画を作成しており、日々視聴者に喜んでもらえる動画作りを目指しています。 【概要】 wakatteTVの動画を切り抜いていただき、簡単な字幕...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 1,
+      "days_left": 13,
+      "deadline_label": "残り13日",
+      "is_closed": false,
+      "posted_at": "2026-11-27 08:45",
+      "match_score": 94,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)",
+        "継続案件"
+      ]
+    },
+    {
       "id": "cw_13569160",
       "platform": "crowdworks",
       "platform_name": "クラウドワークス",
@@ -4177,8 +4261,8 @@
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
       "proposals": 8,
-      "days_left": 4,
-      "deadline_label": "残り4日",
+      "days_left": 3,
+      "deadline_label": "残り3日",
       "is_closed": false,
       "posted_at": "2026-11-17 09:02",
       "match_score": 88,
@@ -5852,90 +5936,6 @@
         "単価2万+",
         "低倍率",
         "継続案件"
-      ]
-    },
-    {
-      "id": "cw_13609397",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "毎日の垢抜け・セルフケア系Instagramの投稿＆リール作成募集！",
-      "url": "https://crowdworks.jp/public/jobs/13609397",
-      "description": "🌸 数ある求人の中からご覧いただきありがとうございます 🌸 私たちは、20代のメンバーを中心に、InstagramやYouTubeショートで「毎日がちょっと特別になる、20代の垢抜けセルフケアや夜のルーティン習慣」を楽しく発信す...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "youtube_video"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 1,
-      "days_left": 5,
-      "deadline_label": "残り5日",
-      "is_closed": false,
-      "posted_at": "2026-11-18 09:57",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "cw_13611602",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【実績公開可】ビジネス系YouTubeチャンネルの編集者募集",
-      "url": "https://crowdworks.jp/public/jobs/13611602",
-      "description": "【 依頼内容 】 ビジネス系YouTubeチャンネルの動画編集業務をお願いいたします。 【 依頼数 】 月2~4本程度 など 【 初稿納期 】 素材共有から約5日 【 契約金額(税込) 】 20,000円/本...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 7,
-      "deadline_label": "残り7日",
-      "is_closed": false,
-      "posted_at": "2026-11-19 10:15",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "cw_13611354",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "🧹【20代～30代前半・未経験OK！】「年末の大掃除で大活躍するアイテム紹介」をテーマにしたショート動画編集者さんを募集します",
-      "url": "https://crowdworks.jp/public/jobs/13611354",
-      "description": "ご覧いただきありがとうございます！ 今回は、20代～30代前半の方を対象に、年末の大掃除を効率よく進めるために役立つ便利な掃除グッズや、普段の掃除でも活躍するおすすめアイテムを紹介するショート動画を編集してくださる方を募集します...",
-      "category": "tiktok_short",
-      "subcategories": [
-        "tiktok_short",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 50000,
-      "reward_label": "30,000円 〜 50,000円",
-      "is_unspecified": false,
-      "proposals": 2,
-      "days_left": 4,
-      "deadline_label": "残り4日",
-      "is_closed": false,
-      "posted_at": "2026-11-19 07:56",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "穴場(応募3件以下)"
       ]
     }
   ]
