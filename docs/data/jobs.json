@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-27 12:57",
+  "updated_at": "2026-11-27 22:41",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 87,
-    "ng_keyword_count": 2,
-    "total_excluded": 89
+    "closed_count": 89,
+    "ng_keyword_count": 4,
+    "total_excluded": 93
   },
   "password_required": false,
   "password_hash": "",
@@ -3684,7 +3684,7 @@
       "proposals": 0,
       "days_left": 7,
       "deadline_label": "募集中",
-      "posted_at": "2026-11-26 22:45",
+      "posted_at": "2026-11-27 22:42",
       "match_score": 94,
       "tags": [
         "単価2万+",
@@ -4887,6 +4887,34 @@
       ]
     },
     {
+      "id": "cw_13628193",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【NARUTO好き大歓迎！】YouTube動画の編集者さんを大募集！AI編集歓迎／早期単価アップあり／ご自身のペースでOK！",
+      "url": "https://crowdworks.jp/public/jobs/13628193",
+      "description": "募集要項をご覧いただきありがとうございます！ 現在は主に、漫画「NARUTO」の考察・解説動画を編集していただける方を大募集中です！ 【当案件の魅力】 ①NARUTO界隈を盛り上げるお仕事 みなさまが作ってくださる動画...",
+      "category": "youtube_video",
+      "subcategories": [
+        "youtube_video",
+        "ar_vr"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 50000,
+      "reward_max": 100000,
+      "reward_label": "50,000円 〜 100,000円",
+      "is_unspecified": false,
+      "proposals": 8,
+      "days_left": 7,
+      "deadline_label": "残り7日",
+      "is_closed": false,
+      "posted_at": "2026-11-27 17:24",
+      "match_score": 88,
+      "tags": [
+        "高単価5万+",
+        "低倍率"
+      ]
+    },
+    {
       "id": "lc_vid_05",
       "platform": "lancers",
       "platform_name": "ランサーズ",
@@ -5907,35 +5935,6 @@
       "tags": [
         "単価2万+",
         "穴場(応募3件以下)"
-      ]
-    },
-    {
-      "id": "cw_13606516",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【※継続あり・初心者OK】 スポーツ系YouTube動画の編集者募集！",
-      "url": "https://crowdworks.jp/public/jobs/13606516",
-      "description": "登録者数3万人のYouTubeチャンネルの動画編集者を募集します！ 安定して継続してお仕事をしたい、そんな方からの応募をお待ちしております。 【お仕事内容】 相撲に関するYouTube動画編集です。 原稿と音声用意して...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "video_editing"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 30000,
-      "reward_max": 30000,
-      "reward_label": "30,000円",
-      "is_unspecified": false,
-      "proposals": 6,
-      "days_left": 2,
-      "deadline_label": "残り2日",
-      "is_closed": false,
-      "posted_at": "2026-11-16 18:48",
-      "match_score": 88,
-      "tags": [
-        "単価2万+",
-        "低倍率",
-        "継続案件"
       ]
     }
   ]
