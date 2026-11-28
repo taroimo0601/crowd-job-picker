@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-27 22:41",
+  "updated_at": "2026-11-28 12:45",
   "total_count": 200,
   "auto_excluded_stats": {
-    "closed_count": 89,
-    "ng_keyword_count": 4,
-    "total_excluded": 93
+    "closed_count": 92,
+    "ng_keyword_count": 3,
+    "total_excluded": 95
   },
   "password_required": false,
   "password_hash": "",
@@ -3684,7 +3684,7 @@
       "proposals": 0,
       "days_left": 7,
       "deadline_label": "募集中",
-      "posted_at": "2026-11-27 22:42",
+      "posted_at": "2026-11-28 12:46",
       "match_score": 94,
       "tags": [
         "単価2万+",
@@ -4261,8 +4261,8 @@
       "reward_label": "150,000円 〜 200,000円",
       "is_unspecified": false,
       "proposals": 8,
-      "days_left": 3,
-      "deadline_label": "残り3日",
+      "days_left": 2,
+      "deadline_label": "残り2日",
       "is_closed": false,
       "posted_at": "2026-11-17 09:02",
       "match_score": 88,
@@ -4880,34 +4880,6 @@
       "deadline_label": "残り14日",
       "is_closed": false,
       "posted_at": "2026-11-26 09:15",
-      "match_score": 88,
-      "tags": [
-        "高単価5万+",
-        "低倍率"
-      ]
-    },
-    {
-      "id": "cw_13628193",
-      "platform": "crowdworks",
-      "platform_name": "クラウドワークス",
-      "title": "【NARUTO好き大歓迎！】YouTube動画の編集者さんを大募集！AI編集歓迎／早期単価アップあり／ご自身のペースでOK！",
-      "url": "https://crowdworks.jp/public/jobs/13628193",
-      "description": "募集要項をご覧いただきありがとうございます！ 現在は主に、漫画「NARUTO」の考察・解説動画を編集していただける方を大募集中です！ 【当案件の魅力】 ①NARUTO界隈を盛り上げるお仕事 みなさまが作ってくださる動画...",
-      "category": "youtube_video",
-      "subcategories": [
-        "youtube_video",
-        "ar_vr"
-      ],
-      "reward_type": "fixed",
-      "reward_min": 50000,
-      "reward_max": 100000,
-      "reward_label": "50,000円 〜 100,000円",
-      "is_unspecified": false,
-      "proposals": 8,
-      "days_left": 7,
-      "deadline_label": "残り7日",
-      "is_closed": false,
-      "posted_at": "2026-11-27 17:24",
       "match_score": 88,
       "tags": [
         "高単価5万+",
@@ -5931,6 +5903,33 @@
       "deadline_label": "残り13日",
       "is_closed": false,
       "posted_at": "2026-11-13 14:57",
+      "match_score": 88,
+      "tags": [
+        "単価2万+",
+        "穴場(応募3件以下)"
+      ]
+    },
+    {
+      "id": "cw_13629123",
+      "platform": "crowdworks",
+      "platform_name": "クラウドワークス",
+      "title": "【20代会社員の方へ発信📡】副業から本業へ｜お金・節約系ショート動画の編集メンバー募集（未経験OK🙆‍♂️）",
+      "url": "https://crowdworks.jp/public/jobs/13629123",
+      "description": "数ある募集の中からご覧いただきありがとうございます。 私自身、会社員として働きながら 「このままでいいのかな」と感じていた時期がありました。 現在はフリーランスとして、様々な事業プロジェクトに参画しております。 今...",
+      "category": "tiktok_short",
+      "subcategories": [
+        "tiktok_short"
+      ],
+      "reward_type": "fixed",
+      "reward_min": 30000,
+      "reward_max": 50000,
+      "reward_label": "30,000円 〜 50,000円",
+      "is_unspecified": false,
+      "proposals": 1,
+      "days_left": 6,
+      "deadline_label": "残り6日",
+      "is_closed": false,
+      "posted_at": "2026-11-28 11:02",
       "match_score": 88,
       "tags": [
         "単価2万+",
